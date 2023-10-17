@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['ntp_5fcon_5ferror_64',['NTP_CON_ERROR',['../_n_t_p___t_i_m_e_8c.html#a071ba5481de72691b41fb7f9d699e3c3',1,'NTP_TIME.c']]],
+  ['ntp_5fcon_5fok_65',['NTP_CON_OK',['../_n_t_p___t_i_m_e_8c.html#a18f60515685c9632e26bbb6ef35b71fb',1,'NTP_TIME.c']]],
+  ['ntp_5fconnection_5fretry_5fcount_66',['NTP_CONNECTION_RETRY_COUNT',['../_n_t_p__config_8h.html#a874b48a46f17cabdbb74726ca62d57b8',1,'NTP_config.h']]],
+  ['ntp_5fcurrent_5fyear_67',['NTP_CURRENT_YEAR',['../_n_t_p__config_8h.html#ab1bb9e782ce1c99afb6ecef8007c4840',1,'NTP_config.h']]],
+  ['ntp_5fdefault_5fyear_68',['NTP_DEFAULT_YEAR',['../_n_t_p___t_i_m_e_8c.html#aefa6695169ba78546c146972a8ade29a',1,'NTP_TIME.c']]],
+  ['ntp_5fmilis_5fin_5fa_5fsecond_69',['NTP_MILIS_IN_A_SECOND',['../_n_t_p__config_8h.html#a1198ded41ed8070717a2a8d33573180d',1,'NTP_config.h']]],
+  ['ntp_5fminutes_5ffor_5frefresh_70',['NTP_MINUTES_FOR_REFRESH',['../_n_t_p__config_8h.html#a3fba15e47a6e258be05ee00e1bb0373a',1,'NTP_config.h']]],
+  ['ntp_5fone_71',['NTP_ONE',['../_n_t_p___t_i_m_e_8c.html#a9e19a7e16a692e8675eb9a9151d1c5c8',1,'NTP_TIME.c']]],
+  ['ntp_5foverwrite_5fenv_5fname_72',['NTP_OVERWRITE_ENV_NAME',['../_n_t_p__config_8h.html#a1b826d487e3f04dae258ef79cdba635e',1,'NTP_config.h']]],
+  ['ntp_5freset_5fzero_73',['NTP_RESET_ZERO',['../_n_t_p___t_i_m_e_8c.html#a3429d3c0db89a98377c55fb3c1f5afe4',1,'NTP_TIME.c']]],
+  ['ntp_5fseconds_5fin_5fa_5fminute_74',['NTP_SECONDS_IN_A_MINUTE',['../_n_t_p__config_8h.html#a93001bbf88fc3dde4b5b5fd5640ffdfc',1,'NTP_config.h']]],
+  ['ntp_5fsntp_5fserver_5fname_75',['NTP_SNTP_SERVER_NAME',['../_n_t_p__config_8h.html#ac037d58956716aa97ca6d963e02ef51a',1,'NTP_config.h']]],
+  ['ntp_5fsntp_5fserver_5fnumber_76',['NTP_SNTP_SERVER_NUMBER',['../_n_t_p__config_8h.html#a1447f564a5ff0b8eeba7be909dfce60e',1,'NTP_config.h']]],
+  ['ntp_5ftask_5fdelay_77',['NTP_TASK_DELAY',['../_n_t_p__config_8h.html#af9091217d4cea51aa0046f79c0bb1cc4',1,'NTP_config.h']]],
+  ['ntp_5ftime_5fc_78',['NTP_TIME_C',['../_n_t_p___t_i_m_e_8c.html#a3634f52ebd9f45d4aebcdd83d7558593',1,'NTP_TIME.c']]],
+  ['ntp_5ftime_5frefresh_5fdelay_5fcount_79',['NTP_TIME_REFRESH_DELAY_COUNT',['../_n_t_p__config_8h.html#abaa4883498b1f82f639e3e01ff405d7c',1,'NTP_config.h']]],
+  ['ntp_5ftime_5fzone_5fname_80',['NTP_TIME_ZONE_NAME',['../_n_t_p__config_8h.html#ab2a5bdefd56442cc1a5240f08c5c1ba6',1,'NTP_config.h']]],
+  ['ntp_5fzero_81',['NTP_ZERO',['../_n_t_p___t_i_m_e_8c.html#a4afe2d9381f26ec2a98d6f1ad2b685ea',1,'NTP_TIME.c']]]
+];

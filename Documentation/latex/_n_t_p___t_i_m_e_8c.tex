@@ -1,0 +1,153 @@
+\hypertarget{_n_t_p___t_i_m_e_8c}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+TIME/src/\+NTP/\+NTP\+\_\+\+TIME.c File Reference}
+\label{_n_t_p___t_i_m_e_8c}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/TIME/src/NTP/NTP\_TIME.c@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/TIME/src/NTP/NTP\_TIME.c}}
+{\ttfamily \#include \char`\"{}NTP\+\_\+\+TIME.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}NTP\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}NTP\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+sntp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+attr.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_a19d4679c6001a75aa54599f3f38636f6}{NTP\+\_\+config}} ()
+\begin{DoxyCompactList}\small\item\em Configure the NTP server connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_a3fb09d07aa7cc2c2b31ad4d24aadefcb}{NTP\+\_\+obtain\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Verify if the syncronization with the NTP server was done. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_abc92ac50c6b9c023b12bfdc7e8122d12}{NTP\+\_\+ub\+\_\+get\+Connection\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the connection error flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_ac81fac8f0c23d4cf099f8dc81a331c25}{NTP\+\_\+v\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the NTP server connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_a6924730d44f1f7734a1d22d2a5cab5b5}{NTP\+\_\+v\+\_\+try\+Connect}} ()
+\begin{DoxyCompactList}\small\item\em Try to retrive data from the NTP server until the time is set correctly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_t_p___t_i_m_e_8c_a662dd3262504ca544c6fd4495e82e3bf}{NTP\+\_\+v\+\_\+get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Set the internal time to the time received from the NTP server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maria.irimus@altran.com}{\texttt{ maria.\+irimus@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_n_t_p___t_i_m_e_8c}{NTP\+\_\+\+TIME.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Maria Irimus 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_a19d4679c6001a75aa54599f3f38636f6}\label{_n_t_p___t_i_m_e_8c_a19d4679c6001a75aa54599f3f38636f6}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_config@{NTP\_config}}
+\index{NTP\_config@{NTP\_config}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_config()}{NTP\_config()}}
+{\footnotesize\ttfamily void NTP\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure the NTP server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_a3fb09d07aa7cc2c2b31ad4d24aadefcb}\label{_n_t_p___t_i_m_e_8c_a3fb09d07aa7cc2c2b31ad4d24aadefcb}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_obtainTime@{NTP\_obtainTime}}
+\index{NTP\_obtainTime@{NTP\_obtainTime}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_obtainTime()}{NTP\_obtainTime()}}
+{\footnotesize\ttfamily void NTP\+\_\+obtain\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verify if the syncronization with the NTP server was done. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_abc92ac50c6b9c023b12bfdc7e8122d12}\label{_n_t_p___t_i_m_e_8c_abc92ac50c6b9c023b12bfdc7e8122d12}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_ub\_getConnectionError@{NTP\_ub\_getConnectionError}}
+\index{NTP\_ub\_getConnectionError@{NTP\_ub\_getConnectionError}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_ub\_getConnectionError()}{NTP\_ub\_getConnectionError()}}
+{\footnotesize\ttfamily char NTP\+\_\+ub\+\_\+get\+Connection\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the connection error flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_a662dd3262504ca544c6fd4495e82e3bf}\label{_n_t_p___t_i_m_e_8c_a662dd3262504ca544c6fd4495e82e3bf}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_v\_getTime@{NTP\_v\_getTime}}
+\index{NTP\_v\_getTime@{NTP\_v\_getTime}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_v\_getTime()}{NTP\_v\_getTime()}}
+{\footnotesize\ttfamily void NTP\+\_\+v\+\_\+get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the internal time to the time received from the NTP server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_ac81fac8f0c23d4cf099f8dc81a331c25}\label{_n_t_p___t_i_m_e_8c_ac81fac8f0c23d4cf099f8dc81a331c25}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_v\_init@{NTP\_v\_init}}
+\index{NTP\_v\_init@{NTP\_v\_init}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_v\_init()}{NTP\_v\_init()}}
+{\footnotesize\ttfamily void NTP\+\_\+v\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the NTP server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_n_t_p___t_i_m_e_8c_a6924730d44f1f7734a1d22d2a5cab5b5}\label{_n_t_p___t_i_m_e_8c_a6924730d44f1f7734a1d22d2a5cab5b5}} 
+\index{NTP\_TIME.c@{NTP\_TIME.c}!NTP\_v\_tryConnect@{NTP\_v\_tryConnect}}
+\index{NTP\_v\_tryConnect@{NTP\_v\_tryConnect}!NTP\_TIME.c@{NTP\_TIME.c}}
+\doxysubsubsection{\texorpdfstring{NTP\_v\_tryConnect()}{NTP\_v\_tryConnect()}}
+{\footnotesize\ttfamily void NTP\+\_\+v\+\_\+try\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try to retrive data from the NTP server until the time is set correctly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

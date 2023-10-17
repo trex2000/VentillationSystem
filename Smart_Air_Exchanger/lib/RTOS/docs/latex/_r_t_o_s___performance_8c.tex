@@ -1,0 +1,358 @@
+\hypertarget{_r_t_o_s___performance_8c}{}\doxysection{C\+:/\+Users/\+Work/\+Desktop/\+SAE\+\_\+\+Clone/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+Performance.c File Reference}
+\label{_r_t_o_s___performance_8c}\index{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Performance.c@{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Performance.c}}
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Performance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for RTOS\+\_\+\+Performance.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{_r_t_o_s___performance_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_e_r_f___v_a_l_u_e___s_t_o_r_a_g_e}{PERF\+\_\+\+VALUE\+\_\+\+STORAGE}}
+\begin{DoxyCompactList}\small\item\em Structure for the cyclic list (implemented in array due to coding constraints) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a39ef6ec5d0f45b106d66e3efe7e69e97}{get\+Min}} (int time\+Category)
+\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a07c3d69d35220ed1e9b52709225d6dc0}{get\+Max}} (int time\+Category)
+\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a02acfb2df5343c8eef1fd87025d158e4}{get\+Average}} (int time\+Category)
+\item 
+void \mbox{\hyperlink{_r_t_o_s___performance_8c_a243a8d97f04fe67a5bfcd90a66b4c1ee}{register\+Time}} (int time\+Category, int num\+Ticks)
+\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a4570df20f2b452bd4df2746953ee40e3}{get\+Average\+Ticks}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} type\+Of\+Task)
+\begin{DoxyCompactList}\small\item\em Get the average elapsed ticks from logged values of the specified task type. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_ab99d28cbe2bb26b04e654d404cfd5fce}{get\+Min\+Ticks}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} type\+Of\+Task)
+\begin{DoxyCompactList}\small\item\em Get the smallest number elapsed ticks from logged values of the specified task type. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a3fc0645010da51d1f149ff8d71a90b7f}{get\+Max\+Ticks}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} type\+Of\+Task)
+\begin{DoxyCompactList}\small\item\em Get the smallest number elapsed ticks from logged values of the specified task type. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a044111e1596d86a222ee5807d01da148}{get\+Time\+Startup}} ()
+\begin{DoxyCompactList}\small\item\em Get the duration of the startup function calls (in ticks) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___performance_8c_acd765a55ca7aac995f94e11acef2ee15}{register\+Ticks}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} type\+Of\+Task, int num\+Ticks)
+\begin{DoxyCompactList}\small\item\em Log a number of elapsed ticks for a certain task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___performance_8c_a8133f4a40c6c02f7da9154dd4eb659ea}{register\+Time\+Startup}} (int num\+Ticks)
+\begin{DoxyCompactList}\small\item\em Log the number of elapsed ticks for the startup task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___performance_8c_a48c6e0f0bd1996a93369f85feb220b5e}{get\+Performance\+Stats}} (char $\ast$stats)
+\begin{DoxyCompactList}\small\item\em Get the complete performance stats for all tasks, in a buffer, ready to be printed. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a34d31dc2bac3a17948fb698bf398fe3d}{get\+Performance\+Stats\+Selective}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} selected\+Task, \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}} metric\+Type)
+\begin{DoxyCompactList}\small\item\em Get the performance stats for a single task type, with a single type of value extracted, as a number of ticks elapsed during the execution of the task (1ms ticks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{struct_p_e_r_f___v_a_l_u_e___s_t_o_r_a_g_e}{PERF\+\_\+\+VALUE\+\_\+\+STORAGE}} \mbox{\hyperlink{_r_t_o_s___performance_8c_a21fba2c030bf3ab0afd58b36afe83592}{perf\+Values}} \mbox{[}\mbox{\hyperlink{_r_t_o_s___config_8h_aa6e7936cd80f4e156cb2e8437619c6dc}{TIME\+\_\+\+CATEGORIES}}\mbox{]}
+\item 
+volatile unsigned int \mbox{\hyperlink{_r_t_o_s___performance_8c_a3a1ce98ad0f817685f6cae0cd053c3a4}{startup\+Time\+Ticks}} =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_r_t_o_s___performance_8c}{RTOS\+\_\+\+Performance.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+10 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a02acfb2df5343c8eef1fd87025d158e4}\label{_r_t_o_s___performance_8c_a02acfb2df5343c8eef1fd87025d158e4}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getAverage@{getAverage}}
+\index{getAverage@{getAverage}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getAverage()}{getAverage()}}
+{\footnotesize\ttfamily unsigned int get\+Average (\begin{DoxyParamCaption}\item[{int}]{time\+Category }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{_r_t_o_s___performance_8c_a02acfb2df5343c8eef1fd87025d158e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a4570df20f2b452bd4df2746953ee40e3}\label{_r_t_o_s___performance_8c_a4570df20f2b452bd4df2746953ee40e3}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getAverageTicks@{getAverageTicks}}
+\index{getAverageTicks@{getAverageTicks}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getAverageTicks()}{getAverageTicks()}}
+{\footnotesize\ttfamily unsigned int get\+Average\+Ticks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{type\+Of\+Task }\end{DoxyParamCaption})}
+
+
+
+Get the average elapsed ticks from logged values of the specified task type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Of\+Task} & The type of task (by loop duration) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unrounded average value 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{_r_t_o_s___performance_8c_a4570df20f2b452bd4df2746953ee40e3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a07c3d69d35220ed1e9b52709225d6dc0}\label{_r_t_o_s___performance_8c_a07c3d69d35220ed1e9b52709225d6dc0}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getMax@{getMax}}
+\index{getMax@{getMax}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getMax()}{getMax()}}
+{\footnotesize\ttfamily unsigned int get\+Max (\begin{DoxyParamCaption}\item[{int}]{time\+Category }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{_r_t_o_s___performance_8c_a07c3d69d35220ed1e9b52709225d6dc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a3fc0645010da51d1f149ff8d71a90b7f}\label{_r_t_o_s___performance_8c_a3fc0645010da51d1f149ff8d71a90b7f}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getMaxTicks@{getMaxTicks}}
+\index{getMaxTicks@{getMaxTicks}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getMaxTicks()}{getMaxTicks()}}
+{\footnotesize\ttfamily unsigned int get\+Max\+Ticks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{type\+Of\+Task }\end{DoxyParamCaption})}
+
+
+
+Get the smallest number elapsed ticks from logged values of the specified task type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Of\+Task} & The type of task (by loop duration) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The exact number of ticks 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{_r_t_o_s___performance_8c_a3fc0645010da51d1f149ff8d71a90b7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a39ef6ec5d0f45b106d66e3efe7e69e97}\label{_r_t_o_s___performance_8c_a39ef6ec5d0f45b106d66e3efe7e69e97}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getMin@{getMin}}
+\index{getMin@{getMin}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getMin()}{getMin()}}
+{\footnotesize\ttfamily unsigned int get\+Min (\begin{DoxyParamCaption}\item[{int}]{time\+Category }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{_r_t_o_s___performance_8c_a39ef6ec5d0f45b106d66e3efe7e69e97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_ab99d28cbe2bb26b04e654d404cfd5fce}\label{_r_t_o_s___performance_8c_ab99d28cbe2bb26b04e654d404cfd5fce}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getMinTicks@{getMinTicks}}
+\index{getMinTicks@{getMinTicks}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getMinTicks()}{getMinTicks()}}
+{\footnotesize\ttfamily unsigned int get\+Min\+Ticks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{type\+Of\+Task }\end{DoxyParamCaption})}
+
+
+
+Get the smallest number elapsed ticks from logged values of the specified task type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Of\+Task} & The type of task (by loop duration) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The exact number of ticks 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{_r_t_o_s___performance_8c_ab99d28cbe2bb26b04e654d404cfd5fce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a48c6e0f0bd1996a93369f85feb220b5e}\label{_r_t_o_s___performance_8c_a48c6e0f0bd1996a93369f85feb220b5e}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getPerformanceStats@{getPerformanceStats}}
+\index{getPerformanceStats@{getPerformanceStats}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getPerformanceStats()}{getPerformanceStats()}}
+{\footnotesize\ttfamily void get\+Performance\+Stats (\begin{DoxyParamCaption}\item[{char $\ast$}]{stats }\end{DoxyParamCaption})}
+
+
+
+Get the complete performance stats for all tasks, in a buffer, ready to be printed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stats} & Should be 256 bytes long \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{_r_t_o_s___performance_8c_a48c6e0f0bd1996a93369f85feb220b5e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a34d31dc2bac3a17948fb698bf398fe3d}\label{_r_t_o_s___performance_8c_a34d31dc2bac3a17948fb698bf398fe3d}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getPerformanceStatsSelective@{getPerformanceStatsSelective}}
+\index{getPerformanceStatsSelective@{getPerformanceStatsSelective}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getPerformanceStatsSelective()}{getPerformanceStatsSelective()}}
+{\footnotesize\ttfamily unsigned int get\+Performance\+Stats\+Selective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{selected\+Task,  }\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}}}]{metric\+Type }\end{DoxyParamCaption})}
+
+
+
+Get the performance stats for a single task type, with a single type of value extracted, as a number of ticks elapsed during the execution of the task (1ms ticks) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Task} & Specify the type of task (by loop duration) \\
+\hline
+{\em metric\+Type} & Specify required metric (by min/avg/max duration of multiple logged loops) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of ticks elapsed during runtime of requested task 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{_r_t_o_s___performance_8c_a34d31dc2bac3a17948fb698bf398fe3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a044111e1596d86a222ee5807d01da148}\label{_r_t_o_s___performance_8c_a044111e1596d86a222ee5807d01da148}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!getTimeStartup@{getTimeStartup}}
+\index{getTimeStartup@{getTimeStartup}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{getTimeStartup()}{getTimeStartup()}}
+{\footnotesize\ttfamily unsigned int get\+Time\+Startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the duration of the startup function calls (in ticks) 
+
+\begin{DoxyReturn}{Returns}
+The exact number of ticks 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{_r_t_o_s___performance_8c_a044111e1596d86a222ee5807d01da148_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_acd765a55ca7aac995f94e11acef2ee15}\label{_r_t_o_s___performance_8c_acd765a55ca7aac995f94e11acef2ee15}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!registerTicks@{registerTicks}}
+\index{registerTicks@{registerTicks}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{registerTicks()}{registerTicks()}}
+{\footnotesize\ttfamily void register\+Ticks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{type\+Of\+Task,  }\item[{int}]{num\+Ticks }\end{DoxyParamCaption})}
+
+
+
+Log a number of elapsed ticks for a certain task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Of\+Task} & The type of task (by loop duration) \\
+\hline
+{\em num\+Ticks} & The exact number of ticks \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{_r_t_o_s___performance_8c_acd765a55ca7aac995f94e11acef2ee15_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___performance_8c_acd765a55ca7aac995f94e11acef2ee15_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a243a8d97f04fe67a5bfcd90a66b4c1ee}\label{_r_t_o_s___performance_8c_a243a8d97f04fe67a5bfcd90a66b4c1ee}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!registerTime@{registerTime}}
+\index{registerTime@{registerTime}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{registerTime()}{registerTime()}}
+{\footnotesize\ttfamily void register\+Time (\begin{DoxyParamCaption}\item[{int}]{time\+Category,  }\item[{int}]{num\+Ticks }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___performance_8c_a243a8d97f04fe67a5bfcd90a66b4c1ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a8133f4a40c6c02f7da9154dd4eb659ea}\label{_r_t_o_s___performance_8c_a8133f4a40c6c02f7da9154dd4eb659ea}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!registerTimeStartup@{registerTimeStartup}}
+\index{registerTimeStartup@{registerTimeStartup}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{registerTimeStartup()}{registerTimeStartup()}}
+{\footnotesize\ttfamily void register\+Time\+Startup (\begin{DoxyParamCaption}\item[{int}]{num\+Ticks }\end{DoxyParamCaption})}
+
+
+
+Log the number of elapsed ticks for the startup task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Ticks} & The exact number of ticks \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___performance_8c_a8133f4a40c6c02f7da9154dd4eb659ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a21fba2c030bf3ab0afd58b36afe83592}\label{_r_t_o_s___performance_8c_a21fba2c030bf3ab0afd58b36afe83592}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!perfValues@{perfValues}}
+\index{perfValues@{perfValues}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{perfValues}{perfValues}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{struct_p_e_r_f___v_a_l_u_e___s_t_o_r_a_g_e}{PERF\+\_\+\+VALUE\+\_\+\+STORAGE}} perf\+Values\mbox{[}\mbox{\hyperlink{_r_t_o_s___config_8h_aa6e7936cd80f4e156cb2e8437619c6dc}{TIME\+\_\+\+CATEGORIES}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .values=\{-\/1\},}
+\DoxyCodeLine{        .nextPosition=0}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_r_t_o_s___performance_8c_a3a1ce98ad0f817685f6cae0cd053c3a4}\label{_r_t_o_s___performance_8c_a3a1ce98ad0f817685f6cae0cd053c3a4}} 
+\index{RTOS\_Performance.c@{RTOS\_Performance.c}!startupTimeTicks@{startupTimeTicks}}
+\index{startupTimeTicks@{startupTimeTicks}!RTOS\_Performance.c@{RTOS\_Performance.c}}
+\doxysubsubsection{\texorpdfstring{startupTimeTicks}{startupTimeTicks}}
+{\footnotesize\ttfamily volatile unsigned int startup\+Time\+Ticks =0}
+

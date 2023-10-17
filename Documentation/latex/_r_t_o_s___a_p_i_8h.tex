@@ -1,0 +1,52 @@
+\hypertarget{_r_t_o_s___a_p_i_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+API.h File Reference}
+\label{_r_t_o_s___a_p_i_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_API.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_API.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8h_a815e9f03259b5b0d11d373d803dbcf09}\label{_r_t_o_s___a_p_i_8h_a815e9f03259b5b0d11d373d803dbcf09}} 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8h_a815e9f03259b5b0d11d373d803dbcf09}{rtos\+Init\+Task}} ()
+\begin{DoxyCompactList}\small\item\em This function will be called by the RTOS after startup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8h_a63d10edbf4e193eb96f957cc831aad90}\label{_r_t_o_s___a_p_i_8h_a63d10edbf4e193eb96f957cc831aad90}} 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8h_a63d10edbf4e193eb96f957cc831aad90}{rtos5ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em This function will be called by an RTOS timer every 5ms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8h_a3cd6c0af145eb16344f91df4774d182f}\label{_r_t_o_s___a_p_i_8h_a3cd6c0af145eb16344f91df4774d182f}} 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8h_a3cd6c0af145eb16344f91df4774d182f}{rtos50ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em This function will be called by an RTOS timer every 50ms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8h_a365056cc5bf636a275c35e5cb1731738}\label{_r_t_o_s___a_p_i_8h_a365056cc5bf636a275c35e5cb1731738}} 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8h_a365056cc5bf636a275c35e5cb1731738}{rtos500ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em This function will be called by an RTOS timer every 500ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8h_aa3a59eb53caa6ad75445f37327fd0949}{rtos\+Shutdown\+Task}} ()
+\begin{DoxyCompactList}\small\item\em This function will be called by the RTOS before shutdown/reboot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_r_t_o_s___a_p_i_8h}{RTOS\+\_\+\+API.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Header for RTOS cyclical functions that need to be filled with the various needed subroutines of each time 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8h_aa3a59eb53caa6ad75445f37327fd0949}\label{_r_t_o_s___a_p_i_8h_aa3a59eb53caa6ad75445f37327fd0949}} 
+\index{RTOS\_API.h@{RTOS\_API.h}!rtosShutdownTask@{rtosShutdownTask}}
+\index{rtosShutdownTask@{rtosShutdownTask}!RTOS\_API.h@{RTOS\_API.h}}
+\doxysubsubsection{\texorpdfstring{rtosShutdownTask()}{rtosShutdownTask()}}
+{\footnotesize\ttfamily void rtos\+Shutdown\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function will be called by the RTOS before shutdown/reboot. 
+
+\begin{DoxyWarning}{Warning}
+If shutdown is unexpected, this will NOT be called 
+\end{DoxyWarning}

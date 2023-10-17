@@ -1,0 +1,533 @@
+\hypertarget{_r_t_o_s___utils_8c}{}\doxysection{C\+:/\+Users/\+Work/\+Desktop/\+SAE\+\_\+\+Clone/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+Utils.c File Reference}
+\label{_r_t_o_s___utils_8c}\index{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Utils.c@{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Utils.c}}
+{\ttfamily \#include $<$freertos/\+Free\+RTOS.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/task.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/timers.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/event\+\_\+groups.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+system.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Performance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Config.\+h\char`\"{}}\newline
+Include dependency graph for RTOS\+\_\+\+Utils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m_e_r___a_r_g_u_m_e_n_t_s}{TIMER\+\_\+\+ARGUMENTS}}
+\begin{DoxyCompactList}\small\item\em Structure for storing all timer handles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}{REBOOT\+\_\+\+FLAG}}~(1$<$$<$0)
+\begin{DoxyCompactList}\small\item\em Bit definition of the reboot flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_r_t_o_s___utils_8c_a39fa99258a9fb3cea6983303f0637ffe}{NUMBER\+\_\+\+OF\+\_\+\+TIMERS}}~5
+\begin{DoxyCompactList}\small\item\em Tags used for debug logging the timers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}{rtos\+Runtime\+Initializer}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Function used as a task callback. Will initialize runtime tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a4bba868d2aeab5da5b147e5e60378f2a}{rtos\+Network\+Initializer}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Function used as a task callback. Will initialize network modules. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}{rtos\+Reboot\+Event\+Listener}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Function used as a task callback. Task has highest priority and waits suspended for reboot flag to be set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}{rtos5ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Call assigned functions every 5ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}{rtos50ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Call assigned functions every 50ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}{rtos500ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Call assigned functions every 500ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_ab06b02c2cdcd0e775e0f8eff762dc4d1}{rtos1000ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Call assigned functions every 1000ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a945d7a0eb0a1a350ec19d1d0fbd846ee}{rtos1min\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Call assigned functions every 1min. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7}{rtos\+Startup\+Routine}} ()
+\begin{DoxyCompactList}\small\item\em Internal call for the startup routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297}{rtos\+Shutdown\+Routine}} ()
+\begin{DoxyCompactList}\small\item\em Internal call for the shutdown routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a941fc6e021999f36538ae1b0bfada676}{rtos\+MQTTInitializer}} (void $\ast$args)
+\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}{rtos\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Used to start the whole RTOS, including subsequent tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}{rtos\+Reboot}} ()
+\begin{DoxyCompactList}\small\item\em Used to trigger a controlled reboot of the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}{init\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the task that will initialize all other runtime tasks. \end{DoxyCompactList}\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}{reboot\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the maximum priority task that will await suspended for the reboot flag. \end{DoxyCompactList}\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a6f6aa41ab1297b3716ed6b898452a823}{network\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the network task tree on core 1. \end{DoxyCompactList}\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a421b9086ef4a7924e104a5fba345d36b}{mqtt\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the MQTT task tree on core 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_t_i_m_e_r___a_r_g_u_m_e_n_t_s}{TIMER\+\_\+\+ARGUMENTS}} \mbox{\hyperlink{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}{t\+Arg}}
+\begin{DoxyCompactList}\small\item\em Structure for the handles of the 3 different timers. \end{DoxyCompactList}\item 
+Event\+Group\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}{shutdown\+Event\+Group}}
+\begin{DoxyCompactList}\small\item\em Handle for the shutdown event group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_r_t_o_s___utils_8c}{RTOS\+\_\+\+Utils.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Implements RTOS task scheduling and timer initialization and operation 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a39fa99258a9fb3cea6983303f0637ffe}\label{_r_t_o_s___utils_8c_a39fa99258a9fb3cea6983303f0637ffe}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!NUMBER\_OF\_TIMERS@{NUMBER\_OF\_TIMERS}}
+\index{NUMBER\_OF\_TIMERS@{NUMBER\_OF\_TIMERS}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_TIMERS}{NUMBER\_OF\_TIMERS}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+TIMERS~5}
+
+
+
+Tags used for debug logging the timers. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}\label{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!REBOOT\_FLAG@{REBOOT\_FLAG}}
+\index{REBOOT\_FLAG@{REBOOT\_FLAG}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{REBOOT\_FLAG}{REBOOT\_FLAG}}
+{\footnotesize\ttfamily \#define REBOOT\+\_\+\+FLAG~(1$<$$<$0)}
+
+
+
+Bit definition of the reboot flag. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_ab06b02c2cdcd0e775e0f8eff762dc4d1}\label{_r_t_o_s___utils_8c_ab06b02c2cdcd0e775e0f8eff762dc4d1}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos1000msTaskWrapper@{rtos1000msTaskWrapper}}
+\index{rtos1000msTaskWrapper@{rtos1000msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos1000msTaskWrapper()}{rtos1000msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos1000ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Call assigned functions every 1000ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_ab06b02c2cdcd0e775e0f8eff762dc4d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_ab06b02c2cdcd0e775e0f8eff762dc4d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a945d7a0eb0a1a350ec19d1d0fbd846ee}\label{_r_t_o_s___utils_8c_a945d7a0eb0a1a350ec19d1d0fbd846ee}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos1minTaskWrapper@{rtos1minTaskWrapper}}
+\index{rtos1minTaskWrapper@{rtos1minTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos1minTaskWrapper()}{rtos1minTaskWrapper()}}
+{\footnotesize\ttfamily void rtos1min\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Call assigned functions every 1min. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a945d7a0eb0a1a350ec19d1d0fbd846ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a945d7a0eb0a1a350ec19d1d0fbd846ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}\label{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos500msTaskWrapper@{rtos500msTaskWrapper}}
+\index{rtos500msTaskWrapper@{rtos500msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos500msTaskWrapper()}{rtos500msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos500ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Call assigned functions every 500ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}\label{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos50msTaskWrapper@{rtos50msTaskWrapper}}
+\index{rtos50msTaskWrapper@{rtos50msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos50msTaskWrapper()}{rtos50msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos50ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Call assigned functions every 50ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}\label{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos5msTaskWrapper@{rtos5msTaskWrapper}}
+\index{rtos5msTaskWrapper@{rtos5msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos5msTaskWrapper()}{rtos5msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos5ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Call assigned functions every 5ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a941fc6e021999f36538ae1b0bfada676}\label{_r_t_o_s___utils_8c_a941fc6e021999f36538ae1b0bfada676}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosMQTTInitializer@{rtosMQTTInitializer}}
+\index{rtosMQTTInitializer@{rtosMQTTInitializer}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosMQTTInitializer()}{rtosMQTTInitializer()}}
+{\footnotesize\ttfamily void rtos\+MQTTInitializer (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{_r_t_o_s___utils_8c_a941fc6e021999f36538ae1b0bfada676_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a941fc6e021999f36538ae1b0bfada676_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a4bba868d2aeab5da5b147e5e60378f2a}\label{_r_t_o_s___utils_8c_a4bba868d2aeab5da5b147e5e60378f2a}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosNetworkInitializer@{rtosNetworkInitializer}}
+\index{rtosNetworkInitializer@{rtosNetworkInitializer}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosNetworkInitializer()}{rtosNetworkInitializer()}}
+{\footnotesize\ttfamily void rtos\+Network\+Initializer (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Function used as a task callback. Will initialize network modules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Do not use, placeholder to 0 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{_r_t_o_s___utils_8c_a4bba868d2aeab5da5b147e5e60378f2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a4bba868d2aeab5da5b147e5e60378f2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}\label{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosReboot@{rtosReboot}}
+\index{rtosReboot@{rtosReboot}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosReboot()}{rtosReboot()}}
+{\footnotesize\ttfamily void rtos\+Reboot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to trigger a controlled reboot of the system. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}\label{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosRebootEventListener@{rtosRebootEventListener}}
+\index{rtosRebootEventListener@{rtosRebootEventListener}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosRebootEventListener()}{rtosRebootEventListener()}}
+{\footnotesize\ttfamily void rtos\+Reboot\+Event\+Listener (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Function used as a task callback. Task has highest priority and waits suspended for reboot flag to be set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & RTOS requirement. Receives placeholder (void$\ast$)0 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}\label{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosRuntimeInitializer@{rtosRuntimeInitializer}}
+\index{rtosRuntimeInitializer@{rtosRuntimeInitializer}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosRuntimeInitializer()}{rtosRuntimeInitializer()}}
+{\footnotesize\ttfamily void rtos\+Runtime\+Initializer (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Function used as a task callback. Will initialize runtime tasks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Will receive the structure that holds the timer handles, cast to void$\ast$ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297}\label{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosShutdownRoutine@{rtosShutdownRoutine}}
+\index{rtosShutdownRoutine@{rtosShutdownRoutine}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosShutdownRoutine()}{rtosShutdownRoutine()}}
+{\footnotesize\ttfamily void rtos\+Shutdown\+Routine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Internal call for the shutdown routine. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}\label{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosStart@{rtosStart}}
+\index{rtosStart@{rtosStart}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosStart()}{rtosStart()}}
+{\footnotesize\ttfamily void rtos\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to start the whole RTOS, including subsequent tasks. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7}\label{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosStartupRoutine@{rtosStartupRoutine}}
+\index{rtosStartupRoutine@{rtosStartupRoutine}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosStartupRoutine()}{rtosStartupRoutine()}}
+{\footnotesize\ttfamily void rtos\+Startup\+Routine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Internal call for the startup routine. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}\label{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!initTaskHandle@{initTaskHandle}}
+\index{initTaskHandle@{initTaskHandle}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{initTaskHandle}{initTaskHandle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t init\+Task\+Handle}
+
+
+
+Handle of the task that will initialize all other runtime tasks. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a421b9086ef4a7924e104a5fba345d36b}\label{_r_t_o_s___utils_8c_a421b9086ef4a7924e104a5fba345d36b}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!mqttTaskHandle@{mqttTaskHandle}}
+\index{mqttTaskHandle@{mqttTaskHandle}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{mqttTaskHandle}{mqttTaskHandle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t mqtt\+Task\+Handle}
+
+
+
+Handle of the MQTT task tree on core 0. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a6f6aa41ab1297b3716ed6b898452a823}\label{_r_t_o_s___utils_8c_a6f6aa41ab1297b3716ed6b898452a823}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!networkTaskHandle@{networkTaskHandle}}
+\index{networkTaskHandle@{networkTaskHandle}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{networkTaskHandle}{networkTaskHandle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t network\+Task\+Handle}
+
+
+
+Handle of the network task tree on core 1. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}\label{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rebootTaskHandle@{rebootTaskHandle}}
+\index{rebootTaskHandle@{rebootTaskHandle}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rebootTaskHandle}{rebootTaskHandle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t reboot\+Task\+Handle}
+
+
+
+Handle of the maximum priority task that will await suspended for the reboot flag. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}\label{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!shutdownEventGroup@{shutdownEventGroup}}
+\index{shutdownEventGroup@{shutdownEventGroup}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{shutdownEventGroup}{shutdownEventGroup}}
+{\footnotesize\ttfamily Event\+Group\+Handle\+\_\+t shutdown\+Event\+Group}
+
+
+
+Handle for the shutdown event group. 
+
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}\label{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!tArg@{tArg}}
+\index{tArg@{tArg}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{tArg}{tArg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_i_m_e_r___a_r_g_u_m_e_n_t_s}{TIMER\+\_\+\+ARGUMENTS}} t\+Arg}
+
+
+
+Structure for the handles of the 3 different timers. 
+

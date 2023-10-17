@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table td {
+            background-color: rgb(200, 200, 200);
+            border: 1px solid black;
+        }
+
+        td:nth-child(2) {
+            text-align: right;
+        }
+
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .flex-container {
+            display: flex;
+            width: 300px;
+            flex-direction: row;
+        }
+
+        .flex-child {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(0, 0, 0);
+            width: 150px;
+            align-items: center;
+        }
+
+        .flex-child:first-child {
+            margin-right: 2px;
+        }
+    </style>
+    <script type="text/javascript">
+        var ws = null;
+        var intervalHandle = null;
+        const FAN_SPEED_LOW = 0;
+        const FAN_SPEED_MED = 1;
+        const FAN_SPEED_HIGH = 2;
+        const FAN_MODE_REC = 3;
+        const FAN_MODE_NONREC = 4;
+        const FAN_MODE_IN_OUT = 5;
+        const FAN_MODE_OUT_IN = 6;
+        const DATA_REQUEST = 7;
+        const FAN_SPEED_OFF = 8;
+        window.onload = function () {
+            createWebSocket();
+        }
+        window.onbeforeunload = function () {
+            closeWebSocket();
+        }
+        function createWebSocket() {
+            ws = new WebSocket("ws://" + window.location.hostname + "/socket");
+            ws.onopen = function (event) {
+                updateData();
+                intervalHandle = setInterval(updateData, 5000);
+            }
+            ws.onerror = function (event) {
+                document.getElementById("websocketStatusLabel").innerText = "OFFLINE";
+                document.getElementById("websocketStatusLabel").style.color = "red";
+                clearInterval(intervalHandle);
+            }
+            ws.onclose = function (event) {
+                document.getElementById("websocketStatusLabel").innerText = "OFFLINE";
+                document.getElementById("websocketStatusLabel").style.color = "red";
+                clearInterval(intervalHandle);
+            }
+            ws.onmessage = function (event) {
+                var msg = JSON.parse(event.data);
+                document.getElementById("humidityValue").innerText = msg["humidityValue"];
+                document.getElementById("tempValueIn").innerText = msg["tempValueIn"];
+                document.getElementById("tempValueOut").innerText = msg["tempValueOut"];
+                document.getElementById("fanSpeedIn").innerText = msg["fanSpeedIn"];
+                document.getElementById("fanSpeedOut").innerText = msg["fanSpeedOut"];
+                document.getElementById("hourMinuteValue").innerText = msg["hourMinuteValue"];
+                document.getElementById("dateValue").innerText = msg["dateValue"];
+                document.getElementById("syncTimeElapsedValue").innerText = msg["syncTimeElapsedValue"];
+                document.getElementById("fanSpeedValue").innerText = msg["fanSpeedValue"];
+                document.getElementById("fanDirectionValue").innerText = msg["fanDirectionValue"];
+            }
+        }
+        function closeWebSocket() {
+            if (ws.OPEN) {
+                ws.close();
+            }
+        }
+        function clickFanSpeedLow() {
+            if (ws.OPEN) {
+                ws.send(FAN_SPEED_OFF.toString());
+            }
+        }
+        function clickFanSpeedLow() {
+            if (ws.OPEN) {
+                ws.send(FAN_SPEED_LOW.toString());
+            }
+        }
+        function clickFanSpeedMed() {
+            if (ws.OPEN) {
+                ws.send(FAN_SPEED_MED.toString());
+            }
+        }
+        function clickFanSpeedHigh() {
+            if (ws.OPEN) {
+                ws.send(FAN_SPEED_HIGH.toString());
+            }
+        }
+        function clickFanModeRec() {
+            if (ws.OPEN) {
+                ws.send(FAN_MODE_REC.toString());
+            }
+        }
+        function clickFanModeNonRec() {
+            if (ws.OPEN) {
+                ws.send(FAN_MODE_NONREC.toString());
+            }
+        }
+        function clickFanModeInOut() {
+            if (ws.OPEN) {
+                ws.send(FAN_MODE_IN_OUT.toString());
+            }
+        }
+        function clickFanModeOutIn() {
+            if (ws.OPEN) {
+                ws.send(FAN_MODE_OUT_IN.toString());
+            }
+        }
+        function updateData() {
+            if (ws.OPEN) {
+                ws.send(DATA_REQUEST.toString());
+                document.getElementById("websocketStatusLabel").innerText = "ONLINE";
+                document.getElementById("websocketStatusLabel").style.color = "green";
+                var currentDate = new Date();
+                document.getElementById("lastDataUpdate").innerText =
+                    ('0' + currentDate.getHours()).slice(-2) + ':' +
+                    ('0' + currentDate.getMinutes()).slice(-2) + ':' +
+                    ('0' + currentDate.getSeconds()).slice(-2);
+            }
+            else {
+                document.getElementById("websocketStatusLabel").innerText = "OFFLINE";
+                document.getElementById("websocketStatusLabel").style.color = "red";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table class="sensorTable"
+        style="border-collapse: collapse; width: 300px; margin-bottom: 20px; border: 1px solid black;">
+        <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
+        </colgroup>
+        <tbody>
+            <tr style="border-bottom: 1px solid black;">
+                <th style="text-align: right;">Websocket:</th>
+                <th id="websocketStatusLabel" style="text-align: left; color: red;">OFFLINE</th>
+            </tr>
+            <tr>
+                <th style="text-align: right;">Last update:</th>
+                <th id="lastDataUpdate" style="text-align: left;">Never</th>
+            </tr>
+        </tbody>
+    </table>
+    <table class="sensorTable" style="border-collapse: collapse; width: 300px; margin-bottom: 60px;">
+        <colgroup>
+            <col span="1" style="width: 60%;">
+            <col span="1" style="width: 40%;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Sensor</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td id="humidityValue"></td>
+            </tr>
+            <tr>
+                <td>Temperature IN (C)</td>
+                <td id="tempValueIn"></td>
+            </tr>
+            <tr>
+                <td>Temperature OUT (C)</td>
+                <td id="tempValueOut"></td>
+            </tr>
+            <tr>
+                <td>Fan speed IN (rpm)</td>
+                <td id="fanSpeedIn"></td>
+            </tr>
+            <tr>
+                <td>Fan speed OUT (rpm)</td>
+                <td id="fanSpeedOut"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="moduleTable" style="border-collapse: collapse; width: 300px; margin-bottom: 60px;">
+        <colgroup>
+            <col span="1" style="width: 60%;">
+            <col span="1" style="width: 40%;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Module</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Time (hh:mm)</td>
+                <td id="hourMinuteValue"></td>
+            </tr>
+            <tr>
+                <td>Date (dd/mm/yyyy)</td>
+                <td id="dateValue"></td>
+            </tr>
+            <tr>
+                <td>Minutes since NTP sync</td>
+                <td id="syncTimeElapsedValue"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="statusTable" style="border-collapse: collapse; width: 300px; margin-bottom: 60px;">
+        <colgroup>
+            <col span="1" style="width: 60%;">
+            <col span="1" style="width: 40%;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Status</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Fan speed</td>
+                <td id="fanSpeedValue"></td>
+            </tr>
+            <tr>
+                <td>Fan direction</td>
+                <td id="fanDirectionValue"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex-container">
+        <div class="flex-child">
+            Fan speed
+            <button onclick="clickFanSpeedOff()" id="fanSpeedLow" style="width: 80px; margin-top: 10px;">OFF</button>
+            <button onclick="clickFanSpeedLow()" id="fanSpeedLow" style="width: 80px;">LOW</button>
+            <button onclick="clickFanSpeedMed()" id="fanSpeedMed" style="width: 80px;">MED</button>
+            <button onclick="clickFanSpeedHigh()" id="fanSpeedHigh" style="width: 80px;">HIGH</button>
+        </div>
+        <div class="flex-child">
+            Fan mode
+            <button onclick="clickFanModeRec()" id="fanDirectionAuto"
+                style="width: 80px; margin-top: 10px;">Recycling</button>
+            <button onclick="clickFanModeNonRec()" id="fanDirectionAuto" style="width: 80px;">Non-Rec</button>
+            <button onclick="clickFanModeInOut()" id="fanDirectionInOut" style="width: 80px;">IN->OUT</button>
+            <button onclick="clickFanModeOutIn()" id="fanDirectionOutIn" style="width: 80px;">OUT->IN</button>
+        </div>
+    </div>
+
+</html>

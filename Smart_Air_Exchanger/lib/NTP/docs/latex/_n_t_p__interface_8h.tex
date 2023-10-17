@@ -1,0 +1,317 @@
+\hypertarget{_n_t_p__interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+NTP/src/\+NTP\+\_\+interface.h File Reference}
+\label{_n_t_p__interface_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NTP/src/NTP\_interface.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NTP/src/NTP\_interface.h}}
+{\ttfamily \#include \char`\"{}NTP\+\_\+\+TIME.\+h\char`\"{}}\newline
+Include dependency graph for NTP\+\_\+interface.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_n_t_p__interface_8h_a5a6a735e08afd4ff7e1af8a40f5d6933}{DEBUG\+\_\+\+NTP}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} \{ \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ae0b975301aaa8c1012a1544d162bcebe}{NTP\+\_\+i\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ade33b4aeacecebbe2395426bef244efd}{NTP\+\_\+i\+\_\+\+ERR\+\_\+\+CONNECTION}}
+, \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a1d57b84f3977cd3d5b028bef897895a3}{NTP\+\_\+i\+\_\+\+ERR\+\_\+\+SYSTEM\+\_\+\+TIME}}
+, \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a4eb483f67de64ad0013339cba927114f}{NTP\+\_\+i\+\_\+\+ERR\+\_\+\+FORMAT\+\_\+\+TIME}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_t_p__interface_8h_a736975073ced2f796b2d41acd4dea2e1}{NTP\+\_\+t\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the NTP server connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_t_p__interface_8h_a885695daa6bc651ef5c4477b94d0e45c}{NTP\+\_\+v\+\_\+try\+Connect}} (void)
+\begin{DoxyCompactList}\small\item\em Try to retrive data from the NTP server until the time is set correctly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_t_p__interface_8h_a0d9d21ffa424944f7b244c0116717f59}{NTP\+\_\+t\+\_\+get\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Set the internal time to the time received from the NTP server. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{_n_t_p__interface_8h_ae56a681f74607e2037f9bf9fcad2c2d4}{NTP\+\_\+ub\+\_\+get\+Connection\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for the connection error flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_t_p__interface_8h_a30a02379c21dc3333e76bf55cffff312}{NTP\+\_\+t\+\_\+connection\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the connection status of the NTP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_a92f428a99053fff22a39b25f7b3173d0}{NTP\+\_\+i\+\_\+last\+Sync}} (void)
+\begin{DoxyCompactList}\small\item\em Set the seconds since the last synchronization. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_a13de201bc85868404d25fba273d8b3a5}{NTP\+\_\+i\+\_\+get\+Min}} (void)
+\begin{DoxyCompactList}\small\item\em Get the minutes from the internal system time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_a90f4bb9132d70947638656fc3a33183d}{NTP\+\_\+i\+\_\+get\+Hour}} (void)
+\begin{DoxyCompactList}\small\item\em Get the hours from the internal system time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_ad005bef9d9d7db05def624f9b76ec93c}{NTP\+\_\+i\+\_\+get\+Day}} (void)
+\begin{DoxyCompactList}\small\item\em Get the day from the internal system time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_a9b1c53478f22029bfb2158556f41f7e8}{NTP\+\_\+i\+\_\+get\+Month}} (void)
+\begin{DoxyCompactList}\small\item\em Get the month from the internal system time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_n_t_p__interface_8h_ad532c994f4f7b237d325e94c897c8b24}{NTP\+\_\+i\+\_\+get\+Year}} (void)
+\begin{DoxyCompactList}\small\item\em Get the year from the internal system time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maria.irimus@altran.com}{\texttt{ maria.\+irimus@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_n_t_p__interface_8h}{NTP\+\_\+interface.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Maria Irimus 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_n_t_p__interface_8h_a5a6a735e08afd4ff7e1af8a40f5d6933}\label{_n_t_p__interface_8h_a5a6a735e08afd4ff7e1af8a40f5d6933}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!DEBUG\_NTP@{DEBUG\_NTP}}
+\index{DEBUG\_NTP@{DEBUG\_NTP}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_NTP}{DEBUG\_NTP}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+NTP~1}
+
+Debug flag\+: 0 -\/ disable info printed, 1 -\/ enable info printed 
+
+Definition at line 52 of file NTP\+\_\+interface.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}\label{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!ntp\_err\_t@{ntp\_err\_t}}
+\index{ntp\_err\_t@{ntp\_err\_t}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{ntp\_err\_t}{ntp\_err\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NTP\_i\_OK@{NTP\_i\_OK}!NTP\_interface.h@{NTP\_interface.h}}\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_OK@{NTP\_i\_OK}}}\mbox{\Hypertarget{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ae0b975301aaa8c1012a1544d162bcebe}\label{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ae0b975301aaa8c1012a1544d162bcebe}} 
+NTP\+\_\+i\+\_\+\+OK&Success. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NTP\_i\_ERR\_CONNECTION@{NTP\_i\_ERR\_CONNECTION}!NTP\_interface.h@{NTP\_interface.h}}\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_ERR\_CONNECTION@{NTP\_i\_ERR\_CONNECTION}}}\mbox{\Hypertarget{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ade33b4aeacecebbe2395426bef244efd}\label{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050ade33b4aeacecebbe2395426bef244efd}} 
+NTP\+\_\+i\+\_\+\+ERR\+\_\+\+CONNECTION&The connection failed ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NTP\_i\_ERR\_SYSTEM\_TIME@{NTP\_i\_ERR\_SYSTEM\_TIME}!NTP\_interface.h@{NTP\_interface.h}}\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_ERR\_SYSTEM\_TIME@{NTP\_i\_ERR\_SYSTEM\_TIME}}}\mbox{\Hypertarget{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a1d57b84f3977cd3d5b028bef897895a3}\label{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a1d57b84f3977cd3d5b028bef897895a3}} 
+NTP\+\_\+i\+\_\+\+ERR\+\_\+\+SYSTEM\+\_\+\+TIME&The current system time was not read correctly. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NTP\_i\_ERR\_FORMAT\_TIME@{NTP\_i\_ERR\_FORMAT\_TIME}!NTP\_interface.h@{NTP\_interface.h}}\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_ERR\_FORMAT\_TIME@{NTP\_i\_ERR\_FORMAT\_TIME}}}\mbox{\Hypertarget{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a4eb483f67de64ad0013339cba927114f}\label{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050a4eb483f67de64ad0013339cba927114f}} 
+NTP\+\_\+i\+\_\+\+ERR\+\_\+\+FORMAT\+\_\+\+TIME&The current system time could not be formatted. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 58 of file NTP\+\_\+interface.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_t_p__interface_8h_ad005bef9d9d7db05def624f9b76ec93c}\label{_n_t_p__interface_8h_ad005bef9d9d7db05def624f9b76ec93c}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_getDay@{NTP\_i\_getDay}}
+\index{NTP\_i\_getDay@{NTP\_i\_getDay}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_getDay()}{NTP\_i\_getDay()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+get\+Day (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the day from the internal system time. 
+
+\begin{DoxyReturn}{Returns}
+int representing the day 
+\end{DoxyReturn}
+
+
+Definition at line 493 of file NTP\+\_\+\+TIME.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_n_t_p__interface_8h_a90f4bb9132d70947638656fc3a33183d}\label{_n_t_p__interface_8h_a90f4bb9132d70947638656fc3a33183d}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_getHour@{NTP\_i\_getHour}}
+\index{NTP\_i\_getHour@{NTP\_i\_getHour}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_getHour()}{NTP\_i\_getHour()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+get\+Hour (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the hours from the internal system time. 
+
+\begin{DoxyReturn}{Returns}
+int representing the hour 
+\end{DoxyReturn}
+
+
+Definition at line 481 of file NTP\+\_\+\+TIME.\+c.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{_n_t_p__interface_8h_a13de201bc85868404d25fba273d8b3a5}\label{_n_t_p__interface_8h_a13de201bc85868404d25fba273d8b3a5}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_getMin@{NTP\_i\_getMin}}
+\index{NTP\_i\_getMin@{NTP\_i\_getMin}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_getMin()}{NTP\_i\_getMin()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+get\+Min (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the minutes from the internal system time. 
+
+\begin{DoxyReturn}{Returns}
+int representing the minutes 
+\end{DoxyReturn}
+
+
+Definition at line 469 of file NTP\+\_\+\+TIME.\+c.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{_n_t_p__interface_8h_a9b1c53478f22029bfb2158556f41f7e8}\label{_n_t_p__interface_8h_a9b1c53478f22029bfb2158556f41f7e8}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_getMonth@{NTP\_i\_getMonth}}
+\index{NTP\_i\_getMonth@{NTP\_i\_getMonth}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_getMonth()}{NTP\_i\_getMonth()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+get\+Month (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the month from the internal system time. 
+
+\begin{DoxyReturn}{Returns}
+int representing the month 
+\end{DoxyReturn}
+
+
+Definition at line 505 of file NTP\+\_\+\+TIME.\+c.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{_n_t_p__interface_8h_ad532c994f4f7b237d325e94c897c8b24}\label{_n_t_p__interface_8h_ad532c994f4f7b237d325e94c897c8b24}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_getYear@{NTP\_i\_getYear}}
+\index{NTP\_i\_getYear@{NTP\_i\_getYear}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_getYear()}{NTP\_i\_getYear()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+get\+Year (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the year from the internal system time. 
+
+\begin{DoxyReturn}{Returns}
+int representing the year 
+\end{DoxyReturn}
+
+
+Definition at line 518 of file NTP\+\_\+\+TIME.\+c.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{_n_t_p__interface_8h_a92f428a99053fff22a39b25f7b3173d0}\label{_n_t_p__interface_8h_a92f428a99053fff22a39b25f7b3173d0}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_i\_lastSync@{NTP\_i\_lastSync}}
+\index{NTP\_i\_lastSync@{NTP\_i\_lastSync}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_i\_lastSync()}{NTP\_i\_lastSync()}}
+{\footnotesize\ttfamily int NTP\+\_\+i\+\_\+last\+Sync (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the seconds since the last synchronization. 
+
+\begin{DoxyReturn}{Returns}
+int representing the seconds since the last sync 
+\end{DoxyReturn}
+
+
+Definition at line 456 of file NTP\+\_\+\+TIME.\+c.
+
+\mbox{\Hypertarget{_n_t_p__interface_8h_a30a02379c21dc3333e76bf55cffff312}\label{_n_t_p__interface_8h_a30a02379c21dc3333e76bf55cffff312}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_t\_connectionStatus@{NTP\_t\_connectionStatus}}
+\index{NTP\_t\_connectionStatus@{NTP\_t\_connectionStatus}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_t\_connectionStatus()}{NTP\_t\_connectionStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} NTP\+\_\+t\+\_\+connection\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the connection status of the NTP. 
+
+\begin{DoxyReturn}{Returns}
+ntp\+\_\+err\+\_\+t representing the error type 
+\end{DoxyReturn}
+
+
+Definition at line 300 of file NTP\+\_\+\+TIME.\+c.
+
+\mbox{\Hypertarget{_n_t_p__interface_8h_a0d9d21ffa424944f7b244c0116717f59}\label{_n_t_p__interface_8h_a0d9d21ffa424944f7b244c0116717f59}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_t\_getTime@{NTP\_t\_getTime}}
+\index{NTP\_t\_getTime@{NTP\_t\_getTime}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_t\_getTime()}{NTP\_t\_getTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} NTP\+\_\+t\+\_\+get\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the internal time to the time received from the NTP server. 
+
+\begin{DoxyReturn}{Returns}
+ntp\+\_\+err\+\_\+t representing the error type 
+\end{DoxyReturn}
+
+
+Definition at line 406 of file NTP\+\_\+\+TIME.\+c.
+
+\mbox{\Hypertarget{_n_t_p__interface_8h_a736975073ced2f796b2d41acd4dea2e1}\label{_n_t_p__interface_8h_a736975073ced2f796b2d41acd4dea2e1}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_t\_init@{NTP\_t\_init}}
+\index{NTP\_t\_init@{NTP\_t\_init}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_t\_init()}{NTP\_t\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_t_p__interface_8h_a46552e270ab696aeca1d9d38f3f53050}{ntp\+\_\+err\+\_\+t}} NTP\+\_\+t\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the NTP server connection. 
+
+\begin{DoxyReturn}{Returns}
+ntp\+\_\+err\+\_\+t representing the error type 
+\end{DoxyReturn}
+
+
+Definition at line 314 of file NTP\+\_\+\+TIME.\+c.
+
+\mbox{\Hypertarget{_n_t_p__interface_8h_ae56a681f74607e2037f9bf9fcad2c2d4}\label{_n_t_p__interface_8h_ae56a681f74607e2037f9bf9fcad2c2d4}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_ub\_getConnectionError@{NTP\_ub\_getConnectionError}}
+\index{NTP\_ub\_getConnectionError@{NTP\_ub\_getConnectionError}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_ub\_getConnectionError()}{NTP\_ub\_getConnectionError()}}
+{\footnotesize\ttfamily char NTP\+\_\+ub\+\_\+get\+Connection\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the connection error flag. 
+
+\begin{DoxyReturn}{Returns}
+char representing the connection error flag 
+\end{DoxyReturn}
+
+
+Definition at line 295 of file NTP\+\_\+\+TIME.\+c.
+
+\mbox{\Hypertarget{_n_t_p__interface_8h_a885695daa6bc651ef5c4477b94d0e45c}\label{_n_t_p__interface_8h_a885695daa6bc651ef5c4477b94d0e45c}} 
+\index{NTP\_interface.h@{NTP\_interface.h}!NTP\_v\_tryConnect@{NTP\_v\_tryConnect}}
+\index{NTP\_v\_tryConnect@{NTP\_v\_tryConnect}!NTP\_interface.h@{NTP\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NTP\_v\_tryConnect()}{NTP\_v\_tryConnect()}}
+{\footnotesize\ttfamily void NTP\+\_\+v\+\_\+try\+Connect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Try to retrive data from the NTP server until the time is set correctly. 
+
+
+
+Definition at line 366 of file NTP\+\_\+\+TIME.\+c.
+

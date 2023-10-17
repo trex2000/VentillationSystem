@@ -1,0 +1,383 @@
+\hypertarget{_l_e_d___diagnostic_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+LED/src/\+LED\+\_\+\+Diagnostic.h File Reference}
+\label{_l_e_d___diagnostic_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/LED/src/LED\_Diagnostic.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/LED/src/LED\_Diagnostic.h}}
+{\ttfamily \#include \char`\"{}LED\+\_\+\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}LED\+\_\+\+Interface.\+h\char`\"{}}\newline
+Include dependency graph for LED\+\_\+\+Diagnostic.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___diagnostic_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{_l_e_d___diagnostic_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a66f30d1726f26220eb47ace8c4660c03}{LED\+\_\+t\+\_\+\+SPEED\+\_\+\+MODE}}~LEDC\+\_\+\+LOW\+\_\+\+SPEED\+\_\+\+MODE
+\begin{DoxyCompactList}\small\item\em Choose the group of channels that operate in LOW speed mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a3ddf8f4b184b3497f9591a8e3e8dd31f}{LED\+\_\+t\+\_\+\+TIMER\+\_\+\+NUMB}}~LEDC\+\_\+\+TIMER\+\_\+0
+\begin{DoxyCompactList}\small\item\em Select the first timer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a18c8351af10ec8dc0007869eede6ac90}{LED\+\_\+t\+\_\+\+DUTY\+\_\+\+RESOLUTION}}~LEDC\+\_\+\+TIMER\+\_\+8\+\_\+\+BIT
+\begin{DoxyCompactList}\small\item\em Set the duty resolution of the timer to 8 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a91ec4b192ff0961effa439edbfb459b6}{LED\+\_\+i\+\_\+\+FREQUENCY}}~(int) 1000
+\begin{DoxyCompactList}\small\item\em Frequency in Hz. Set the frequency to 1k\+Hz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_aa7c43be08e0c29f1e21e482620fe0aa9}{LED\+\_\+t\+\_\+\+CLOCK}}~LEDC\+\_\+\+AUTO\+\_\+\+CLK
+\begin{DoxyCompactList}\small\item\em Choose the driver clock for the timer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a4fa6c7529b66219096e97bb81b7844fa}{LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+RED}}~LEDC\+\_\+\+CHANNEL\+\_\+0
+\begin{DoxyCompactList}\small\item\em Select the channel for the RED LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a68df36f5d1c1f00645c9a114bf9a92ac}{LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+BLUE}}~LEDC\+\_\+\+CHANNEL\+\_\+1
+\begin{DoxyCompactList}\small\item\em Select the channel for the BLUE LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a28846a9eb7b5d301555c63dc52a90569}{LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+GREEN}}~LEDC\+\_\+\+CHANNEL\+\_\+2
+\begin{DoxyCompactList}\small\item\em Select the channel for the GREEN LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_abf79e6dd42a7d7631aeb1dda6d713dff}{LED\+\_\+t\+\_\+\+INTERRUPT}}~LEDC\+\_\+\+INTR\+\_\+\+DISABLE
+\begin{DoxyCompactList}\small\item\em Select the interrupt type for the channel. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a09b86183a23625c7dd3fdfb29a04bef3}{LED\+\_\+t\+\_\+\+RED\+\_\+\+PIN}}~LED\+\_\+\+RGB\+\_\+R
+\begin{DoxyCompactList}\small\item\em Select the pin for the RED LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_ac0ead0ead607c25b3907f7667000aaac}{LED\+\_\+t\+\_\+\+BLUE\+\_\+\+PIN}}~LED\+\_\+\+RGB\+\_\+B
+\begin{DoxyCompactList}\small\item\em Select the pin for the BLUE LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_adb75e13c24069f62c741040881a76540}{LED\+\_\+t\+\_\+\+GREEN\+\_\+\+PIN}}~LED\+\_\+\+RGB\+\_\+G
+\begin{DoxyCompactList}\small\item\em Select the pin for the GREEN LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_aad3ff8395860a891e064082b1824afd2}{LED\+\_\+i\+\_\+\+INIT\+\_\+\+DUTY}}~(int) 256
+\begin{DoxyCompactList}\small\item\em Initial duty. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_abca9982e6015ae00bb29557c3b1fbbd9}{LED\+\_\+i\+\_\+\+QUARTER\+\_\+\+DUTY}}~(int) 192
+\begin{DoxyCompactList}\small\item\em Quarter duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 25\%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_a4b4a02d85b816c0ce43353b6b8acb978}{LED\+\_\+i\+\_\+\+HALF\+\_\+\+DUTY}}~(int) 128
+\begin{DoxyCompactList}\small\item\em Half duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 50\%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_ae1a68a2cd3e6621882dbdcf949c2176c}{LED\+\_\+i\+\_\+\+TRIQUARTER\+\_\+\+DUTY}}~(int) 64
+\begin{DoxyCompactList}\small\item\em Three quarters duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 75\%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_ae2b470d4cc74b7964b1cfe2d93f119ad}{LED\+\_\+i\+\_\+\+FULL\+\_\+\+DUTY}}~(int) 0
+\begin{DoxyCompactList}\small\item\em Full duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 100\%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_l_e_d___diagnostic_8h_ab89e7e9c238f49f1eeb91521dd6f1f3e}{LED\+\_\+i\+\_\+\+INIT\+\_\+\+HPOINT}}~(int) 0
+\begin{DoxyCompactList}\small\item\em Initial hpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54}{led\+\_\+control\+\_\+status\+\_\+t}} \{ \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a6d9663415c6671478fbb940ca249968c}{LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+INITIALIZED}} = 0
+, \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a4e80408d083e13458102103c11f8dbde}{LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+NOT\+\_\+\+INITIALIZED}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54acd002cffc831a6ab4607e5f3383620e4}{LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+IN\+\_\+\+USE}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a1d7be8fac15e1854322e0f031d07621c}{LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+NOT\+\_\+\+IN\+\_\+\+USE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:tudor.coroian@altran.com}{\texttt{ tudor.\+coroian@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/11
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_l_e_d___diagnostic_8h}{LED\+\_\+\+Diagnostic.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Tudor Coroian 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+11 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a91ec4b192ff0961effa439edbfb459b6}\label{_l_e_d___diagnostic_8h_a91ec4b192ff0961effa439edbfb459b6}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_FREQUENCY@{LED\_i\_FREQUENCY}}
+\index{LED\_i\_FREQUENCY@{LED\_i\_FREQUENCY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_FREQUENCY}{LED\_i\_FREQUENCY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+FREQUENCY~(int) 1000}
+
+
+
+Frequency in Hz. Set the frequency to 1k\+Hz. 
+
+
+
+Definition at line 55 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ae2b470d4cc74b7964b1cfe2d93f119ad}\label{_l_e_d___diagnostic_8h_ae2b470d4cc74b7964b1cfe2d93f119ad}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_FULL\_DUTY@{LED\_i\_FULL\_DUTY}}
+\index{LED\_i\_FULL\_DUTY@{LED\_i\_FULL\_DUTY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_FULL\_DUTY}{LED\_i\_FULL\_DUTY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+FULL\+\_\+\+DUTY~(int) 0}
+
+
+
+Full duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 100\%. 
+
+
+
+Definition at line 68 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a4b4a02d85b816c0ce43353b6b8acb978}\label{_l_e_d___diagnostic_8h_a4b4a02d85b816c0ce43353b6b8acb978}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_HALF\_DUTY@{LED\_i\_HALF\_DUTY}}
+\index{LED\_i\_HALF\_DUTY@{LED\_i\_HALF\_DUTY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_HALF\_DUTY}{LED\_i\_HALF\_DUTY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+HALF\+\_\+\+DUTY~(int) 128}
+
+
+
+Half duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 50\%. 
+
+
+
+Definition at line 66 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_aad3ff8395860a891e064082b1824afd2}\label{_l_e_d___diagnostic_8h_aad3ff8395860a891e064082b1824afd2}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_INIT\_DUTY@{LED\_i\_INIT\_DUTY}}
+\index{LED\_i\_INIT\_DUTY@{LED\_i\_INIT\_DUTY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_INIT\_DUTY}{LED\_i\_INIT\_DUTY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+INIT\+\_\+\+DUTY~(int) 256}
+
+
+
+Initial duty. 
+
+
+
+Definition at line 64 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ab89e7e9c238f49f1eeb91521dd6f1f3e}\label{_l_e_d___diagnostic_8h_ab89e7e9c238f49f1eeb91521dd6f1f3e}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_INIT\_HPOINT@{LED\_i\_INIT\_HPOINT}}
+\index{LED\_i\_INIT\_HPOINT@{LED\_i\_INIT\_HPOINT}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_INIT\_HPOINT}{LED\_i\_INIT\_HPOINT}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+INIT\+\_\+\+HPOINT~(int) 0}
+
+
+
+Initial hpoint. 
+
+
+
+Definition at line 69 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_abca9982e6015ae00bb29557c3b1fbbd9}\label{_l_e_d___diagnostic_8h_abca9982e6015ae00bb29557c3b1fbbd9}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_QUARTER\_DUTY@{LED\_i\_QUARTER\_DUTY}}
+\index{LED\_i\_QUARTER\_DUTY@{LED\_i\_QUARTER\_DUTY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_QUARTER\_DUTY}{LED\_i\_QUARTER\_DUTY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+QUARTER\+\_\+\+DUTY~(int) 192}
+
+
+
+Quarter duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 25\%. 
+
+
+
+Definition at line 65 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ae1a68a2cd3e6621882dbdcf949c2176c}\label{_l_e_d___diagnostic_8h_ae1a68a2cd3e6621882dbdcf949c2176c}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_TRIQUARTER\_DUTY@{LED\_i\_TRIQUARTER\_DUTY}}
+\index{LED\_i\_TRIQUARTER\_DUTY@{LED\_i\_TRIQUARTER\_DUTY}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_i\_TRIQUARTER\_DUTY}{LED\_i\_TRIQUARTER\_DUTY}}
+{\footnotesize\ttfamily \#define LED\+\_\+i\+\_\+\+TRIQUARTER\+\_\+\+DUTY~(int) 64}
+
+
+
+Three quarters duty (based on resolution) =$>$ 255 -\/ (2$\ast$$\ast$8 -\/ 1) $\ast$ 75\%. 
+
+
+
+Definition at line 67 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ac0ead0ead607c25b3907f7667000aaac}\label{_l_e_d___diagnostic_8h_ac0ead0ead607c25b3907f7667000aaac}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_BLUE\_PIN@{LED\_t\_BLUE\_PIN}}
+\index{LED\_t\_BLUE\_PIN@{LED\_t\_BLUE\_PIN}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_BLUE\_PIN}{LED\_t\_BLUE\_PIN}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+BLUE\+\_\+\+PIN~LED\+\_\+\+RGB\+\_\+B}
+
+
+
+Select the pin for the BLUE LED. 
+
+
+
+Definition at line 62 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a68df36f5d1c1f00645c9a114bf9a92ac}\label{_l_e_d___diagnostic_8h_a68df36f5d1c1f00645c9a114bf9a92ac}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_CHANNEL\_BLUE@{LED\_t\_CHANNEL\_BLUE}}
+\index{LED\_t\_CHANNEL\_BLUE@{LED\_t\_CHANNEL\_BLUE}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_CHANNEL\_BLUE}{LED\_t\_CHANNEL\_BLUE}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+BLUE~LEDC\+\_\+\+CHANNEL\+\_\+1}
+
+
+
+Select the channel for the BLUE LED. 
+
+
+
+Definition at line 58 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a28846a9eb7b5d301555c63dc52a90569}\label{_l_e_d___diagnostic_8h_a28846a9eb7b5d301555c63dc52a90569}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_CHANNEL\_GREEN@{LED\_t\_CHANNEL\_GREEN}}
+\index{LED\_t\_CHANNEL\_GREEN@{LED\_t\_CHANNEL\_GREEN}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_CHANNEL\_GREEN}{LED\_t\_CHANNEL\_GREEN}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+GREEN~LEDC\+\_\+\+CHANNEL\+\_\+2}
+
+
+
+Select the channel for the GREEN LED. 
+
+
+
+Definition at line 59 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a4fa6c7529b66219096e97bb81b7844fa}\label{_l_e_d___diagnostic_8h_a4fa6c7529b66219096e97bb81b7844fa}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_CHANNEL\_RED@{LED\_t\_CHANNEL\_RED}}
+\index{LED\_t\_CHANNEL\_RED@{LED\_t\_CHANNEL\_RED}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_CHANNEL\_RED}{LED\_t\_CHANNEL\_RED}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+CHANNEL\+\_\+\+RED~LEDC\+\_\+\+CHANNEL\+\_\+0}
+
+
+
+Select the channel for the RED LED. 
+
+
+
+Definition at line 57 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_aa7c43be08e0c29f1e21e482620fe0aa9}\label{_l_e_d___diagnostic_8h_aa7c43be08e0c29f1e21e482620fe0aa9}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_CLOCK@{LED\_t\_CLOCK}}
+\index{LED\_t\_CLOCK@{LED\_t\_CLOCK}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_CLOCK}{LED\_t\_CLOCK}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+CLOCK~LEDC\+\_\+\+AUTO\+\_\+\+CLK}
+
+
+
+Choose the driver clock for the timer. 
+
+
+
+Definition at line 56 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a18c8351af10ec8dc0007869eede6ac90}\label{_l_e_d___diagnostic_8h_a18c8351af10ec8dc0007869eede6ac90}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_DUTY\_RESOLUTION@{LED\_t\_DUTY\_RESOLUTION}}
+\index{LED\_t\_DUTY\_RESOLUTION@{LED\_t\_DUTY\_RESOLUTION}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_DUTY\_RESOLUTION}{LED\_t\_DUTY\_RESOLUTION}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+DUTY\+\_\+\+RESOLUTION~LEDC\+\_\+\+TIMER\+\_\+8\+\_\+\+BIT}
+
+
+
+Set the duty resolution of the timer to 8 bits. 
+
+
+
+Definition at line 54 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_adb75e13c24069f62c741040881a76540}\label{_l_e_d___diagnostic_8h_adb75e13c24069f62c741040881a76540}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_GREEN\_PIN@{LED\_t\_GREEN\_PIN}}
+\index{LED\_t\_GREEN\_PIN@{LED\_t\_GREEN\_PIN}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_GREEN\_PIN}{LED\_t\_GREEN\_PIN}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+GREEN\+\_\+\+PIN~LED\+\_\+\+RGB\+\_\+G}
+
+
+
+Select the pin for the GREEN LED. 
+
+
+
+Definition at line 63 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_abf79e6dd42a7d7631aeb1dda6d713dff}\label{_l_e_d___diagnostic_8h_abf79e6dd42a7d7631aeb1dda6d713dff}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_INTERRUPT@{LED\_t\_INTERRUPT}}
+\index{LED\_t\_INTERRUPT@{LED\_t\_INTERRUPT}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_INTERRUPT}{LED\_t\_INTERRUPT}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+INTERRUPT~LEDC\+\_\+\+INTR\+\_\+\+DISABLE}
+
+
+
+Select the interrupt type for the channel. 
+
+
+
+Definition at line 60 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a09b86183a23625c7dd3fdfb29a04bef3}\label{_l_e_d___diagnostic_8h_a09b86183a23625c7dd3fdfb29a04bef3}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_RED\_PIN@{LED\_t\_RED\_PIN}}
+\index{LED\_t\_RED\_PIN@{LED\_t\_RED\_PIN}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_RED\_PIN}{LED\_t\_RED\_PIN}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+RED\+\_\+\+PIN~LED\+\_\+\+RGB\+\_\+R}
+
+
+
+Select the pin for the RED LED. 
+
+
+
+Definition at line 61 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a66f30d1726f26220eb47ace8c4660c03}\label{_l_e_d___diagnostic_8h_a66f30d1726f26220eb47ace8c4660c03}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_SPEED\_MODE@{LED\_t\_SPEED\_MODE}}
+\index{LED\_t\_SPEED\_MODE@{LED\_t\_SPEED\_MODE}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_SPEED\_MODE}{LED\_t\_SPEED\_MODE}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+SPEED\+\_\+\+MODE~LEDC\+\_\+\+LOW\+\_\+\+SPEED\+\_\+\+MODE}
+
+
+
+Choose the group of channels that operate in LOW speed mode. 
+
+
+
+Definition at line 52 of file LED\+\_\+\+Diagnostic.\+h.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_a3ddf8f4b184b3497f9591a8e3e8dd31f}\label{_l_e_d___diagnostic_8h_a3ddf8f4b184b3497f9591a8e3e8dd31f}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_t\_TIMER\_NUMB@{LED\_t\_TIMER\_NUMB}}
+\index{LED\_t\_TIMER\_NUMB@{LED\_t\_TIMER\_NUMB}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_TIMER\_NUMB}{LED\_t\_TIMER\_NUMB}}
+{\footnotesize\ttfamily \#define LED\+\_\+t\+\_\+\+TIMER\+\_\+\+NUMB~LEDC\+\_\+\+TIMER\+\_\+0}
+
+
+
+Select the first timer. 
+
+
+
+Definition at line 53 of file LED\+\_\+\+Diagnostic.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54}\label{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54}} 
+\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!led\_control\_status\_t@{led\_control\_status\_t}}
+\index{led\_control\_status\_t@{led\_control\_status\_t}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}
+\doxysubsubsection{\texorpdfstring{led\_control\_status\_t}{led\_control\_status\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54}{led\+\_\+control\+\_\+status\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_CONTROL\_INITIALIZED@{LED\_i\_CONTROL\_INITIALIZED}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_CONTROL\_INITIALIZED@{LED\_i\_CONTROL\_INITIALIZED}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a6d9663415c6671478fbb940ca249968c}\label{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a6d9663415c6671478fbb940ca249968c}} 
+LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+INITIALIZED&LED control module was initialized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_CONTROL\_NOT\_INITIALIZED@{LED\_i\_CONTROL\_NOT\_INITIALIZED}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_CONTROL\_NOT\_INITIALIZED@{LED\_i\_CONTROL\_NOT\_INITIALIZED}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a4e80408d083e13458102103c11f8dbde}\label{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a4e80408d083e13458102103c11f8dbde}} 
+LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+NOT\+\_\+\+INITIALIZED&LED control module was not initialized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_CONTROL\_IN\_USE@{LED\_i\_CONTROL\_IN\_USE}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_CONTROL\_IN\_USE@{LED\_i\_CONTROL\_IN\_USE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54acd002cffc831a6ab4607e5f3383620e4}\label{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54acd002cffc831a6ab4607e5f3383620e4}} 
+LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+IN\+\_\+\+USE&LED control currently being used by another module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_CONTROL\_NOT\_IN\_USE@{LED\_i\_CONTROL\_NOT\_IN\_USE}!LED\_Diagnostic.h@{LED\_Diagnostic.h}}\index{LED\_Diagnostic.h@{LED\_Diagnostic.h}!LED\_i\_CONTROL\_NOT\_IN\_USE@{LED\_i\_CONTROL\_NOT\_IN\_USE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a1d7be8fac15e1854322e0f031d07621c}\label{_l_e_d___diagnostic_8h_ada72220791ef08fc636c68c3fc29ff54a1d7be8fac15e1854322e0f031d07621c}} 
+LED\+\_\+i\+\_\+\+CONTROL\+\_\+\+NOT\+\_\+\+IN\+\_\+\+USE&LED control not currently being used by another module. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 74 of file LED\+\_\+\+Diagnostic.\+h.
+

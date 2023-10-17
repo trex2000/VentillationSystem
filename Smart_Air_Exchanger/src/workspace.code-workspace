@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "Smart_Air_Exchanger",
+			"path": ".."
+		},
+		{
+			"name": "Temperature-Test",
+			"path": "..\\..\\..\\..\\PlatformIO\\Projects\\Temperature-Test"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"esp_log.h": "c",
+			"ds18b20.h": "c",
+			"owb.h": "c"
+		}
+	}
+}

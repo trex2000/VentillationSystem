@@ -1,0 +1,206 @@
+\hypertarget{_temperature___interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Documents/\+Project/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+Temperature/src/\+Temperature\+\_\+\+Interface.h File Reference}
+\label{_temperature___interface_8h}\index{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature\_Interface.h@{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature\_Interface.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for Temperature\+\_\+\+Interface.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{_temperature___interface_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{_temperature___interface_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_temperature___interface_8h_afb29d029cbe587f1ed78cdf634a50eeb}{DEBUG\+\_\+\+TEMPERATURE}}~1
+\begin{DoxyCompactList}\small\item\em set as 1 when debug mode is ON, set as 0 when debug mode is OFF \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} \{ \newline
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcac1385a62aff183a538d6e947bc0e7064}{TEMPERATURE\+\_\+i\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcae846489f003c10e233ac6f2b6bec89d5}{TEMPERATURE\+\_\+i\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CONNECTED}}
+, \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca4b9a671dac1a980421bb9d99729e64ae}{TEMPERATURE\+\_\+i\+\_\+\+NOT\+\_\+\+INITIALIZED}}
+, \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca59fa4a8c2dfcf4bb88bcd41f1e26e85e}{TEMPERATURE\+\_\+i\+\_\+\+CAN\+\_\+\+NOT\+\_\+\+READ\+\_\+\+TEMPERATURE}}
+, \newline
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca705b9d7ea5c98c267db050a8a6826a31}{TEMPERATURE\+\_\+i\+\_\+\+UNKNOWN\+\_\+\+DEVICE}}
+, \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaf3ae41c3e1bdff8b1129dc97e9af289c}{TEMPERATURE\+\_\+i\+\_\+\+MISSING\+\_\+\+DEVICE}}
+, \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaa0073e4228f8fc4fc87ccfc564f7e68c}{TEMPERATURE\+\_\+i\+\_\+\+OUTSIDE\+\_\+\+INTERVAL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_temperature___interface_8h_a04dad00b0c5141a77c095babad5afa0e}{Temperature\+\_\+v\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em function that initialises the one wire bus \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_temperature___interface_8h_ad9f390dd122342b0943b13f5fd17a0fd}{Temperature\+\_\+v\+\_\+\+Read\+\_\+\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em function that reads the temperature values from the temperature sensors (must be repeated in a cycle) \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature___interface_8h_a1699ec48fd7b83d2181fec28f44fe803}{Temperature\+\_\+i\+\_\+get\+Interior}} ()
+\begin{DoxyCompactList}\small\item\em function that delivers the value of the interior temperature \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature___interface_8h_a470b509e6bf45099bbf62e8865144629}{Temperature\+\_\+i\+\_\+get\+Exterior}} ()
+\begin{DoxyCompactList}\small\item\em function that delivers the value of the exterior temperature \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature___interface_8h_ace8c6d7d447cf9bc514e326873fa1b4b}{Temperature\+\_\+i\+\_\+\+Interior}}
+\begin{DoxyCompactList}\small\item\em interior value in case some module needs it (modifying this does not modify the true value of the temperature) \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature___interface_8h_a78ac6e8f1719bee14067c7fa3984f126}{Temperature\+\_\+i\+\_\+\+Exterior}}
+\begin{DoxyCompactList}\small\item\em interior value in case some module needs it (modifying this does not modify the true value of the temperature) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ecaterina Lutac (\href{mailto:ecaterina.lutac@altran.com}{\texttt{ ecaterina.\+lutac@altran.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/09-\/03
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_temperature___interface_8h_afb29d029cbe587f1ed78cdf634a50eeb}\label{_temperature___interface_8h_afb29d029cbe587f1ed78cdf634a50eeb}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!DEBUG\_TEMPERATURE@{DEBUG\_TEMPERATURE}}
+\index{DEBUG\_TEMPERATURE@{DEBUG\_TEMPERATURE}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_TEMPERATURE}{DEBUG\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+TEMPERATURE~1}
+
+
+
+set as 1 when debug mode is ON, set as 0 when debug mode is OFF 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!temperature\_err\_t@{temperature\_err\_t}}
+\index{temperature\_err\_t@{temperature\_err\_t}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{temperature\_err\_t}{temperature\_err\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_SUCCESS@{TEMPERATURE\_i\_SUCCESS}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_SUCCESS@{TEMPERATURE\_i\_SUCCESS}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcac1385a62aff183a538d6e947bc0e7064}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcac1385a62aff183a538d6e947bc0e7064}} 
+TEMPERATURE\+\_\+i\+\_\+\+SUCCESS&No errors. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_DEVICE\_NOT\_CONNECTED@{TEMPERATURE\_i\_DEVICE\_NOT\_CONNECTED}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_DEVICE\_NOT\_CONNECTED@{TEMPERATURE\_i\_DEVICE\_NOT\_CONNECTED}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcae846489f003c10e233ac6f2b6bec89d5}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcae846489f003c10e233ac6f2b6bec89d5}} 
+TEMPERATURE\+\_\+i\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CONNECTED&The addressed device is not connected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_NOT\_INITIALIZED@{TEMPERATURE\_i\_NOT\_INITIALIZED}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_NOT\_INITIALIZED@{TEMPERATURE\_i\_NOT\_INITIALIZED}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca4b9a671dac1a980421bb9d99729e64ae}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca4b9a671dac1a980421bb9d99729e64ae}} 
+TEMPERATURE\+\_\+i\+\_\+\+NOT\+\_\+\+INITIALIZED&The bus is not initialized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_CAN\_NOT\_READ\_TEMPERATURE@{TEMPERATURE\_i\_CAN\_NOT\_READ\_TEMPERATURE}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_CAN\_NOT\_READ\_TEMPERATURE@{TEMPERATURE\_i\_CAN\_NOT\_READ\_TEMPERATURE}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca59fa4a8c2dfcf4bb88bcd41f1e26e85e}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca59fa4a8c2dfcf4bb88bcd41f1e26e85e}} 
+TEMPERATURE\+\_\+i\+\_\+\+CAN\+\_\+\+NOT\+\_\+\+READ\+\_\+\+TEMPERATURE&No response received from the addressed device. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_UNKNOWN\_DEVICE@{TEMPERATURE\_i\_UNKNOWN\_DEVICE}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_UNKNOWN\_DEVICE@{TEMPERATURE\_i\_UNKNOWN\_DEVICE}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca705b9d7ea5c98c267db050a8a6826a31}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca705b9d7ea5c98c267db050a8a6826a31}} 
+TEMPERATURE\+\_\+i\+\_\+\+UNKNOWN\+\_\+\+DEVICE&Unknown rom\+\_\+code found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_MISSING\_DEVICE@{TEMPERATURE\_i\_MISSING\_DEVICE}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_MISSING\_DEVICE@{TEMPERATURE\_i\_MISSING\_DEVICE}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaf3ae41c3e1bdff8b1129dc97e9af289c}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaf3ae41c3e1bdff8b1129dc97e9af289c}} 
+TEMPERATURE\+\_\+i\+\_\+\+MISSING\+\_\+\+DEVICE&One or both temperature sensors are missing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPERATURE\_i\_OUTSIDE\_INTERVAL@{TEMPERATURE\_i\_OUTSIDE\_INTERVAL}!Temperature\_Interface.h@{Temperature\_Interface.h}}\index{Temperature\_Interface.h@{Temperature\_Interface.h}!TEMPERATURE\_i\_OUTSIDE\_INTERVAL@{TEMPERATURE\_i\_OUTSIDE\_INTERVAL}}}\mbox{\Hypertarget{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaa0073e4228f8fc4fc87ccfc564f7e68c}\label{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaa0073e4228f8fc4fc87ccfc564f7e68c}} 
+TEMPERATURE\+\_\+i\+\_\+\+OUTSIDE\+\_\+\+INTERVAL&Temperature outside the limit. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_temperature___interface_8h_a470b509e6bf45099bbf62e8865144629}\label{_temperature___interface_8h_a470b509e6bf45099bbf62e8865144629}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_i\_getExterior@{Temperature\_i\_getExterior}}
+\index{Temperature\_i\_getExterior@{Temperature\_i\_getExterior}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_getExterior()}{Temperature\_i\_getExterior()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+get\+Exterior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that delivers the value of the exterior temperature 
+
+function that delivers the value of the exterior temperature
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature___interface_8h_a1699ec48fd7b83d2181fec28f44fe803}\label{_temperature___interface_8h_a1699ec48fd7b83d2181fec28f44fe803}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_i\_getInterior@{Temperature\_i\_getInterior}}
+\index{Temperature\_i\_getInterior@{Temperature\_i\_getInterior}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_getInterior()}{Temperature\_i\_getInterior()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+get\+Interior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that delivers the value of the interior temperature 
+
+function that delivers the value of the interior temperature
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature___interface_8h_a04dad00b0c5141a77c095babad5afa0e}\label{_temperature___interface_8h_a04dad00b0c5141a77c095babad5afa0e}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_v\_Init@{Temperature\_v\_Init}}
+\index{Temperature\_v\_Init@{Temperature\_v\_Init}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_v\_Init()}{Temperature\_v\_Init()}}
+{\footnotesize\ttfamily void Temperature\+\_\+v\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that initialises the one wire bus 
+
+function that initialises the one wire bus \mbox{\Hypertarget{_temperature___interface_8h_ad9f390dd122342b0943b13f5fd17a0fd}\label{_temperature___interface_8h_ad9f390dd122342b0943b13f5fd17a0fd}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_v\_Read\_Temperature@{Temperature\_v\_Read\_Temperature}}
+\index{Temperature\_v\_Read\_Temperature@{Temperature\_v\_Read\_Temperature}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_v\_Read\_Temperature()}{Temperature\_v\_Read\_Temperature()}}
+{\footnotesize\ttfamily void Temperature\+\_\+v\+\_\+\+Read\+\_\+\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that reads the temperature values from the temperature sensors (must be repeated in a cycle) 
+
+function that reads the temperature values from the temperature sensors (must be repeated in a cycle) \texorpdfstring{$<$}{<} read interior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read exterior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read interior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read exterior temperature and check if errors
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_temperature___interface_8h_a78ac6e8f1719bee14067c7fa3984f126}\label{_temperature___interface_8h_a78ac6e8f1719bee14067c7fa3984f126}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_i\_Exterior@{Temperature\_i\_Exterior}}
+\index{Temperature\_i\_Exterior@{Temperature\_i\_Exterior}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_Exterior}{Temperature\_i\_Exterior}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Exterior\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) 
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) \mbox{\Hypertarget{_temperature___interface_8h_ace8c6d7d447cf9bc514e326873fa1b4b}\label{_temperature___interface_8h_ace8c6d7d447cf9bc514e326873fa1b4b}} 
+\index{Temperature\_Interface.h@{Temperature\_Interface.h}!Temperature\_i\_Interior@{Temperature\_i\_Interior}}
+\index{Temperature\_i\_Interior@{Temperature\_i\_Interior}!Temperature\_Interface.h@{Temperature\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_Interior}{Temperature\_i\_Interior}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Interior\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) 
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) 

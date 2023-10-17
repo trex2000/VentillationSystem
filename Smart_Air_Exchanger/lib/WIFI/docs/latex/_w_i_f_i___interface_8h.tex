@@ -1,0 +1,77 @@
+\hypertarget{_w_i_f_i___interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/\+SAE\+\_\+\+Clone/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+WIFI/src/\+WIFI\+\_\+\+Interface.h File Reference}
+\label{_w_i_f_i___interface_8h}\index{C:/Users/Administrator/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/WIFI/src/WIFI\_Interface.h@{C:/Users/Administrator/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/WIFI/src/WIFI\_Interface.h}}
+{\ttfamily \#include \char`\"{}WIFI\+\_\+\+Control.\+h\char`\"{}}\newline
+Include dependency graph for WIFI\+\_\+\+Interface.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_w_i_f_i___interface_8h_a62462d26c2ada6e72a4cac368b09c13a}{WIFI\+\_\+\+DEBUG\+\_\+\+FLAG}}~0
+\item 
+\#define \mbox{\hyperlink{_w_i_f_i___interface_8h_a8051ccbdf3e34be0ce07a9097bcf33a3}{WEBSOCKET\+\_\+\+DEBUG}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_w_i_f_i___interface_8h_a98ceca96843944fddd5b9d7eaaa1024b}{WIFI\+\_\+v\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em The function initializes the netif intreface, creates an esp event loop and registers event handlers on esp Wi-\/fi and IP events. The Wi-\/fi will be at first configured in station operating mode with credentials saved in NVS. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_w_i_f_i___interface_8h_a49cf8676213d91d020fd63ed8303358f}{WIFI\+\_\+i\+\_\+\+Is\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Wi-\/fi flag for connection. If connection to Wi-\/fi is provided, flag is 1, otherwise flag is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_w_i_f_i___interface_8h}{WIFI\+\_\+\+Interface.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Baleanu Sorina 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_w_i_f_i___interface_8h_a8051ccbdf3e34be0ce07a9097bcf33a3}\label{_w_i_f_i___interface_8h_a8051ccbdf3e34be0ce07a9097bcf33a3}} 
+\index{WIFI\_Interface.h@{WIFI\_Interface.h}!WEBSOCKET\_DEBUG@{WEBSOCKET\_DEBUG}}
+\index{WEBSOCKET\_DEBUG@{WEBSOCKET\_DEBUG}!WIFI\_Interface.h@{WIFI\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{WEBSOCKET\_DEBUG}{WEBSOCKET\_DEBUG}}
+{\footnotesize\ttfamily \#define WEBSOCKET\+\_\+\+DEBUG~0}
+
+\mbox{\Hypertarget{_w_i_f_i___interface_8h_a62462d26c2ada6e72a4cac368b09c13a}\label{_w_i_f_i___interface_8h_a62462d26c2ada6e72a4cac368b09c13a}} 
+\index{WIFI\_Interface.h@{WIFI\_Interface.h}!WIFI\_DEBUG\_FLAG@{WIFI\_DEBUG\_FLAG}}
+\index{WIFI\_DEBUG\_FLAG@{WIFI\_DEBUG\_FLAG}!WIFI\_Interface.h@{WIFI\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_DEBUG\_FLAG}{WIFI\_DEBUG\_FLAG}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+DEBUG\+\_\+\+FLAG~0}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_w_i_f_i___interface_8h_a49cf8676213d91d020fd63ed8303358f}\label{_w_i_f_i___interface_8h_a49cf8676213d91d020fd63ed8303358f}} 
+\index{WIFI\_Interface.h@{WIFI\_Interface.h}!WIFI\_i\_IsConnected@{WIFI\_i\_IsConnected}}
+\index{WIFI\_i\_IsConnected@{WIFI\_i\_IsConnected}!WIFI\_Interface.h@{WIFI\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_i\_IsConnected()}{WIFI\_i\_IsConnected()}}
+{\footnotesize\ttfamily int8\+\_\+t WIFI\+\_\+i\+\_\+\+Is\+Connected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the Wi-\/fi flag for connection. If connection to Wi-\/fi is provided, flag is 1, otherwise flag is 0. 
+
+\begin{DoxyReturn}{Returns}
+int8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_w_i_f_i___interface_8h_a98ceca96843944fddd5b9d7eaaa1024b}\label{_w_i_f_i___interface_8h_a98ceca96843944fddd5b9d7eaaa1024b}} 
+\index{WIFI\_Interface.h@{WIFI\_Interface.h}!WIFI\_v\_Init@{WIFI\_v\_Init}}
+\index{WIFI\_v\_Init@{WIFI\_v\_Init}!WIFI\_Interface.h@{WIFI\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_v\_Init()}{WIFI\_v\_Init()}}
+{\footnotesize\ttfamily void WIFI\+\_\+v\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function initializes the netif intreface, creates an esp event loop and registers event handlers on esp Wi-\/fi and IP events. The Wi-\/fi will be at first configured in station operating mode with credentials saved in NVS. 
+

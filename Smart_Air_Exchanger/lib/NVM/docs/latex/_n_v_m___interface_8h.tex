@@ -1,0 +1,653 @@
+\hypertarget{_n_v_m___interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+NVM/src/\+NVM\+\_\+\+Interface.h File Reference}
+\label{_n_v_m___interface_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Interface.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Interface.h}}
+
+
+Interface for the Non-\/volatile memory module. It contains functions for initializing the non-\/volatile storage, as well as functions that allow the user to access it.  
+
+
+{\ttfamily \#include \char`\"{}NVM\+\_\+\+Storage.\+h\char`\"{}}\newline
+Include dependency graph for NVM\+\_\+\+Interface.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{_n_v_m___interface_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{_n_v_m___interface_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a82ba1ae8200a7eec951afcfd36f6a565}{NVM\+\_\+\+DISABLE}}~FALSE
+\begin{DoxyCompactList}\small\item\em Disbale flag for the NVM module. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a012b9192a79cd8402e7b796d34bc2caa}{NVM\+\_\+i\+\_\+\+OK}}~(int) 0
+\begin{DoxyCompactList}\small\item\em Success. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a9472de8e95eb7b6c71ea3b4ca4ff9043}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+ON\+\_\+\+HOLD}}~(int) 1
+\begin{DoxyCompactList}\small\item\em Write function is on hold. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a6f728aee10a783ac29fee60ebb76b1b9}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+OPEN}}~(int) 2
+\begin{DoxyCompactList}\small\item\em Could not open the non-\/volatile storage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a318a476bbd24b87b7fe97396a19a0d86}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+VALUE\+\_\+\+NOT\+\_\+\+FOUND}}~(int) 3
+\begin{DoxyCompactList}\small\item\em The value was not intialized yet. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a57646167d6ac5f158bfa00a453615668}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+READ}}~(int) 4
+\begin{DoxyCompactList}\small\item\em Could not read the value from the non-\/volatile storage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a18c8e6156812a9102be922cb85c06283}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+WRITE}}~(int) 5
+\begin{DoxyCompactList}\small\item\em Could not write the value in the non-\/volatile storage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a9029374641d112b381d86c5ac0fa455c}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND}}~(int) 6
+\begin{DoxyCompactList}\small\item\em No network credentials were stored. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_abc48360fb40f20be2bf43f590f9b8f2a}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+INIT}}~(int) 7
+\begin{DoxyCompactList}\small\item\em Error when initiallizing the non-\/volatile storage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_ab8f89714422c325d7710d1444dee4633}{NVM\+\_\+i\+\_\+\+STORAGE\+\_\+\+INITIALIZED}}~(int) 8
+\begin{DoxyCompactList}\small\item\em Non-\/volatile storage was initialized. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a145dc2f8967f51c97302e7dbef464a74}{NVM\+\_\+i\+\_\+\+STORAGE\+\_\+\+NOT\+\_\+\+INITIALIZED}}~(int) 9
+\begin{DoxyCompactList}\small\item\em Non-\/volatile storage was not initialized. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_afc06ba77b12beb6133e1dbc9b3bad313}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+EMPTY\+\_\+\+PARAM}}~(int) 10
+\begin{DoxyCompactList}\small\item\em Function expected a non-\/empty parameter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a6fe507ffaca300b570305034a5ad536c}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+NON\+\_\+\+EMPTY\+\_\+\+PARAM}}~(int) 11
+\begin{DoxyCompactList}\small\item\em Function expected an empty parameter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a4caf62bf8a49076fee68d7cf8bc5ed54}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+VALUE\+\_\+\+OUTSIDE\+\_\+\+BOUNDARIES}}~(int) 12
+\begin{DoxyCompactList}\small\item\em Value passed as parameter is outside of the range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_n_v_m___interface_8h_a93cf8ca7c0486cf84192731931915290}{NVM\+\_\+i\+\_\+\+ERR\+\_\+\+UNSPECIFIED\+\_\+\+SIZE}}~(int) 13
+\begin{DoxyCompactList}\small\item\em Size of the value to be stored was not specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eb}{nvm\+\_\+fan\+\_\+func\+Param\+\_\+t}} \{ \newline
+\mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba065d018fbf181999341907ea5433609c}{NVM\+\_\+i\+\_\+\+MODE\+\_\+\+AUTO}} = 0
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba134055e6d377ec18668ed3c7e04de11d}{NVM\+\_\+i\+\_\+\+MODE\+\_\+\+MANUAL}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba157e909c839bdf0414e61eb926047f46}{NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+LOW}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3c455dc5c24292377946bf6ffb405ea0}{NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+MEDIUM}}
+, \newline
+\mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaa669b17cd0e876d0f4dcd994d3b20cf3}{NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+HIGH}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaddb2a32d6235897bfd2e4f103a9a474b}{NVM\+\_\+i\+\_\+\+STEP\+\_\+1}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3f9568f0e1e93e015586e2ba4590e461}{NVM\+\_\+i\+\_\+\+STEP\+\_\+2}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba59948e043dd818304982178c4ab077a4}{NVM\+\_\+i\+\_\+\+STEP\+\_\+3}}
+, \newline
+\mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba5c75c575e463ed0f520be2eac414949e}{NVM\+\_\+i\+\_\+\+STEP\+\_\+4}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba76fbf8d54df9d71ce366993fd3582e9d}{NVM\+\_\+i\+\_\+\+STEP\+\_\+5}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac044424405391f135176ae9f641a1f2a}{NVM\+\_\+i\+\_\+\+STEP\+\_\+6}}
+, \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac5d0b03b6cdd19c9420667dac0862175}{NVM\+\_\+i\+\_\+\+STEP\+\_\+7}}
+, \newline
+\mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaae29e0db9ae73e46a59534af4242958f}{NVM\+\_\+i\+\_\+\+STEP\+\_\+8}}
+ \}
+\begin{DoxyCompactList}\small\item\em Provide consistent and controlled access to the fan related functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a3e4be32f245250781e2a6641daa9aaa0}{NVM\+\_\+t\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializer function for the Non-\/volatile memory module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a4c9317560cfda82b9eca94766b413c6a}{NVM\+\_\+t\+\_\+status}} (void)
+\begin{DoxyCompactList}\small\item\em Check the status of the non-\/volatile storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a2bac25b7e8ef7e7d3d1a9532e34cc405}{NVM\+\_\+t\+\_\+get\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a0e16eb6370a37c16e0d77e2625e4c557}{NVM\+\_\+t\+\_\+set\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a9846025fdd11b3f9f1dd5dffcdfe7b7a}{NVM\+\_\+t\+\_\+get\+Temp\+Offset}} (int $\ast$offset)
+\begin{DoxyCompactList}\small\item\em Read the temperature offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_aa854ba88515665104040839a9e8d4377}{NVM\+\_\+t\+\_\+set\+Temp\+Offset}} (int offset)
+\begin{DoxyCompactList}\small\item\em Write the temperature offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a73b00ce273624c6b5615a020207ccf77}{NVM\+\_\+t\+\_\+get\+Humidity\+Offset}} (int $\ast$offset)
+\begin{DoxyCompactList}\small\item\em Read the humidity offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a2ab8b1c4281483a7a1f9bd1f6296098a}{NVM\+\_\+t\+\_\+set\+Humidity\+Offset}} (int offset)
+\begin{DoxyCompactList}\small\item\em Write the humidity offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a3660ff767c4229ce2f0dd54f31838689}{NVM\+\_\+t\+\_\+get\+Fan\+Function\+Offset}} (int $\ast$offset)
+\begin{DoxyCompactList}\small\item\em Read the fan speed offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a38b969d8ba66c235f5f1ff52a0420246}{NVM\+\_\+t\+\_\+set\+Fan\+Function\+Offset}} (int offset)
+\begin{DoxyCompactList}\small\item\em Write the fan speed offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_ae94fec765c1817fe236f718a2d054963}{NVM\+\_\+t\+\_\+get\+Fan\+Function\+Slope}} (int $\ast$slope)
+\begin{DoxyCompactList}\small\item\em Read the slope of the fan speed function from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_aff46d10887c5c4ff54817b4b9ea0a6ed}{NVM\+\_\+t\+\_\+set\+Fan\+Function\+Slope}} (int slope)
+\begin{DoxyCompactList}\small\item\em Write the slope of the fan speed function in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a8c8a08a30e4623dce12f89fd073423b3}{NVM\+\_\+t\+\_\+get\+Fan\+Function\+Error\+Coeff}} (int $\ast$error\+Coeff)
+\begin{DoxyCompactList}\small\item\em Read the error coefficient of the fan speed function from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a77e16f11b296321e49a15bb3d942c0b9}{NVM\+\_\+t\+\_\+set\+Fan\+Function\+Error\+Coeff}} (int error\+Coeff)
+\begin{DoxyCompactList}\small\item\em Write the error coefficient of the fan speed function in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a254f19eb0c60611739d9d505a9f6095f}{NVM\+\_\+t\+\_\+get\+Fan\+Function\+Flag}} (int $\ast$flag)
+\item 
+\mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} \mbox{\hyperlink{_n_v_m___interface_8h_a955c5be13d7bdf6096c01ff24a358f04}{NVM\+\_\+t\+\_\+set\+Fan\+Function\+Flag}} (int flag)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the Non-\/volatile memory module. It contains functions for initializing the non-\/volatile storage, as well as functions that allow the user to access it. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:tudor.coroian@altran.com}{\texttt{ tudor.\+coroian@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_n_v_m___interface_8h}{NVM\+\_\+\+Interface.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Tudor Coroian 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Interface for the Non-\/volatile memory module. It contains functions for initializing the non-\/volatile storage, as well as functions that allow the user to access it. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a82ba1ae8200a7eec951afcfd36f6a565}\label{_n_v_m___interface_8h_a82ba1ae8200a7eec951afcfd36f6a565}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_DISABLE@{NVM\_DISABLE}}
+\index{NVM\_DISABLE@{NVM\_DISABLE}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_DISABLE}{NVM\_DISABLE}}
+{\footnotesize\ttfamily \#define NVM\+\_\+\+DISABLE~FALSE}
+
+
+
+Disbale flag for the NVM module. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_afc06ba77b12beb6133e1dbc9b3bad313}\label{_n_v_m___interface_8h_afc06ba77b12beb6133e1dbc9b3bad313}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_EMPTY\_PARAM@{NVM\_i\_ERR\_EMPTY\_PARAM}}
+\index{NVM\_i\_ERR\_EMPTY\_PARAM@{NVM\_i\_ERR\_EMPTY\_PARAM}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_EMPTY\_PARAM}{NVM\_i\_ERR\_EMPTY\_PARAM}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+EMPTY\+\_\+\+PARAM~(int) 10}
+
+
+
+Function expected a non-\/empty parameter. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_abc48360fb40f20be2bf43f590f9b8f2a}\label{_n_v_m___interface_8h_abc48360fb40f20be2bf43f590f9b8f2a}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_INIT@{NVM\_i\_ERR\_INIT}}
+\index{NVM\_i\_ERR\_INIT@{NVM\_i\_ERR\_INIT}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_INIT}{NVM\_i\_ERR\_INIT}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+INIT~(int) 7}
+
+
+
+Error when initiallizing the non-\/volatile storage. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a9029374641d112b381d86c5ac0fa455c}\label{_n_v_m___interface_8h_a9029374641d112b381d86c5ac0fa455c}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND@{NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND}}
+\index{NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND@{NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND}{NVM\_i\_ERR\_NO\_CREDENTIALS\_FOUND}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND~(int) 6}
+
+
+
+No network credentials were stored. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a6fe507ffaca300b570305034a5ad536c}\label{_n_v_m___interface_8h_a6fe507ffaca300b570305034a5ad536c}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_NON\_EMPTY\_PARAM@{NVM\_i\_ERR\_NON\_EMPTY\_PARAM}}
+\index{NVM\_i\_ERR\_NON\_EMPTY\_PARAM@{NVM\_i\_ERR\_NON\_EMPTY\_PARAM}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_NON\_EMPTY\_PARAM}{NVM\_i\_ERR\_NON\_EMPTY\_PARAM}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+NON\+\_\+\+EMPTY\+\_\+\+PARAM~(int) 11}
+
+
+
+Function expected an empty parameter. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a9472de8e95eb7b6c71ea3b4ca4ff9043}\label{_n_v_m___interface_8h_a9472de8e95eb7b6c71ea3b4ca4ff9043}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_ON\_HOLD@{NVM\_i\_ERR\_ON\_HOLD}}
+\index{NVM\_i\_ERR\_ON\_HOLD@{NVM\_i\_ERR\_ON\_HOLD}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_ON\_HOLD}{NVM\_i\_ERR\_ON\_HOLD}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+ON\+\_\+\+HOLD~(int) 1}
+
+
+
+Write function is on hold. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a6f728aee10a783ac29fee60ebb76b1b9}\label{_n_v_m___interface_8h_a6f728aee10a783ac29fee60ebb76b1b9}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_OPEN@{NVM\_i\_ERR\_OPEN}}
+\index{NVM\_i\_ERR\_OPEN@{NVM\_i\_ERR\_OPEN}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_OPEN}{NVM\_i\_ERR\_OPEN}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+OPEN~(int) 2}
+
+
+
+Could not open the non-\/volatile storage. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a57646167d6ac5f158bfa00a453615668}\label{_n_v_m___interface_8h_a57646167d6ac5f158bfa00a453615668}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_READ@{NVM\_i\_ERR\_READ}}
+\index{NVM\_i\_ERR\_READ@{NVM\_i\_ERR\_READ}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_READ}{NVM\_i\_ERR\_READ}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+READ~(int) 4}
+
+
+
+Could not read the value from the non-\/volatile storage. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a93cf8ca7c0486cf84192731931915290}\label{_n_v_m___interface_8h_a93cf8ca7c0486cf84192731931915290}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_UNSPECIFIED\_SIZE@{NVM\_i\_ERR\_UNSPECIFIED\_SIZE}}
+\index{NVM\_i\_ERR\_UNSPECIFIED\_SIZE@{NVM\_i\_ERR\_UNSPECIFIED\_SIZE}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_UNSPECIFIED\_SIZE}{NVM\_i\_ERR\_UNSPECIFIED\_SIZE}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+UNSPECIFIED\+\_\+\+SIZE~(int) 13}
+
+
+
+Size of the value to be stored was not specified. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a318a476bbd24b87b7fe97396a19a0d86}\label{_n_v_m___interface_8h_a318a476bbd24b87b7fe97396a19a0d86}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_VALUE\_NOT\_FOUND@{NVM\_i\_ERR\_VALUE\_NOT\_FOUND}}
+\index{NVM\_i\_ERR\_VALUE\_NOT\_FOUND@{NVM\_i\_ERR\_VALUE\_NOT\_FOUND}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_VALUE\_NOT\_FOUND}{NVM\_i\_ERR\_VALUE\_NOT\_FOUND}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+VALUE\+\_\+\+NOT\+\_\+\+FOUND~(int) 3}
+
+
+
+The value was not intialized yet. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a4caf62bf8a49076fee68d7cf8bc5ed54}\label{_n_v_m___interface_8h_a4caf62bf8a49076fee68d7cf8bc5ed54}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES@{NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES}}
+\index{NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES@{NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES}{NVM\_i\_ERR\_VALUE\_OUTSIDE\_BOUNDARIES}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+VALUE\+\_\+\+OUTSIDE\+\_\+\+BOUNDARIES~(int) 12}
+
+
+
+Value passed as parameter is outside of the range. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a18c8e6156812a9102be922cb85c06283}\label{_n_v_m___interface_8h_a18c8e6156812a9102be922cb85c06283}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_ERR\_WRITE@{NVM\_i\_ERR\_WRITE}}
+\index{NVM\_i\_ERR\_WRITE@{NVM\_i\_ERR\_WRITE}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_ERR\_WRITE}{NVM\_i\_ERR\_WRITE}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+ERR\+\_\+\+WRITE~(int) 5}
+
+
+
+Could not write the value in the non-\/volatile storage. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a012b9192a79cd8402e7b796d34bc2caa}\label{_n_v_m___interface_8h_a012b9192a79cd8402e7b796d34bc2caa}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_OK@{NVM\_i\_OK}}
+\index{NVM\_i\_OK@{NVM\_i\_OK}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_OK}{NVM\_i\_OK}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+OK~(int) 0}
+
+
+
+Success. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_ab8f89714422c325d7710d1444dee4633}\label{_n_v_m___interface_8h_ab8f89714422c325d7710d1444dee4633}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STORAGE\_INITIALIZED@{NVM\_i\_STORAGE\_INITIALIZED}}
+\index{NVM\_i\_STORAGE\_INITIALIZED@{NVM\_i\_STORAGE\_INITIALIZED}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_STORAGE\_INITIALIZED}{NVM\_i\_STORAGE\_INITIALIZED}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+STORAGE\+\_\+\+INITIALIZED~(int) 8}
+
+
+
+Non-\/volatile storage was initialized. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a145dc2f8967f51c97302e7dbef464a74}\label{_n_v_m___interface_8h_a145dc2f8967f51c97302e7dbef464a74}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STORAGE\_NOT\_INITIALIZED@{NVM\_i\_STORAGE\_NOT\_INITIALIZED}}
+\index{NVM\_i\_STORAGE\_NOT\_INITIALIZED@{NVM\_i\_STORAGE\_NOT\_INITIALIZED}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_i\_STORAGE\_NOT\_INITIALIZED}{NVM\_i\_STORAGE\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily \#define NVM\+\_\+i\+\_\+\+STORAGE\+\_\+\+NOT\+\_\+\+INITIALIZED~(int) 9}
+
+
+
+Non-\/volatile storage was not initialized. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}\label{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!nvm\_err\_t@{nvm\_err\_t}}
+\index{nvm\_err\_t@{nvm\_err\_t}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{nvm\_err\_t}{nvm\_err\_t}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eb}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eb}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!nvm\_fan\_funcParam\_t@{nvm\_fan\_funcParam\_t}}
+\index{nvm\_fan\_funcParam\_t@{nvm\_fan\_funcParam\_t}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{nvm\_fan\_funcParam\_t}{nvm\_fan\_funcParam\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eb}{nvm\+\_\+fan\+\_\+func\+Param\+\_\+t}}}
+
+
+
+Provide consistent and controlled access to the fan related functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_MODE\_AUTO@{NVM\_i\_MODE\_AUTO}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_MODE\_AUTO@{NVM\_i\_MODE\_AUTO}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba065d018fbf181999341907ea5433609c}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba065d018fbf181999341907ea5433609c}} 
+NVM\+\_\+i\+\_\+\+MODE\+\_\+\+AUTO&Automatic functioning mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_MODE\_MANUAL@{NVM\_i\_MODE\_MANUAL}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_MODE\_MANUAL@{NVM\_i\_MODE\_MANUAL}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba134055e6d377ec18668ed3c7e04de11d}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba134055e6d377ec18668ed3c7e04de11d}} 
+NVM\+\_\+i\+\_\+\+MODE\+\_\+\+MANUAL&Manual functioning mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_SPEED\_LOW@{NVM\_i\_SPEED\_LOW}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_SPEED\_LOW@{NVM\_i\_SPEED\_LOW}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba157e909c839bdf0414e61eb926047f46}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba157e909c839bdf0414e61eb926047f46}} 
+NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+LOW&Low speed (for manual mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_SPEED\_MEDIUM@{NVM\_i\_SPEED\_MEDIUM}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_SPEED\_MEDIUM@{NVM\_i\_SPEED\_MEDIUM}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3c455dc5c24292377946bf6ffb405ea0}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3c455dc5c24292377946bf6ffb405ea0}} 
+NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+MEDIUM&Medium speed (for manual mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_SPEED\_HIGH@{NVM\_i\_SPEED\_HIGH}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_SPEED\_HIGH@{NVM\_i\_SPEED\_HIGH}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaa669b17cd0e876d0f4dcd994d3b20cf3}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaa669b17cd0e876d0f4dcd994d3b20cf3}} 
+NVM\+\_\+i\+\_\+\+SPEED\+\_\+\+HIGH&High speed (for manual mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_1@{NVM\_i\_STEP\_1}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_1@{NVM\_i\_STEP\_1}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaddb2a32d6235897bfd2e4f103a9a474b}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaddb2a32d6235897bfd2e4f103a9a474b}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+1&Step 1 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_2@{NVM\_i\_STEP\_2}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_2@{NVM\_i\_STEP\_2}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3f9568f0e1e93e015586e2ba4590e461}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba3f9568f0e1e93e015586e2ba4590e461}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+2&Step 2 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_3@{NVM\_i\_STEP\_3}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_3@{NVM\_i\_STEP\_3}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba59948e043dd818304982178c4ab077a4}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba59948e043dd818304982178c4ab077a4}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+3&Step 3 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_4@{NVM\_i\_STEP\_4}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_4@{NVM\_i\_STEP\_4}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba5c75c575e463ed0f520be2eac414949e}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba5c75c575e463ed0f520be2eac414949e}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+4&Step 4 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_5@{NVM\_i\_STEP\_5}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_5@{NVM\_i\_STEP\_5}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba76fbf8d54df9d71ce366993fd3582e9d}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118eba76fbf8d54df9d71ce366993fd3582e9d}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+5&Step 5 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_6@{NVM\_i\_STEP\_6}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_6@{NVM\_i\_STEP\_6}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac044424405391f135176ae9f641a1f2a}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac044424405391f135176ae9f641a1f2a}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+6&Step 6 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_7@{NVM\_i\_STEP\_7}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_7@{NVM\_i\_STEP\_7}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac5d0b03b6cdd19c9420667dac0862175}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebac5d0b03b6cdd19c9420667dac0862175}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+7&Step 7 for speed (for automatic mode) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NVM\_i\_STEP\_8@{NVM\_i\_STEP\_8}!NVM\_Interface.h@{NVM\_Interface.h}}\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_i\_STEP\_8@{NVM\_i\_STEP\_8}}}\mbox{\Hypertarget{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaae29e0db9ae73e46a59534af4242958f}\label{_n_v_m___interface_8h_ab14a8130cb8820b2476c3147edf118ebaae29e0db9ae73e46a59534af4242958f}} 
+NVM\+\_\+i\+\_\+\+STEP\+\_\+8&Step 8 for speed (for automatic mode) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a8c8a08a30e4623dce12f89fd073423b3}\label{_n_v_m___interface_8h_a8c8a08a30e4623dce12f89fd073423b3}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getFanFunctionErrorCoeff@{NVM\_t\_getFanFunctionErrorCoeff}}
+\index{NVM\_t\_getFanFunctionErrorCoeff@{NVM\_t\_getFanFunctionErrorCoeff}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getFanFunctionErrorCoeff()}{NVM\_t\_getFanFunctionErrorCoeff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Fan\+Function\+Error\+Coeff (\begin{DoxyParamCaption}\item[{int $\ast$}]{error\+Coeff }\end{DoxyParamCaption})}
+
+
+
+Read the error coefficient of the fan speed function from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Coeff} & Store the read value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a254f19eb0c60611739d9d505a9f6095f}\label{_n_v_m___interface_8h_a254f19eb0c60611739d9d505a9f6095f}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getFanFunctionFlag@{NVM\_t\_getFanFunctionFlag}}
+\index{NVM\_t\_getFanFunctionFlag@{NVM\_t\_getFanFunctionFlag}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getFanFunctionFlag()}{NVM\_t\_getFanFunctionFlag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Fan\+Function\+Flag (\begin{DoxyParamCaption}\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a3660ff767c4229ce2f0dd54f31838689}\label{_n_v_m___interface_8h_a3660ff767c4229ce2f0dd54f31838689}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getFanFunctionOffset@{NVM\_t\_getFanFunctionOffset}}
+\index{NVM\_t\_getFanFunctionOffset@{NVM\_t\_getFanFunctionOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getFanFunctionOffset()}{NVM\_t\_getFanFunctionOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Fan\+Function\+Offset (\begin{DoxyParamCaption}\item[{int $\ast$}]{offset }\end{DoxyParamCaption})}
+
+
+
+Read the fan speed offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Store the read value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_ae94fec765c1817fe236f718a2d054963}\label{_n_v_m___interface_8h_ae94fec765c1817fe236f718a2d054963}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getFanFunctionSlope@{NVM\_t\_getFanFunctionSlope}}
+\index{NVM\_t\_getFanFunctionSlope@{NVM\_t\_getFanFunctionSlope}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getFanFunctionSlope()}{NVM\_t\_getFanFunctionSlope()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Fan\+Function\+Slope (\begin{DoxyParamCaption}\item[{int $\ast$}]{slope }\end{DoxyParamCaption})}
+
+
+
+Read the slope of the fan speed function from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slope} & Store the read value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a73b00ce273624c6b5615a020207ccf77}\label{_n_v_m___interface_8h_a73b00ce273624c6b5615a020207ccf77}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getHumidityOffset@{NVM\_t\_getHumidityOffset}}
+\index{NVM\_t\_getHumidityOffset@{NVM\_t\_getHumidityOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getHumidityOffset()}{NVM\_t\_getHumidityOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Humidity\+Offset (\begin{DoxyParamCaption}\item[{int $\ast$}]{offset }\end{DoxyParamCaption})}
+
+
+
+Read the humidity offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Store the read value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a9846025fdd11b3f9f1dd5dffcdfe7b7a}\label{_n_v_m___interface_8h_a9846025fdd11b3f9f1dd5dffcdfe7b7a}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getTempOffset@{NVM\_t\_getTempOffset}}
+\index{NVM\_t\_getTempOffset@{NVM\_t\_getTempOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getTempOffset()}{NVM\_t\_getTempOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Temp\+Offset (\begin{DoxyParamCaption}\item[{int $\ast$}]{offset }\end{DoxyParamCaption})}
+
+
+
+Read the temperature offset from the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Store the read value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a2bac25b7e8ef7e7d3d1a9532e34cc405}\label{_n_v_m___interface_8h_a2bac25b7e8ef7e7d3d1a9532e34cc405}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_getWifiCredentials@{NVM\_t\_getWifiCredentials}}
+\index{NVM\_t\_getWifiCredentials@{NVM\_t\_getWifiCredentials}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_getWifiCredentials()}{NVM\_t\_getWifiCredentials()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+get\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a3e4be32f245250781e2a6641daa9aaa0}\label{_n_v_m___interface_8h_a3e4be32f245250781e2a6641daa9aaa0}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_init@{NVM\_t\_init}}
+\index{NVM\_t\_init@{NVM\_t\_init}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_init()}{NVM\_t\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializer function for the Non-\/volatile memory module. 
+
+\mbox{\Hypertarget{_n_v_m___interface_8h_a77e16f11b296321e49a15bb3d942c0b9}\label{_n_v_m___interface_8h_a77e16f11b296321e49a15bb3d942c0b9}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setFanFunctionErrorCoeff@{NVM\_t\_setFanFunctionErrorCoeff}}
+\index{NVM\_t\_setFanFunctionErrorCoeff@{NVM\_t\_setFanFunctionErrorCoeff}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setFanFunctionErrorCoeff()}{NVM\_t\_setFanFunctionErrorCoeff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Fan\+Function\+Error\+Coeff (\begin{DoxyParamCaption}\item[{int}]{error\+Coeff }\end{DoxyParamCaption})}
+
+
+
+Write the error coefficient of the fan speed function in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Coeff} & Value to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a955c5be13d7bdf6096c01ff24a358f04}\label{_n_v_m___interface_8h_a955c5be13d7bdf6096c01ff24a358f04}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setFanFunctionFlag@{NVM\_t\_setFanFunctionFlag}}
+\index{NVM\_t\_setFanFunctionFlag@{NVM\_t\_setFanFunctionFlag}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setFanFunctionFlag()}{NVM\_t\_setFanFunctionFlag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Fan\+Function\+Flag (\begin{DoxyParamCaption}\item[{int}]{flag }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a38b969d8ba66c235f5f1ff52a0420246}\label{_n_v_m___interface_8h_a38b969d8ba66c235f5f1ff52a0420246}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setFanFunctionOffset@{NVM\_t\_setFanFunctionOffset}}
+\index{NVM\_t\_setFanFunctionOffset@{NVM\_t\_setFanFunctionOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setFanFunctionOffset()}{NVM\_t\_setFanFunctionOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Fan\+Function\+Offset (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Write the fan speed offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Value to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_aff46d10887c5c4ff54817b4b9ea0a6ed}\label{_n_v_m___interface_8h_aff46d10887c5c4ff54817b4b9ea0a6ed}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setFanFunctionSlope@{NVM\_t\_setFanFunctionSlope}}
+\index{NVM\_t\_setFanFunctionSlope@{NVM\_t\_setFanFunctionSlope}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setFanFunctionSlope()}{NVM\_t\_setFanFunctionSlope()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Fan\+Function\+Slope (\begin{DoxyParamCaption}\item[{int}]{slope }\end{DoxyParamCaption})}
+
+
+
+Write the slope of the fan speed function in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slope} & Value to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a2ab8b1c4281483a7a1f9bd1f6296098a}\label{_n_v_m___interface_8h_a2ab8b1c4281483a7a1f9bd1f6296098a}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setHumidityOffset@{NVM\_t\_setHumidityOffset}}
+\index{NVM\_t\_setHumidityOffset@{NVM\_t\_setHumidityOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setHumidityOffset()}{NVM\_t\_setHumidityOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Humidity\+Offset (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Write the humidity offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Value to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_aa854ba88515665104040839a9e8d4377}\label{_n_v_m___interface_8h_aa854ba88515665104040839a9e8d4377}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setTempOffset@{NVM\_t\_setTempOffset}}
+\index{NVM\_t\_setTempOffset@{NVM\_t\_setTempOffset}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setTempOffset()}{NVM\_t\_setTempOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Temp\+Offset (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Write the temperature offset in the memory. Return NVM\+\_\+i\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Value to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a0e16eb6370a37c16e0d77e2625e4c557}\label{_n_v_m___interface_8h_a0e16eb6370a37c16e0d77e2625e4c557}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_setWifiCredentials@{NVM\_t\_setWifiCredentials}}
+\index{NVM\_t\_setWifiCredentials@{NVM\_t\_setWifiCredentials}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_setWifiCredentials()}{NVM\_t\_setWifiCredentials()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+set\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_a4c9317560cfda82b9eca94766b413c6a}\label{_n_v_m___interface_8h_a4c9317560cfda82b9eca94766b413c6a}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_t\_status@{NVM\_t\_status}}
+\index{NVM\_t\_status@{NVM\_t\_status}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_t\_status()}{NVM\_t\_status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}{nvm\+\_\+err\+\_\+t}} NVM\+\_\+t\+\_\+status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check the status of the non-\/volatile storage. 
+
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}

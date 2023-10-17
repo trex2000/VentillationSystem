@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['getaverage_0',['getAverage',['../_r_t_o_s___performance_8c.html#a02acfb2df5343c8eef1fd87025d158e4',1,'RTOS_Performance.c']]],
+  ['getaverageticks_1',['getAverageTicks',['../_r_t_o_s___performance_8c.html#a4570df20f2b452bd4df2746953ee40e3',1,'getAverageTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8h.html#a4570df20f2b452bd4df2746953ee40e3',1,'getAverageTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c']]],
+  ['getmax_2',['getMax',['../_r_t_o_s___performance_8c.html#a07c3d69d35220ed1e9b52709225d6dc0',1,'RTOS_Performance.c']]],
+  ['getmaxticks_3',['getMaxTicks',['../_r_t_o_s___performance_8c.html#a3fc0645010da51d1f149ff8d71a90b7f',1,'getMaxTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8h.html#a3fc0645010da51d1f149ff8d71a90b7f',1,'getMaxTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c']]],
+  ['getmin_4',['getMin',['../_r_t_o_s___performance_8c.html#a39ef6ec5d0f45b106d66e3efe7e69e97',1,'RTOS_Performance.c']]],
+  ['getminticks_5',['getMinTicks',['../_r_t_o_s___performance_8c.html#ab99d28cbe2bb26b04e654d404cfd5fce',1,'getMinTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8h.html#ab99d28cbe2bb26b04e654d404cfd5fce',1,'getMinTicks(TASK_TYPE_LIST typeOfTask):&#160;RTOS_Performance.c']]],
+  ['getperformancestats_6',['getPerformanceStats',['../_r_t_o_s___interface_8h.html#a48c6e0f0bd1996a93369f85feb220b5e',1,'getPerformanceStats(char *stats):&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8c.html#a48c6e0f0bd1996a93369f85feb220b5e',1,'getPerformanceStats(char *stats):&#160;RTOS_Performance.c']]],
+  ['getperformancestatsselective_7',['getPerformanceStatsSelective',['../_r_t_o_s___interface_8h.html#a34d31dc2bac3a17948fb698bf398fe3d',1,'getPerformanceStatsSelective(TASK_TYPE_LIST selectedTask, STAT_METRIC_TYPE metricType):&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8c.html#a34d31dc2bac3a17948fb698bf398fe3d',1,'getPerformanceStatsSelective(TASK_TYPE_LIST selectedTask, STAT_METRIC_TYPE metricType):&#160;RTOS_Performance.c']]],
+  ['gettimestartup_8',['getTimeStartup',['../_r_t_o_s___performance_8c.html#a044111e1596d86a222ee5807d01da148',1,'getTimeStartup():&#160;RTOS_Performance.c'],['../_r_t_o_s___performance_8h.html#a044111e1596d86a222ee5807d01da148',1,'getTimeStartup():&#160;RTOS_Performance.c']]]
+];

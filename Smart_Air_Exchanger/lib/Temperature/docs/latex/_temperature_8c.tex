@@ -1,0 +1,466 @@
+\hypertarget{_temperature_8c}{}\doxysection{C\+:/\+Users/\+Administrator/\+Documents/\+Project/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+Temperature/src/\+Temperature.c File Reference}
+\label{_temperature_8c}\index{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature.c@{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature.c}}
+{\ttfamily \#include \char`\"{}Temperature\+\_\+\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temperature\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temperature.\+h\char`\"{}}\newline
+Include dependency graph for Temperature.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temperature_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_temperature_8c_acb7d6e06b4a0a3788a0cec211ecb5470}{GPIO\+\_\+\+DS18\+B20\+\_\+0}}~(TEMP\+\_\+\+PIN)
+\begin{DoxyCompactList}\small\item\em One-\/\+Wire Bus pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_a4e132cfaa78353e3af1474a86b2dd535}{MAX\+\_\+\+DEVICES}}~(2)
+\begin{DoxyCompactList}\small\item\em Maximum number of temperature sensors that can be connected to the bus. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_a2042d0bb2f483912475a0570f65887e9}{DS18\+B20\+\_\+\+RESOLUTION}}~(DS18\+B20\+\_\+\+RESOLUTION\+\_\+12\+\_\+\+BIT)
+\item 
+\#define \mbox{\hyperlink{_temperature_8c_ac32e7bee9d8c1ee37bfae3e48852535d}{SAMPLE\+\_\+\+PERIOD}}~(1000)
+\item 
+\#define \mbox{\hyperlink{_temperature_8c_afc3d101f633a076cc1ca84b85b6224b2}{TAG}}~(\char`\"{}Temperature\char`\"{})
+\begin{DoxyCompactList}\small\item\em name for module logs \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_ab3f68d59e815ea166f8c983bc6e85c5b}{WINDOW\+\_\+\+SIZE}}~4
+\begin{DoxyCompactList}\small\item\em number of values to be memorized for the average filter \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_afa90c134aaaf595db43463389cd8b2a2}{HYST\+\_\+\+TRIGGER\+\_\+\+LEVEL}}~5
+\begin{DoxyCompactList}\small\item\em hysteresis trigger level \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_a021f40ee3ed66d7824da499f4f4fbe9b}{MINIMUM\+\_\+\+ADMISSIBLE\+\_\+\+TEMPERATURE}}~-\/300
+\begin{DoxyCompactList}\small\item\em lowest admitted temperature $\ast$ 10 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_ae9294d783b58dc83c1ee6a9df048c88b}{MAXIMUM\+\_\+\+ADMISSIBLE\+\_\+\+TEMPERATURE}}~500
+\begin{DoxyCompactList}\small\item\em highest admitted temperature $\ast$ 10 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_ac02a5a67e0612d6cb90e61cc23398701}{TEMPERATURE\+\_\+\+OFFSET}}~2
+\begin{DoxyCompactList}\small\item\em offset which is the result of experiments \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_ac03b6bff586dc43de2ce26dfd106ee80}{TEMPERATURE\+\_\+\+DEFAULT\+\_\+\+OFFSET}}~0
+\begin{DoxyCompactList}\small\item\em offset in case no other offset is given \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_a7b665c11616fe9eed716e89c859cfc19}{TEMPERATURE\+\_\+\+DEFAULT}}~850
+\begin{DoxyCompactList}\small\item\em value in case of any error or warning \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_ae8a6b5cbf51ab11f460c1bd92089e573}{EXTERIOR}}~(\char`\"{}e53c01f096340428\char`\"{})
+\begin{DoxyCompactList}\small\item\em exterior temperature sensor rom-\/code \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_temperature_8c_a86d4434206a75506f1ba5f0ab74d92c6}{INTERIOR}}~(\char`\"{}4d3c01f096466328\char`\"{})
+\begin{DoxyCompactList}\small\item\em interior temperature sensor rom-\/code \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} \mbox{\hyperlink{_temperature_8c_a7fda4c92be0fb6028f5f4ee4b275d4f7}{Temperature\+\_\+t\+\_\+find\+Device}} (char $\ast$Temperature\+\_\+pc\+\_\+\+ROMCode, int $\ast$Temperature\+\_\+pi\+\_\+\+Device\+Number)
+\begin{DoxyCompactList}\small\item\em Search for a device rom-\/code in the array of devices. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case it is found. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} \mbox{\hyperlink{_temperature_8c_af776dd37d0559408f7c6212b10fa7299}{Temperature\+\_\+t\+\_\+\+Read\+\_\+\+Interior}} ()
+\begin{DoxyCompactList}\small\item\em Read the interior sensor\textquotesingle{}s temperature if connected to the one-\/wire bus. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case of success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} \mbox{\hyperlink{_temperature_8c_a54ba9447bb398b502c992e6b5891e1a6}{Temperature\+\_\+t\+\_\+\+Read\+\_\+\+Exterior}} ()
+\begin{DoxyCompactList}\small\item\em Read the exterior sensor\textquotesingle{}s temperature if connected to the one-\/wire bus. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case of success. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_temperature_8c_a314addcb1ff10ae748e5461eccfe7171}{Temperature\+\_\+v\+\_\+\+Filter\+Device\+Temperature}} (bool Temperature\+\_\+b\+\_\+\+Exterior\+VSInterior\+Device)
+\begin{DoxyCompactList}\small\item\em Filter the chosen devices\textquotesingle{} temperature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} \mbox{\hyperlink{_temperature_8c_a9eb11328c9dcd6cb930c799c536e867a}{Temperature\+\_\+t\+\_\+\+Check\+Validity}} (int32\+\_\+t Temperature\+\_\+i\+\_\+\+Value)
+\begin{DoxyCompactList}\small\item\em Filter the given value Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case the value is inside the chosen interval. Returns TEMPERATURE\+\_\+i\+\_\+\+OUTSIDE\+\_\+\+INTERVAL in case the value is outside the interval. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_a6f1364a0005a34c253336b192a1a844f}{Temperature\+\_\+i\+\_\+\+Convert\+To\+Mult5}} (int32\+\_\+t Temperature\+\_\+i\+\_\+\+Value)
+\begin{DoxyCompactList}\small\item\em Convert a given value to a multiple of 5. Returns the value as an integer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_a290e03a18d4f3927e728ef47388f8fec}{Temperature\+\_\+i\+\_\+\+Hysteresis}} (int32\+\_\+t Temperature\+\_\+i\+\_\+\+Previous\+Temperature, int32\+\_\+t Temperature\+\_\+i\+\_\+\+Current\+Temperature)
+\begin{DoxyCompactList}\small\item\em Verifies if the new temperature has a difference of at least HYST\+\_\+\+TRIGGER\+\_\+\+LEVEL celsius degrees from the old temperature. Returns the current temperature value when the difference of values is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_temperature_8c_a04dad00b0c5141a77c095babad5afa0e}{Temperature\+\_\+v\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialise the One-\/\+Wire Bus and connect the temperature sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_temperature_8c_ad9f390dd122342b0943b13f5fd17a0fd}{Temperature\+\_\+v\+\_\+\+Read\+\_\+\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Read the sensor\textquotesingle{}s temperatures. In case debug mode os one, it showcases the read values of the temperature. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_a1699ec48fd7b83d2181fec28f44fe803}{Temperature\+\_\+i\+\_\+get\+Interior}} ()
+\begin{DoxyCompactList}\small\item\em Returns the interior temperature value. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_a470b509e6bf45099bbf62e8865144629}{Temperature\+\_\+i\+\_\+get\+Exterior}} ()
+\begin{DoxyCompactList}\small\item\em Returns the exterior temperature value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_ace8c6d7d447cf9bc514e326873fa1b4b}{Temperature\+\_\+i\+\_\+\+Interior}}
+\begin{DoxyCompactList}\small\item\em variable that can be seen by other modules \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_temperature_8c_a78ac6e8f1719bee14067c7fa3984f126}{Temperature\+\_\+i\+\_\+\+Exterior}}
+\begin{DoxyCompactList}\small\item\em variable that can be seen by other modules \end{DoxyCompactList}\item 
+volatile int \mbox{\hyperlink{_temperature_8c_ae7491da64f33e814fea804f7ebca17ea}{Temperature\+\_\+vi\+\_\+\+Num\+Devices}}
+\begin{DoxyCompactList}\small\item\em store the number of connected devices on the One-\/\+Wire Bus \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ecaterina Lutac (\href{mailto:ecaterina.lutac@altran.com}{\texttt{ ecaterina.\+lutac@altran.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/09-\/03
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_temperature_8c_a2042d0bb2f483912475a0570f65887e9}\label{_temperature_8c_a2042d0bb2f483912475a0570f65887e9}} 
+\index{Temperature.c@{Temperature.c}!DS18B20\_RESOLUTION@{DS18B20\_RESOLUTION}}
+\index{DS18B20\_RESOLUTION@{DS18B20\_RESOLUTION}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_RESOLUTION}{DS18B20\_RESOLUTION}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+RESOLUTION~(DS18\+B20\+\_\+\+RESOLUTION\+\_\+12\+\_\+\+BIT)}
+
+\mbox{\Hypertarget{_temperature_8c_ae8a6b5cbf51ab11f460c1bd92089e573}\label{_temperature_8c_ae8a6b5cbf51ab11f460c1bd92089e573}} 
+\index{Temperature.c@{Temperature.c}!EXTERIOR@{EXTERIOR}}
+\index{EXTERIOR@{EXTERIOR}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{EXTERIOR}{EXTERIOR}}
+{\footnotesize\ttfamily \#define EXTERIOR~(\char`\"{}e53c01f096340428\char`\"{})}
+
+
+
+exterior temperature sensor rom-\/code 
+
+\mbox{\Hypertarget{_temperature_8c_acb7d6e06b4a0a3788a0cec211ecb5470}\label{_temperature_8c_acb7d6e06b4a0a3788a0cec211ecb5470}} 
+\index{Temperature.c@{Temperature.c}!GPIO\_DS18B20\_0@{GPIO\_DS18B20\_0}}
+\index{GPIO\_DS18B20\_0@{GPIO\_DS18B20\_0}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_DS18B20\_0}{GPIO\_DS18B20\_0}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+DS18\+B20\+\_\+0~(TEMP\+\_\+\+PIN)}
+
+
+
+One-\/\+Wire Bus pin. 
+
+\mbox{\Hypertarget{_temperature_8c_afa90c134aaaf595db43463389cd8b2a2}\label{_temperature_8c_afa90c134aaaf595db43463389cd8b2a2}} 
+\index{Temperature.c@{Temperature.c}!HYST\_TRIGGER\_LEVEL@{HYST\_TRIGGER\_LEVEL}}
+\index{HYST\_TRIGGER\_LEVEL@{HYST\_TRIGGER\_LEVEL}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{HYST\_TRIGGER\_LEVEL}{HYST\_TRIGGER\_LEVEL}}
+{\footnotesize\ttfamily \#define HYST\+\_\+\+TRIGGER\+\_\+\+LEVEL~5}
+
+
+
+hysteresis trigger level 
+
+\mbox{\Hypertarget{_temperature_8c_a86d4434206a75506f1ba5f0ab74d92c6}\label{_temperature_8c_a86d4434206a75506f1ba5f0ab74d92c6}} 
+\index{Temperature.c@{Temperature.c}!INTERIOR@{INTERIOR}}
+\index{INTERIOR@{INTERIOR}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{INTERIOR}{INTERIOR}}
+{\footnotesize\ttfamily \#define INTERIOR~(\char`\"{}4d3c01f096466328\char`\"{})}
+
+
+
+interior temperature sensor rom-\/code 
+
+\mbox{\Hypertarget{_temperature_8c_a4e132cfaa78353e3af1474a86b2dd535}\label{_temperature_8c_a4e132cfaa78353e3af1474a86b2dd535}} 
+\index{Temperature.c@{Temperature.c}!MAX\_DEVICES@{MAX\_DEVICES}}
+\index{MAX\_DEVICES@{MAX\_DEVICES}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_DEVICES}{MAX\_DEVICES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DEVICES~(2)}
+
+
+
+Maximum number of temperature sensors that can be connected to the bus. 
+
+\mbox{\Hypertarget{_temperature_8c_ae9294d783b58dc83c1ee6a9df048c88b}\label{_temperature_8c_ae9294d783b58dc83c1ee6a9df048c88b}} 
+\index{Temperature.c@{Temperature.c}!MAXIMUM\_ADMISSIBLE\_TEMPERATURE@{MAXIMUM\_ADMISSIBLE\_TEMPERATURE}}
+\index{MAXIMUM\_ADMISSIBLE\_TEMPERATURE@{MAXIMUM\_ADMISSIBLE\_TEMPERATURE}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{MAXIMUM\_ADMISSIBLE\_TEMPERATURE}{MAXIMUM\_ADMISSIBLE\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define MAXIMUM\+\_\+\+ADMISSIBLE\+\_\+\+TEMPERATURE~500}
+
+
+
+highest admitted temperature $\ast$ 10 
+
+\mbox{\Hypertarget{_temperature_8c_a021f40ee3ed66d7824da499f4f4fbe9b}\label{_temperature_8c_a021f40ee3ed66d7824da499f4f4fbe9b}} 
+\index{Temperature.c@{Temperature.c}!MINIMUM\_ADMISSIBLE\_TEMPERATURE@{MINIMUM\_ADMISSIBLE\_TEMPERATURE}}
+\index{MINIMUM\_ADMISSIBLE\_TEMPERATURE@{MINIMUM\_ADMISSIBLE\_TEMPERATURE}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{MINIMUM\_ADMISSIBLE\_TEMPERATURE}{MINIMUM\_ADMISSIBLE\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define MINIMUM\+\_\+\+ADMISSIBLE\+\_\+\+TEMPERATURE~-\/300}
+
+
+
+lowest admitted temperature $\ast$ 10 
+
+\mbox{\Hypertarget{_temperature_8c_ac32e7bee9d8c1ee37bfae3e48852535d}\label{_temperature_8c_ac32e7bee9d8c1ee37bfae3e48852535d}} 
+\index{Temperature.c@{Temperature.c}!SAMPLE\_PERIOD@{SAMPLE\_PERIOD}}
+\index{SAMPLE\_PERIOD@{SAMPLE\_PERIOD}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_PERIOD}{SAMPLE\_PERIOD}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+PERIOD~(1000)}
+
+\mbox{\Hypertarget{_temperature_8c_afc3d101f633a076cc1ca84b85b6224b2}\label{_temperature_8c_afc3d101f633a076cc1ca84b85b6224b2}} 
+\index{Temperature.c@{Temperature.c}!TAG@{TAG}}
+\index{TAG@{TAG}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define TAG~(\char`\"{}Temperature\char`\"{})}
+
+
+
+name for module logs 
+
+\mbox{\Hypertarget{_temperature_8c_a7b665c11616fe9eed716e89c859cfc19}\label{_temperature_8c_a7b665c11616fe9eed716e89c859cfc19}} 
+\index{Temperature.c@{Temperature.c}!TEMPERATURE\_DEFAULT@{TEMPERATURE\_DEFAULT}}
+\index{TEMPERATURE\_DEFAULT@{TEMPERATURE\_DEFAULT}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{TEMPERATURE\_DEFAULT}{TEMPERATURE\_DEFAULT}}
+{\footnotesize\ttfamily \#define TEMPERATURE\+\_\+\+DEFAULT~850}
+
+
+
+value in case of any error or warning 
+
+\mbox{\Hypertarget{_temperature_8c_ac03b6bff586dc43de2ce26dfd106ee80}\label{_temperature_8c_ac03b6bff586dc43de2ce26dfd106ee80}} 
+\index{Temperature.c@{Temperature.c}!TEMPERATURE\_DEFAULT\_OFFSET@{TEMPERATURE\_DEFAULT\_OFFSET}}
+\index{TEMPERATURE\_DEFAULT\_OFFSET@{TEMPERATURE\_DEFAULT\_OFFSET}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{TEMPERATURE\_DEFAULT\_OFFSET}{TEMPERATURE\_DEFAULT\_OFFSET}}
+{\footnotesize\ttfamily \#define TEMPERATURE\+\_\+\+DEFAULT\+\_\+\+OFFSET~0}
+
+
+
+offset in case no other offset is given 
+
+\mbox{\Hypertarget{_temperature_8c_ac02a5a67e0612d6cb90e61cc23398701}\label{_temperature_8c_ac02a5a67e0612d6cb90e61cc23398701}} 
+\index{Temperature.c@{Temperature.c}!TEMPERATURE\_OFFSET@{TEMPERATURE\_OFFSET}}
+\index{TEMPERATURE\_OFFSET@{TEMPERATURE\_OFFSET}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{TEMPERATURE\_OFFSET}{TEMPERATURE\_OFFSET}}
+{\footnotesize\ttfamily \#define TEMPERATURE\+\_\+\+OFFSET~2}
+
+
+
+offset which is the result of experiments 
+
+\mbox{\Hypertarget{_temperature_8c_ab3f68d59e815ea166f8c983bc6e85c5b}\label{_temperature_8c_ab3f68d59e815ea166f8c983bc6e85c5b}} 
+\index{Temperature.c@{Temperature.c}!WINDOW\_SIZE@{WINDOW\_SIZE}}
+\index{WINDOW\_SIZE@{WINDOW\_SIZE}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_SIZE}{WINDOW\_SIZE}}
+{\footnotesize\ttfamily \#define WINDOW\+\_\+\+SIZE~4}
+
+
+
+number of values to be memorized for the average filter 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_temperature_8c_a6f1364a0005a34c253336b192a1a844f}\label{_temperature_8c_a6f1364a0005a34c253336b192a1a844f}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_ConvertToMult5@{Temperature\_i\_ConvertToMult5}}
+\index{Temperature\_i\_ConvertToMult5@{Temperature\_i\_ConvertToMult5}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_ConvertToMult5()}{Temperature\_i\_ConvertToMult5()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Convert\+To\+Mult5 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{Temperature\+\_\+i\+\_\+\+Value }\end{DoxyParamCaption})}
+
+
+
+Convert a given value to a multiple of 5. Returns the value as an integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Temperature\+\_\+i\+\_\+\+Value} & The value to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature_8c_a470b509e6bf45099bbf62e8865144629}\label{_temperature_8c_a470b509e6bf45099bbf62e8865144629}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_getExterior@{Temperature\_i\_getExterior}}
+\index{Temperature\_i\_getExterior@{Temperature\_i\_getExterior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_getExterior()}{Temperature\_i\_getExterior()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+get\+Exterior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the exterior temperature value. 
+
+function that delivers the value of the exterior temperature
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature_8c_a1699ec48fd7b83d2181fec28f44fe803}\label{_temperature_8c_a1699ec48fd7b83d2181fec28f44fe803}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_getInterior@{Temperature\_i\_getInterior}}
+\index{Temperature\_i\_getInterior@{Temperature\_i\_getInterior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_getInterior()}{Temperature\_i\_getInterior()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+get\+Interior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the interior temperature value. 
+
+function that delivers the value of the interior temperature
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature_8c_a290e03a18d4f3927e728ef47388f8fec}\label{_temperature_8c_a290e03a18d4f3927e728ef47388f8fec}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_Hysteresis@{Temperature\_i\_Hysteresis}}
+\index{Temperature\_i\_Hysteresis@{Temperature\_i\_Hysteresis}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_Hysteresis()}{Temperature\_i\_Hysteresis()}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Hysteresis (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{Temperature\+\_\+i\+\_\+\+Previous\+Temperature,  }\item[{int32\+\_\+t}]{Temperature\+\_\+i\+\_\+\+Current\+Temperature }\end{DoxyParamCaption})}
+
+
+
+Verifies if the new temperature has a difference of at least HYST\+\_\+\+TRIGGER\+\_\+\+LEVEL celsius degrees from the old temperature. Returns the current temperature value when the difference of values is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Temperature\+\_\+i\+\_\+\+Previous\+Temperature} & The old temperature \\
+\hline
+{\em Temperature\+\_\+i\+\_\+\+Current\+Temperature} & The current temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature_8c_a9eb11328c9dcd6cb930c799c536e867a}\label{_temperature_8c_a9eb11328c9dcd6cb930c799c536e867a}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_t\_CheckValidity@{Temperature\_t\_CheckValidity}}
+\index{Temperature\_t\_CheckValidity@{Temperature\_t\_CheckValidity}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_t\_CheckValidity()}{Temperature\_t\_CheckValidity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} Temperature\+\_\+t\+\_\+\+Check\+Validity (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{Temperature\+\_\+i\+\_\+\+Value }\end{DoxyParamCaption})}
+
+
+
+Filter the given value Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case the value is inside the chosen interval. Returns TEMPERATURE\+\_\+i\+\_\+\+OUTSIDE\+\_\+\+INTERVAL in case the value is outside the interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Temperature\+\_\+i\+\_\+\+Value} & The value to be filtered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temperature\+\_\+err\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_temperature_8c_a7fda4c92be0fb6028f5f4ee4b275d4f7}\label{_temperature_8c_a7fda4c92be0fb6028f5f4ee4b275d4f7}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_t\_findDevice@{Temperature\_t\_findDevice}}
+\index{Temperature\_t\_findDevice@{Temperature\_t\_findDevice}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_t\_findDevice()}{Temperature\_t\_findDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} Temperature\+\_\+t\+\_\+find\+Device (\begin{DoxyParamCaption}\item[{char $\ast$}]{Temperature\+\_\+pc\+\_\+\+ROMCode,  }\item[{int $\ast$}]{Temperature\+\_\+pi\+\_\+\+Device\+Number }\end{DoxyParamCaption})}
+
+
+
+Search for a device rom-\/code in the array of devices. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case it is found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Temperature\+\_\+pc\+\_\+\+ROMCode} & The rom\+\_\+code to be searched \\
+\hline
+{\em Temperature\+\_\+pi\+\_\+\+Device\+Number} & The position of the searched device in the array devices\mbox{[}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temperature\+\_\+err\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temperature_8c_a7fda4c92be0fb6028f5f4ee4b275d4f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temperature_8c_a54ba9447bb398b502c992e6b5891e1a6}\label{_temperature_8c_a54ba9447bb398b502c992e6b5891e1a6}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_t\_Read\_Exterior@{Temperature\_t\_Read\_Exterior}}
+\index{Temperature\_t\_Read\_Exterior@{Temperature\_t\_Read\_Exterior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_t\_Read\_Exterior()}{Temperature\_t\_Read\_Exterior()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} Temperature\+\_\+t\+\_\+\+Read\+\_\+\+Exterior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the exterior sensor\textquotesingle{}s temperature if connected to the one-\/wire bus. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case of success. 
+
+\begin{DoxyReturn}{Returns}
+temperature\+\_\+err\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temperature_8c_a54ba9447bb398b502c992e6b5891e1a6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temperature_8c_af776dd37d0559408f7c6212b10fa7299}\label{_temperature_8c_af776dd37d0559408f7c6212b10fa7299}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_t\_Read\_Interior@{Temperature\_t\_Read\_Interior}}
+\index{Temperature\_t\_Read\_Interior@{Temperature\_t\_Read\_Interior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_t\_Read\_Interior()}{Temperature\_t\_Read\_Interior()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\+\_\+err\+\_\+t}} Temperature\+\_\+t\+\_\+\+Read\+\_\+\+Interior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the interior sensor\textquotesingle{}s temperature if connected to the one-\/wire bus. Returns TEMPERATURE\+\_\+i\+\_\+\+SUCCESS in case of success. 
+
+\begin{DoxyReturn}{Returns}
+temperature\+\_\+err\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temperature_8c_af776dd37d0559408f7c6212b10fa7299_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temperature_8c_a314addcb1ff10ae748e5461eccfe7171}\label{_temperature_8c_a314addcb1ff10ae748e5461eccfe7171}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_v\_FilterDeviceTemperature@{Temperature\_v\_FilterDeviceTemperature}}
+\index{Temperature\_v\_FilterDeviceTemperature@{Temperature\_v\_FilterDeviceTemperature}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_v\_FilterDeviceTemperature()}{Temperature\_v\_FilterDeviceTemperature()}}
+{\footnotesize\ttfamily void Temperature\+\_\+v\+\_\+\+Filter\+Device\+Temperature (\begin{DoxyParamCaption}\item[{bool}]{Temperature\+\_\+b\+\_\+\+Exterior\+VSInterior\+Device }\end{DoxyParamCaption})}
+
+
+
+Filter the chosen devices\textquotesingle{} temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Temperature\+\_\+b\+\_\+\+Exterior\+VSInterior\+Device} & Variable which tells the function if the filtering is for the interior temperature or the exterior temperature \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_temperature_8c_a04dad00b0c5141a77c095babad5afa0e}\label{_temperature_8c_a04dad00b0c5141a77c095babad5afa0e}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_v\_Init@{Temperature\_v\_Init}}
+\index{Temperature\_v\_Init@{Temperature\_v\_Init}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_v\_Init()}{Temperature\_v\_Init()}}
+{\footnotesize\ttfamily void Temperature\+\_\+v\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise the One-\/\+Wire Bus and connect the temperature sensors. 
+
+function that initialises the one wire bus \mbox{\Hypertarget{_temperature_8c_ad9f390dd122342b0943b13f5fd17a0fd}\label{_temperature_8c_ad9f390dd122342b0943b13f5fd17a0fd}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_v\_Read\_Temperature@{Temperature\_v\_Read\_Temperature}}
+\index{Temperature\_v\_Read\_Temperature@{Temperature\_v\_Read\_Temperature}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_v\_Read\_Temperature()}{Temperature\_v\_Read\_Temperature()}}
+{\footnotesize\ttfamily void Temperature\+\_\+v\+\_\+\+Read\+\_\+\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the sensor\textquotesingle{}s temperatures. In case debug mode os one, it showcases the read values of the temperature. 
+
+function that reads the temperature values from the temperature sensors (must be repeated in a cycle) \texorpdfstring{$<$}{<} read interior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read exterior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read interior temperature and check if errors
+
+\texorpdfstring{$<$}{<} read exterior temperature and check if errors
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_temperature_8c_a78ac6e8f1719bee14067c7fa3984f126}\label{_temperature_8c_a78ac6e8f1719bee14067c7fa3984f126}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_Exterior@{Temperature\_i\_Exterior}}
+\index{Temperature\_i\_Exterior@{Temperature\_i\_Exterior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_Exterior}{Temperature\_i\_Exterior}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Exterior}
+
+
+
+variable that can be seen by other modules 
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) \mbox{\Hypertarget{_temperature_8c_ace8c6d7d447cf9bc514e326873fa1b4b}\label{_temperature_8c_ace8c6d7d447cf9bc514e326873fa1b4b}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_i\_Interior@{Temperature\_i\_Interior}}
+\index{Temperature\_i\_Interior@{Temperature\_i\_Interior}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_i\_Interior}{Temperature\_i\_Interior}}
+{\footnotesize\ttfamily int32\+\_\+t Temperature\+\_\+i\+\_\+\+Interior}
+
+
+
+variable that can be seen by other modules 
+
+interior value in case some module needs it (modifying this does not modify the true value of the temperature) \mbox{\Hypertarget{_temperature_8c_ae7491da64f33e814fea804f7ebca17ea}\label{_temperature_8c_ae7491da64f33e814fea804f7ebca17ea}} 
+\index{Temperature.c@{Temperature.c}!Temperature\_vi\_NumDevices@{Temperature\_vi\_NumDevices}}
+\index{Temperature\_vi\_NumDevices@{Temperature\_vi\_NumDevices}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{Temperature\_vi\_NumDevices}{Temperature\_vi\_NumDevices}}
+{\footnotesize\ttfamily volatile int Temperature\+\_\+vi\+\_\+\+Num\+Devices}
+
+
+
+store the number of connected devices on the One-\/\+Wire Bus 
+

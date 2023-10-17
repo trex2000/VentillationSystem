@@ -1,0 +1,114 @@
+\hypertarget{_n_v_m___interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+NVM/src/\+NVM\+\_\+\+Interface.h File Reference}
+\label{_n_v_m___interface_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Interface.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Interface.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_adf2090522f4ed062b57807ff9803cd21}\label{_n_v_m___interface_8h_adf2090522f4ed062b57807ff9803cd21}} 
+\#define {\bfseries NVM\+\_\+\+OK}~0
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_ad11c353b66e20b31724da4a5ba352d36}\label{_n_v_m___interface_8h_ad11c353b66e20b31724da4a5ba352d36}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+ON\+\_\+\+HOLD}~1
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_a7a6802eaf4ceabfd352cfbb45a452079}\label{_n_v_m___interface_8h_a7a6802eaf4ceabfd352cfbb45a452079}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+OPEN}~2
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_a34c77dffff9216d846b3f1437686f41e}\label{_n_v_m___interface_8h_a34c77dffff9216d846b3f1437686f41e}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+VALUE\+\_\+\+NOT\+\_\+\+FOUND}~3
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_ab9716bdc7305c9006138b1db053f85d2}\label{_n_v_m___interface_8h_ab9716bdc7305c9006138b1db053f85d2}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+READ}~4
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_aad084b8fd044b7d14951cf29ac695336}\label{_n_v_m___interface_8h_aad084b8fd044b7d14951cf29ac695336}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+WRITE}~5
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_a80d85ba675cc186d76d5090b9f614114}\label{_n_v_m___interface_8h_a80d85ba675cc186d76d5090b9f614114}} 
+\#define {\bfseries NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND}~6
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}\label{_n_v_m___interface_8h_ab7bb3d13cbe2d17d0626a5c49495087c}} 
+typedef int {\bfseries nvm\+\_\+err\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_n_v_m___interface_8h_af1e39921a4a96519c8695eb482970433}\label{_n_v_m___interface_8h_af1e39921a4a96519c8695eb482970433}} 
+void \mbox{\hyperlink{_n_v_m___interface_8h_af1e39921a4a96519c8695eb482970433}{NVM\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializer function for the Non-\/volatile memory module. \end{DoxyCompactList}\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___interface_8h_aa24de317b341b012c7426ad0b5892217}{NVM\+\_\+get\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. \end{DoxyCompactList}\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___interface_8h_ad2235df39221c32039006578bc8d3e8f}{NVM\+\_\+set\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:tudor.coroian@altran.com}{\texttt{ tudor.\+coroian@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_n_v_m___interface_8h}{NVM\+\_\+\+Interface.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Tudor Coroian 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_v_m___interface_8h_aa24de317b341b012c7426ad0b5892217}\label{_n_v_m___interface_8h_aa24de317b341b012c7426ad0b5892217}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_getWifiCredentials@{NVM\_getWifiCredentials}}
+\index{NVM\_getWifiCredentials@{NVM\_getWifiCredentials}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_getWifiCredentials()}{NVM\_getWifiCredentials()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+get\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___interface_8h_ad2235df39221c32039006578bc8d3e8f}\label{_n_v_m___interface_8h_ad2235df39221c32039006578bc8d3e8f}} 
+\index{NVM\_Interface.h@{NVM\_Interface.h}!NVM\_setWifiCredentials@{NVM\_setWifiCredentials}}
+\index{NVM\_setWifiCredentials@{NVM\_setWifiCredentials}!NVM\_Interface.h@{NVM\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{NVM\_setWifiCredentials()}{NVM\_setWifiCredentials()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+set\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}

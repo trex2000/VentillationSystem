@@ -1,0 +1,229 @@
+\hypertarget{_r_t_o_s___a_p_i_8c}{}\doxysection{C\+:/\+Users/\+Work/\+Desktop/\+SAE\+\_\+\+Clone/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+API.c File Reference}
+\label{_r_t_o_s___a_p_i_8c}\index{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_API.c@{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_API.c}}
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}NVM\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}WIFI\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FAN\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temperature\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}NTP\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTC\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Time\+Management\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}GPIO\+\_\+\+GPIO.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Humidity\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MQTT\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Comfort\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}LED\+\_\+\+Interface.\+h\char`\"{}}\newline
+Include dependency graph for RTOS\+\_\+\+API.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a8109a7b6c2286f462ffa3c8b037c2b7c}{rtos\+Network\+Init\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called in the startup routine, runs on core 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a815e9f03259b5b0d11d373d803dbcf09}{rtos\+Init\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called in the startup routine, runs on core 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a9b835fd19dadb0125d4ebc70146c9542}{rtos\+MQTTInit\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called in the startup routine, runs on core 0, just for MQTT, after all other tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a63d10edbf4e193eb96f957cc831aad90}{rtos5ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called every 5ms during runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a3cd6c0af145eb16344f91df4774d182f}{rtos50ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called every 50ms during runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a365056cc5bf636a275c35e5cb1731738}{rtos500ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called every 500ms during runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_ad5d72d41aa06d3776e073dcc71dbba4f}{rtos1000ms\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called every 1000ms during runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_a1c955493f77a58c5faab7b0d4446ec52}{rtos1min\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called every 1 min during runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949}{rtos\+Shutdown\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Is called before a controlled reboot/shutdown. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_r_t_o_s___a_p_i_8c}{RTOS\+\_\+\+API.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Holds RTOS runtime functions that will hold calls for various submodule API functions, in order to run them. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_ad5d72d41aa06d3776e073dcc71dbba4f}\label{_r_t_o_s___a_p_i_8c_ad5d72d41aa06d3776e073dcc71dbba4f}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtos1000msTask@{rtos1000msTask}}
+\index{rtos1000msTask@{rtos1000msTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtos1000msTask()}{rtos1000msTask()}}
+{\footnotesize\ttfamily void rtos1000ms\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called every 1000ms during runtime. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_ad5d72d41aa06d3776e073dcc71dbba4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a1c955493f77a58c5faab7b0d4446ec52}\label{_r_t_o_s___a_p_i_8c_a1c955493f77a58c5faab7b0d4446ec52}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtos1minTask@{rtos1minTask}}
+\index{rtos1minTask@{rtos1minTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtos1minTask()}{rtos1minTask()}}
+{\footnotesize\ttfamily void rtos1min\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called every 1 min during runtime. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a1c955493f77a58c5faab7b0d4446ec52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a365056cc5bf636a275c35e5cb1731738}\label{_r_t_o_s___a_p_i_8c_a365056cc5bf636a275c35e5cb1731738}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtos500msTask@{rtos500msTask}}
+\index{rtos500msTask@{rtos500msTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtos500msTask()}{rtos500msTask()}}
+{\footnotesize\ttfamily void rtos500ms\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called every 500ms during runtime. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a365056cc5bf636a275c35e5cb1731738_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a3cd6c0af145eb16344f91df4774d182f}\label{_r_t_o_s___a_p_i_8c_a3cd6c0af145eb16344f91df4774d182f}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtos50msTask@{rtos50msTask}}
+\index{rtos50msTask@{rtos50msTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtos50msTask()}{rtos50msTask()}}
+{\footnotesize\ttfamily void rtos50ms\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called every 50ms during runtime. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a3cd6c0af145eb16344f91df4774d182f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a63d10edbf4e193eb96f957cc831aad90}\label{_r_t_o_s___a_p_i_8c_a63d10edbf4e193eb96f957cc831aad90}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtos5msTask@{rtos5msTask}}
+\index{rtos5msTask@{rtos5msTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtos5msTask()}{rtos5msTask()}}
+{\footnotesize\ttfamily void rtos5ms\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called every 5ms during runtime. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a63d10edbf4e193eb96f957cc831aad90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a815e9f03259b5b0d11d373d803dbcf09}\label{_r_t_o_s___a_p_i_8c_a815e9f03259b5b0d11d373d803dbcf09}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtosInitTask@{rtosInitTask}}
+\index{rtosInitTask@{rtosInitTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtosInitTask()}{rtosInitTask()}}
+{\footnotesize\ttfamily void rtos\+Init\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called in the startup routine, runs on core 0. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a815e9f03259b5b0d11d373d803dbcf09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a9b835fd19dadb0125d4ebc70146c9542}\label{_r_t_o_s___a_p_i_8c_a9b835fd19dadb0125d4ebc70146c9542}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtosMQTTInitTask@{rtosMQTTInitTask}}
+\index{rtosMQTTInitTask@{rtosMQTTInitTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtosMQTTInitTask()}{rtosMQTTInitTask()}}
+{\footnotesize\ttfamily void rtos\+MQTTInit\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called in the startup routine, runs on core 0, just for MQTT, after all other tasks. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a9b835fd19dadb0125d4ebc70146c9542_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_a8109a7b6c2286f462ffa3c8b037c2b7c}\label{_r_t_o_s___a_p_i_8c_a8109a7b6c2286f462ffa3c8b037c2b7c}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtosNetworkInitTask@{rtosNetworkInitTask}}
+\index{rtosNetworkInitTask@{rtosNetworkInitTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtosNetworkInitTask()}{rtosNetworkInitTask()}}
+{\footnotesize\ttfamily void rtos\+Network\+Init\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called in the startup routine, runs on core 1. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_a8109a7b6c2286f462ffa3c8b037c2b7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949}\label{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949}} 
+\index{RTOS\_API.c@{RTOS\_API.c}!rtosShutdownTask@{rtosShutdownTask}}
+\index{rtosShutdownTask@{rtosShutdownTask}!RTOS\_API.c@{RTOS\_API.c}}
+\doxysubsubsection{\texorpdfstring{rtosShutdownTask()}{rtosShutdownTask()}}
+{\footnotesize\ttfamily void rtos\+Shutdown\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Is called before a controlled reboot/shutdown. 
+
+\begin{DoxyWarning}{Warning}
+Will not be called if reboot is unexpected 
+\end{DoxyWarning}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949_icgraph}
+\end{center}
+\end{figure}

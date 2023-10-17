@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "nvm_config.h": "c",
+        "esp_system.h": "c",
+        "sdkconfig.h": "c",
+        "esp_attr.h": "c",
+        "esp_err.h": "c",
+        "freertos.h": "c",
+        "task.h": "c",
+        "stdbool.h": "c",
+        "temperature_interface.h": "c",
+        "temperature_config.h": "c",
+        "gpio_interface.h": "c",
+        "cstddef": "c",
+        "nvs_flash.h": "c",
+        "humid_control.h": "c",
+        "humid_config.h": "c",
+        "humidity_control.h": "c",
+        "humidity_interface.h": "c",
+        "ctime": "cpp",
+        "rtos_interface.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false,
+    "cmake.configureOnOpen": true
+}

@@ -1,0 +1,163 @@
+\hypertarget{_webserver___interface_8h}{}\doxysection{Webserver\+\_\+\+STA/src/\+Webserver\+\_\+\+Interface.h File Reference}
+\label{_webserver___interface_8h}\index{Webserver\_STA/src/Webserver\_Interface.h@{Webserver\_STA/src/Webserver\_Interface.h}}
+{\ttfamily \#include \char`\"{}Webserver.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Comfort\+\_\+\+Interface.\+h\char`\"{}}\newline
+Include dependency graph for Webserver\+\_\+\+Interface.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{_webserver___interface_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159}{WEBSOCKET\+\_\+\+REQUEST\+\_\+\+FLAG}} \{ \newline
+\mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa0a1f75751da659353767a794eda027e}{FAN\+\_\+\+SPEED\+\_\+\+LOW}} = 0
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a7a54c2b5000e622c42efbe81f252b9a9}{FAN\+\_\+\+SPEED\+\_\+\+MED}} = 1
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159ac561ee71fd9d9556b00cdfab3cc91a85}{FAN\+\_\+\+SPEED\+\_\+\+HIGH}} = 2
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa73d8e1c42f82f0815afa11903340e9c}{FAN\+\_\+\+MODE\+\_\+\+REC}} = 3
+, \newline
+\mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a57c19cda2fceb18b80f9ebf730d55807}{FAN\+\_\+\+MODE\+\_\+\+NONREC}} = 4
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a3ad2b144505d3af94b96e61975b28851}{FAN\+\_\+\+MODE\+\_\+\+IN\+\_\+\+OUT}} = 5
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a4de2766d2660e089b89b14e0443d4cb8}{FAN\+\_\+\+MODE\+\_\+\+OUT\+\_\+\+IN}} = 6
+, \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a47303523d936192c30279a49cc274323}{DATA\+\_\+\+REQUEST}} = 7
+, \newline
+\mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159abc690f10aa90e7013c1d0c5716c91bff}{FAN\+\_\+\+SPEED\+\_\+\+OFF}} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_webserver___interface_8h_a7a80d16ac9306d4bd0c065f33ba516d1}{get\+Webserver\+Number\+Buffers}} (int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Get the number of needed buffer reads when Webserver file is split into chunks of given size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_webserver___interface_8h_a78ee4a33d99384679628349b4bb4a406}{get\+Webserver\+Buffer\+Index}} (int index, int buffer\+Size, const uint8\+\_\+t $\ast$$\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Get a pointer to the nth chunk of the HTML file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_webserver___interface_8h_a57f838aaf738eff2ab2e0ad4522b28d3}{compile\+Data\+Packet}} (uint8\+\_\+t $\ast$data\+Buffer)
+\begin{DoxyCompactList}\small\item\em Compiles the JSON content to be sent as a reply to the webserver data request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_webserver___interface_8h}{Webserver\+\_\+\+Interface.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+16 
+\end{DoxyParagraph}
+
+
+Defines infrastructure for timer handling. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159}} 
+\index{Webserver\_Interface.h@{Webserver\_Interface.h}!WEBSOCKET\_REQUEST\_FLAG@{WEBSOCKET\_REQUEST\_FLAG}}
+\index{WEBSOCKET\_REQUEST\_FLAG@{WEBSOCKET\_REQUEST\_FLAG}!Webserver\_Interface.h@{Webserver\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{WEBSOCKET\_REQUEST\_FLAG}{WEBSOCKET\_REQUEST\_FLAG}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159}{WEBSOCKET\+\_\+\+REQUEST\+\_\+\+FLAG}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_SPEED\_LOW@{FAN\_SPEED\_LOW}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_SPEED\_LOW@{FAN\_SPEED\_LOW}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa0a1f75751da659353767a794eda027e}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa0a1f75751da659353767a794eda027e}} 
+FAN\+\_\+\+SPEED\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_SPEED\_MED@{FAN\_SPEED\_MED}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_SPEED\_MED@{FAN\_SPEED\_MED}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a7a54c2b5000e622c42efbe81f252b9a9}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a7a54c2b5000e622c42efbe81f252b9a9}} 
+FAN\+\_\+\+SPEED\+\_\+\+MED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_SPEED\_HIGH@{FAN\_SPEED\_HIGH}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_SPEED\_HIGH@{FAN\_SPEED\_HIGH}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159ac561ee71fd9d9556b00cdfab3cc91a85}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159ac561ee71fd9d9556b00cdfab3cc91a85}} 
+FAN\+\_\+\+SPEED\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_MODE\_REC@{FAN\_MODE\_REC}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_MODE\_REC@{FAN\_MODE\_REC}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa73d8e1c42f82f0815afa11903340e9c}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159aa73d8e1c42f82f0815afa11903340e9c}} 
+FAN\+\_\+\+MODE\+\_\+\+REC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_MODE\_NONREC@{FAN\_MODE\_NONREC}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_MODE\_NONREC@{FAN\_MODE\_NONREC}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a57c19cda2fceb18b80f9ebf730d55807}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a57c19cda2fceb18b80f9ebf730d55807}} 
+FAN\+\_\+\+MODE\+\_\+\+NONREC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_MODE\_IN\_OUT@{FAN\_MODE\_IN\_OUT}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_MODE\_IN\_OUT@{FAN\_MODE\_IN\_OUT}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a3ad2b144505d3af94b96e61975b28851}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a3ad2b144505d3af94b96e61975b28851}} 
+FAN\+\_\+\+MODE\+\_\+\+IN\+\_\+\+OUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_MODE\_OUT\_IN@{FAN\_MODE\_OUT\_IN}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_MODE\_OUT\_IN@{FAN\_MODE\_OUT\_IN}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a4de2766d2660e089b89b14e0443d4cb8}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a4de2766d2660e089b89b14e0443d4cb8}} 
+FAN\+\_\+\+MODE\+\_\+\+OUT\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_REQUEST@{DATA\_REQUEST}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!DATA\_REQUEST@{DATA\_REQUEST}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a47303523d936192c30279a49cc274323}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159a47303523d936192c30279a49cc274323}} 
+DATA\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAN\_SPEED\_OFF@{FAN\_SPEED\_OFF}!Webserver\_Interface.h@{Webserver\_Interface.h}}\index{Webserver\_Interface.h@{Webserver\_Interface.h}!FAN\_SPEED\_OFF@{FAN\_SPEED\_OFF}}}\mbox{\Hypertarget{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159abc690f10aa90e7013c1d0c5716c91bff}\label{_webserver___interface_8h_ab47226b8141e5207f54aca0d7fc14159abc690f10aa90e7013c1d0c5716c91bff}} 
+FAN\+\_\+\+SPEED\+\_\+\+OFF&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_webserver___interface_8h_a57f838aaf738eff2ab2e0ad4522b28d3}\label{_webserver___interface_8h_a57f838aaf738eff2ab2e0ad4522b28d3}} 
+\index{Webserver\_Interface.h@{Webserver\_Interface.h}!compileDataPacket@{compileDataPacket}}
+\index{compileDataPacket@{compileDataPacket}!Webserver\_Interface.h@{Webserver\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{compileDataPacket()}{compileDataPacket()}}
+{\footnotesize\ttfamily int compile\+Data\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Compiles the JSON content to be sent as a reply to the webserver data request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Buffer} & The buffer where the JSON will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the JSON 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_webserver___interface_8h_a78ee4a33d99384679628349b4bb4a406}\label{_webserver___interface_8h_a78ee4a33d99384679628349b4bb4a406}} 
+\index{Webserver\_Interface.h@{Webserver\_Interface.h}!getWebserverBufferIndex@{getWebserverBufferIndex}}
+\index{getWebserverBufferIndex@{getWebserverBufferIndex}!Webserver\_Interface.h@{Webserver\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{getWebserverBufferIndex()}{getWebserverBufferIndex()}}
+{\footnotesize\ttfamily int get\+Webserver\+Buffer\+Index (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{buffer\+Size,  }\item[{const uint8\+\_\+t $\ast$$\ast$}]{pointer }\end{DoxyParamCaption})}
+
+
+
+Get a pointer to the nth chunk of the HTML file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the chunk (starts at 0) \\
+\hline
+{\em buffer\+Size} & The maximum size of the chunks \\
+\hline
+{\em pointer} & The address where the pointer to the chunk memory location will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the selected buffer (will be smaller than buffer\+Size if at end of file and not enough data left) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_webserver___interface_8h_a7a80d16ac9306d4bd0c065f33ba516d1}\label{_webserver___interface_8h_a7a80d16ac9306d4bd0c065f33ba516d1}} 
+\index{Webserver\_Interface.h@{Webserver\_Interface.h}!getWebserverNumberBuffers@{getWebserverNumberBuffers}}
+\index{getWebserverNumberBuffers@{getWebserverNumberBuffers}!Webserver\_Interface.h@{Webserver\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{getWebserverNumberBuffers()}{getWebserverNumberBuffers()}}
+{\footnotesize\ttfamily int get\+Webserver\+Number\+Buffers (\begin{DoxyParamCaption}\item[{int}]{buffer\+Size }\end{DoxyParamCaption})}
+
+
+
+Get the number of needed buffer reads when Webserver file is split into chunks of given size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Size} & The size of one buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of buffers 
+\end{DoxyReturn}

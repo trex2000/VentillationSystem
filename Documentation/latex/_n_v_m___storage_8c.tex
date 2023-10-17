@@ -1,0 +1,139 @@
+\hypertarget{_n_v_m___storage_8c}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+NVM/src/\+NVM\+\_\+\+Storage.c File Reference}
+\label{_n_v_m___storage_8c}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Storage.c@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/NVM/src/NVM\_Storage.c}}
+{\ttfamily \#include \char`\"{}NVM\+\_\+\+Storage.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___storage_8c_a2f3b8cbbe264debc5a7246a99674300e}{NVM\+\_\+read\+\_\+str}} (const char $\ast$key, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read a string value stored at the specified key. Returns NVM\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___storage_8c_ae492b16ca307262eb670e266d71e7771}{NVM\+\_\+write\+\_\+str}} (const char $\ast$key, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write a string value at the specified key. Return NVM\+\_\+\+OK in case of success. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_n_v_m___storage_8c_af1e39921a4a96519c8695eb482970433}\label{_n_v_m___storage_8c_af1e39921a4a96519c8695eb482970433}} 
+void \mbox{\hyperlink{_n_v_m___storage_8c_af1e39921a4a96519c8695eb482970433}{NVM\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializer function for the Non-\/volatile memory module. \end{DoxyCompactList}\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___storage_8c_aa24de317b341b012c7426ad0b5892217}{NVM\+\_\+get\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. \end{DoxyCompactList}\item 
+nvm\+\_\+err\+\_\+t \mbox{\hyperlink{_n_v_m___storage_8c_ad2235df39221c32039006578bc8d3e8f}{NVM\+\_\+set\+Wifi\+Credentials}} (char $\ast$ssid, char $\ast$pwd)
+\begin{DoxyCompactList}\small\item\em Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_n_v_m___storage_8c_ad04cd8abf18fd98f868181e898816124}\label{_n_v_m___storage_8c_ad04cd8abf18fd98f868181e898816124}} 
+const char $\ast$ \mbox{\hyperlink{_n_v_m___storage_8c_ad04cd8abf18fd98f868181e898816124}{CONST\+\_\+\+NVM\+\_\+ssid}} = \char`\"{}SSID\char`\"{}
+\begin{DoxyCompactList}\small\item\em Store the key for reading and writing the SSID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_n_v_m___storage_8c_ab5240e25a75c7a1df2c80dbe6fdcfbad}\label{_n_v_m___storage_8c_ab5240e25a75c7a1df2c80dbe6fdcfbad}} 
+const char $\ast$ \mbox{\hyperlink{_n_v_m___storage_8c_ab5240e25a75c7a1df2c80dbe6fdcfbad}{CONST\+\_\+\+NVM\+\_\+pwd}} = \char`\"{}password\char`\"{}
+\begin{DoxyCompactList}\small\item\em Store the key for reading and writing the password for connecting to a network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:tudor.coroian@altran.com}{\texttt{ tudor.\+coroian@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_n_v_m___storage_8c}{NVM\+\_\+\+Storage.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Tudor Coroian 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_v_m___storage_8c_aa24de317b341b012c7426ad0b5892217}\label{_n_v_m___storage_8c_aa24de317b341b012c7426ad0b5892217}} 
+\index{NVM\_Storage.c@{NVM\_Storage.c}!NVM\_getWifiCredentials@{NVM\_getWifiCredentials}}
+\index{NVM\_getWifiCredentials@{NVM\_getWifiCredentials}!NVM\_Storage.c@{NVM\_Storage.c}}
+\doxysubsubsection{\texorpdfstring{NVM\_getWifiCredentials()}{NVM\_getWifiCredentials()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+get\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Get the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+NO\+\_\+\+CREDENTIALS\+\_\+\+FOUND if one of the credentials was not found in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___storage_8c_a2f3b8cbbe264debc5a7246a99674300e}\label{_n_v_m___storage_8c_a2f3b8cbbe264debc5a7246a99674300e}} 
+\index{NVM\_Storage.c@{NVM\_Storage.c}!NVM\_read\_str@{NVM\_read\_str}}
+\index{NVM\_read\_str@{NVM\_read\_str}!NVM\_Storage.c@{NVM\_Storage.c}}
+\doxysubsubsection{\texorpdfstring{NVM\_read\_str()}{NVM\_read\_str()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+read\+\_\+str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Read a string value stored at the specified key. Returns NVM\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The name of the stored value \\
+\hline
+{\em value} & The actual value written in memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___storage_8c_ad2235df39221c32039006578bc8d3e8f}\label{_n_v_m___storage_8c_ad2235df39221c32039006578bc8d3e8f}} 
+\index{NVM\_Storage.c@{NVM\_Storage.c}!NVM\_setWifiCredentials@{NVM\_setWifiCredentials}}
+\index{NVM\_setWifiCredentials@{NVM\_setWifiCredentials}!NVM\_Storage.c@{NVM\_Storage.c}}
+\doxysubsubsection{\texorpdfstring{NVM\_setWifiCredentials()}{NVM\_setWifiCredentials()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+set\+Wifi\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{ssid,  }\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Store the Wi\+Fi credentials stored in the non-\/volatile memory. Return NVM\+\_\+\+ERR\+\_\+\+WRITE if the values were not written in the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & Used to store the actual value for the SSID \\
+\hline
+{\em pwd} & Used to store the actual value for the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_v_m___storage_8c_ae492b16ca307262eb670e266d71e7771}\label{_n_v_m___storage_8c_ae492b16ca307262eb670e266d71e7771}} 
+\index{NVM\_Storage.c@{NVM\_Storage.c}!NVM\_write\_str@{NVM\_write\_str}}
+\index{NVM\_write\_str@{NVM\_write\_str}!NVM\_Storage.c@{NVM\_Storage.c}}
+\doxysubsubsection{\texorpdfstring{NVM\_write\_str()}{NVM\_write\_str()}}
+{\footnotesize\ttfamily nvm\+\_\+err\+\_\+t NVM\+\_\+write\+\_\+str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a string value at the specified key. Return NVM\+\_\+\+OK in case of success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The name of the stored value \\
+\hline
+{\em value} & The actual value written in memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nvm\+\_\+err\+\_\+t 
+\end{DoxyReturn}

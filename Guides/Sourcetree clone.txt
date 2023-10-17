@@ -1,0 +1,18 @@
+1. Gitlab -> dreapta sus -> edit profile -> Access tokens
+2.
+	Token name: Sourcetree (sau ce vreti voi)
+	Expiration date: fara
+	Select scopes: bifati tot
+3.Create personal access token
+4.Dati copy la token si salvati undeva
+5.Sourcetree -> Remote (new tab daca nu apare) -> Add an account
+6.	
+	Hosting service: GitLab
+	Refresh personal access token
+		Username: user-ul din gitlab (@userulmeu)
+		Password: token-ul copiat mai devreme (punctul 4)
+	Dupa bifa verde, ok
+7.Refresh, daca nu appare nimic, bifati si debifati Show organization repos
+8.Smart Air Exchanger -> Clone -> Alege locatia -> Clone
+
+DONE!

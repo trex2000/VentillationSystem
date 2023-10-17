@@ -1,0 +1,159 @@
+\hypertarget{_r_t_o_s___utils_8c}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+Utils.c File Reference}
+\label{_r_t_o_s___utils_8c}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Utils.c@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Utils.c}}
+{\ttfamily \#include $<$freertos/\+Free\+RTOS.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/task.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/timers.\+h$>$}\newline
+{\ttfamily \#include $<$freertos/event\+\_\+groups.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+system.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Utils.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m_e_r___a_r_g_u_m_e_n_t_s}{TIMER\+\_\+\+ARGUMENTS}}
+\begin{DoxyCompactList}\small\item\em Structure for storing all timer handles \mbox{[}0\mbox{]}=5ms, \mbox{[}1\mbox{]}=50ms, \mbox{[}2\mbox{]}=500ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}\label{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}} 
+\#define \mbox{\hyperlink{_r_t_o_s___utils_8c_a8c3155dadb8dec42896611bfc3a01462}{REBOOT\+\_\+\+FLAG}}~(1$<$$<$0)
+\begin{DoxyCompactList}\small\item\em Bit definition of the reboot flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a39fa99258a9fb3cea6983303f0637ffe}\label{_r_t_o_s___utils_8c_a39fa99258a9fb3cea6983303f0637ffe}} 
+\#define {\bfseries NUMBER\+\_\+\+OF\+\_\+\+TIMERS}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}{rtos\+Runtime\+Initializer}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Function used as a task callback. Will initialize runtime tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}{rtos\+Reboot\+Event\+Listener}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Function used as a task callback. Task has highest priority and waits suspended for reboot flag to be set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}{rtos5ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Calls assigned functions every 5ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}{rtos50ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Calls assigned functions every 50ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}{rtos500ms\+Task\+Wrapper}} (Timer\+Handle\+\_\+t x\+Timer)
+\begin{DoxyCompactList}\small\item\em Calls assigned functions every 500ms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7}\label{_r_t_o_s___utils_8c_af887cb986362f7031655a914667625f7}} 
+void {\bfseries rtos\+Startup\+Routine} ()
+\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297}\label{_r_t_o_s___utils_8c_a46e476a2b58954487784d7a6e9238297}} 
+void {\bfseries rtos\+Shutdown\+Routine} ()
+\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}\label{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}} 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a1837509919a7e51fe94409128a1742e2}{rtos\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Call this function from app\+\_\+main() in order to start the RTOS. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}\label{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}} 
+void \mbox{\hyperlink{_r_t_o_s___utils_8c_a0764e0fef6dbf64b5084ed455032d522}{rtos\+Reboot}} ()
+\begin{DoxyCompactList}\small\item\em Call this function from anywhere in order to trigger a reboot (will also execute the functions in \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949}{rtos\+Shutdown\+Task()}}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}\label{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}} 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a0cdc22be6c16ce501df69ec96a661468}{init\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the task that will initialize all other runtime tasks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}\label{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}} 
+Task\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_aaf4cbffb79e027dc75272cce4920c69e}{reboot\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle of the maximum priority task that will await suspended for the reboot flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}\label{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}} 
+\mbox{\hyperlink{struct_t_i_m_e_r___a_r_g_u_m_e_n_t_s}{TIMER\+\_\+\+ARGUMENTS}} \mbox{\hyperlink{_r_t_o_s___utils_8c_a41d688cb0be432c2a3653f0e19241b6f}{t\+Arg}}
+\begin{DoxyCompactList}\small\item\em Structure for the handles of the 3 different timers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}\label{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}} 
+Event\+Group\+Handle\+\_\+t \mbox{\hyperlink{_r_t_o_s___utils_8c_a0ba46bf38e06387ac4c3db52abbaecbf}{shutdown\+Event\+Group}}
+\begin{DoxyCompactList}\small\item\em Handle for the shutdown event group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_r_t_o_s___utils_8c}{RTOS\+\_\+\+Utils.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Implements RTOS task scheduling and timer initialization and operation 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}\label{_r_t_o_s___utils_8c_a16dc6f98248804491b36cb23e66c07e2}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos500msTaskWrapper@{rtos500msTaskWrapper}}
+\index{rtos500msTaskWrapper@{rtos500msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos500msTaskWrapper()}{rtos500msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos500ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Calls assigned functions every 500ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}\label{_r_t_o_s___utils_8c_a7b2bc3f5a473bf178abe6c81075881e0}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos50msTaskWrapper@{rtos50msTaskWrapper}}
+\index{rtos50msTaskWrapper@{rtos50msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos50msTaskWrapper()}{rtos50msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos50ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Calls assigned functions every 50ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}\label{_r_t_o_s___utils_8c_a06c5d5dd3ba66f0c256c555a7b9670ed}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtos5msTaskWrapper@{rtos5msTaskWrapper}}
+\index{rtos5msTaskWrapper@{rtos5msTaskWrapper}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtos5msTaskWrapper()}{rtos5msTaskWrapper()}}
+{\footnotesize\ttfamily void rtos5ms\+Task\+Wrapper (\begin{DoxyParamCaption}\item[{Timer\+Handle\+\_\+t}]{x\+Timer }\end{DoxyParamCaption})}
+
+
+
+Calls assigned functions every 5ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Timer} & RTOS requirement. Its timer handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}\label{_r_t_o_s___utils_8c_a8395e73a16a59b7dc81f93922f726dbc}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosRebootEventListener@{rtosRebootEventListener}}
+\index{rtosRebootEventListener@{rtosRebootEventListener}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosRebootEventListener()}{rtosRebootEventListener()}}
+{\footnotesize\ttfamily void rtos\+Reboot\+Event\+Listener (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Function used as a task callback. Task has highest priority and waits suspended for reboot flag to be set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & RTOS requirement. Receives placeholder (void$\ast$)0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}\label{_r_t_o_s___utils_8c_abafd99252fb1d709ed60157027e49def}} 
+\index{RTOS\_Utils.c@{RTOS\_Utils.c}!rtosRuntimeInitializer@{rtosRuntimeInitializer}}
+\index{rtosRuntimeInitializer@{rtosRuntimeInitializer}!RTOS\_Utils.c@{RTOS\_Utils.c}}
+\doxysubsubsection{\texorpdfstring{rtosRuntimeInitializer()}{rtosRuntimeInitializer()}}
+{\footnotesize\ttfamily void rtos\+Runtime\+Initializer (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Function used as a task callback. Will initialize runtime tasks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Will receive the structure that holds the timer handles, cast to void$\ast$ \\
+\hline
+\end{DoxyParams}

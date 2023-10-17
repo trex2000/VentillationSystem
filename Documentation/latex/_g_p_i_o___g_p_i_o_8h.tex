@@ -1,0 +1,107 @@
+\hypertarget{_g_p_i_o___g_p_i_o_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+GPIO/\+Src/\+GPIO\+\_\+\+GPIO.h File Reference}
+\label{_g_p_i_o___g_p_i_o_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/GPIO/Src/GPIO\_GPIO.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/GPIO/Src/GPIO\_GPIO.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_g_p_i_o___g_p_i_o_8h_a90363099dc984eccffd2a7ad34def32d}{GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize GPIO Pin for the selectet porpuse. Do not edit the existing GPIOTypes configuration! Create new configuration if it does not exist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o___g_p_i_o_8h_a6e3c383b9acd1582443be08bf4cfa292}{GPIO\+\_\+\+Set}} (unsigned char)
+\begin{DoxyCompactList}\small\item\em Set the value of the GPIO Pin to HIGH. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o___g_p_i_o_8h_ac64e3ec0e7493fa10c2b904cc1433a2c}{GPIO\+\_\+\+Get}} (unsigned char)
+\begin{DoxyCompactList}\small\item\em Get the value of the GPIO Pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o___g_p_i_o_8h_afcaa46d64c68a7cd6aa770fe95b9bf67}{GPIO\+\_\+\+Clear}} (unsigned char)
+\begin{DoxyCompactList}\small\item\em Set the value of the GPIO Pin to LOW. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Radu Larisa (\href{mailto:larisa.radu@altran.com}{\texttt{ larisa.\+radu@altran.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/04-\/09
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_g_p_i_o___g_p_i_o_8h}{GPIO\+\_\+\+GPIO.\+h}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Radu Larisa 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_g_p_i_o___g_p_i_o_8h_afcaa46d64c68a7cd6aa770fe95b9bf67}\label{_g_p_i_o___g_p_i_o_8h_afcaa46d64c68a7cd6aa770fe95b9bf67}} 
+\index{GPIO\_GPIO.h@{GPIO\_GPIO.h}!GPIO\_Clear@{GPIO\_Clear}}
+\index{GPIO\_Clear@{GPIO\_Clear}!GPIO\_GPIO.h@{GPIO\_GPIO.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Clear()}{GPIO\_Clear()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{unsigned char}]{gpio\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Set the value of the GPIO Pin to LOW. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+num} & GPIO Pin number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_g_p_i_o___g_p_i_o_8h_ac64e3ec0e7493fa10c2b904cc1433a2c}\label{_g_p_i_o___g_p_i_o_8h_ac64e3ec0e7493fa10c2b904cc1433a2c}} 
+\index{GPIO\_GPIO.h@{GPIO\_GPIO.h}!GPIO\_Get@{GPIO\_Get}}
+\index{GPIO\_Get@{GPIO\_Get}!GPIO\_GPIO.h@{GPIO\_GPIO.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Get()}{GPIO\_Get()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Get (\begin{DoxyParamCaption}\item[{unsigned char}]{gpio\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Get the value of the GPIO Pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+num} & GPIO Pin number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_g_p_i_o___g_p_i_o_8h_a90363099dc984eccffd2a7ad34def32d}\label{_g_p_i_o___g_p_i_o_8h_a90363099dc984eccffd2a7ad34def32d}} 
+\index{GPIO\_GPIO.h@{GPIO\_GPIO.h}!GPIO\_Init@{GPIO\_Init}}
+\index{GPIO\_Init@{GPIO\_Init}!GPIO\_GPIO.h@{GPIO\_GPIO.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Init()}{GPIO\_Init()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize GPIO Pin for the selectet porpuse. Do not edit the existing GPIOTypes configuration! Create new configuration if it does not exist. 
+
+GPIO\+\_\+\+Type\+\_\+1
+\begin{DoxyItemize}
+\item disable interrupt
+\item set as output mode ~\newline
+
+\item disable pull-\/down mode
+\item disable pull-\/up mode
+\end{DoxyItemize}\mbox{\Hypertarget{_g_p_i_o___g_p_i_o_8h_a6e3c383b9acd1582443be08bf4cfa292}\label{_g_p_i_o___g_p_i_o_8h_a6e3c383b9acd1582443be08bf4cfa292}} 
+\index{GPIO\_GPIO.h@{GPIO\_GPIO.h}!GPIO\_Set@{GPIO\_Set}}
+\index{GPIO\_Set@{GPIO\_Set}!GPIO\_GPIO.h@{GPIO\_GPIO.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Set()}{GPIO\_Set()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Set (\begin{DoxyParamCaption}\item[{unsigned char}]{gpio\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Set the value of the GPIO Pin to HIGH. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+num} & GPIO Pin number \\
+\hline
+\end{DoxyParams}

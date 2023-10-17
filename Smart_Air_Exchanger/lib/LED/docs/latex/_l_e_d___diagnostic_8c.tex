@@ -1,0 +1,366 @@
+\hypertarget{_l_e_d___diagnostic_8c}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+LED/src/\+LED\+\_\+\+Diagnostic.c File Reference}
+\label{_l_e_d___diagnostic_8c}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/LED/src/LED\_Diagnostic.c@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/LED/src/LED\_Diagnostic.c}}
+{\ttfamily \#include \char`\"{}LED\+\_\+\+Diagnostic.\+h\char`\"{}}\newline
+Include dependency graph for LED\+\_\+\+Diagnostic.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___diagnostic_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2e}{led\+\_\+color\+\_\+t}} \{ \newline
+\mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea48efdc7251c216c03324a687b9dc9805}{LED\+\_\+i\+\_\+\+GREEN}} = 0
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea69b0962230df6f94287f7f116687c277}{LED\+\_\+i\+\_\+\+RED}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eac026ae044cf84d671bc48b2b5e46276c}{LED\+\_\+i\+\_\+\+BLUE}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea4d6630ce0e9da8a6b2fbad2dc24f8ff9}{LED\+\_\+i\+\_\+\+YELLOW}}
+, \newline
+\mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafc771fdf7e2254ab691fadeb76490e95}{LED\+\_\+i\+\_\+\+MAGENTA}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea8658a049a3f5bce505f93d7f3feb564e}{LED\+\_\+i\+\_\+\+CYAN}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafa46133011d7a7dd46275e84cb7d138c}{LED\+\_\+i\+\_\+\+ORANGE}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea7040021a06932b52c674d13ee38cc201}{LED\+\_\+i\+\_\+\+WHITE}}
+, \newline
+\mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea96a724de16ba755de4431d51e392a34d}{LED\+\_\+i\+\_\+\+PURPLE}}
+, \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eaeb616cb3ca6b3b216698775072cc8089}{LED\+\_\+i\+\_\+\+BLACK}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a41db6c9964a602e8f7ef9c38061e9ead}{LED\+\_\+t\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialized the LED control module. Returns LED\+\_\+i\+\_\+\+OK on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_adb3a82ba328c3417e1b3c90a6d656e82}{LED\+\_\+t\+\_\+status}} (void)
+\begin{DoxyCompactList}\small\item\em Checks the status of the LED control module. Returns the status of the LED control module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a862dac8002eb2748222aeb953868ca5a}{LED\+\_\+t\+\_\+set\+Green}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to green. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a34f3be60d40350467666b0dbab1b8679}{LED\+\_\+t\+\_\+set\+Red}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to red. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a9ec4230f815ca63c88ea33e4bc3ed5d2}{LED\+\_\+t\+\_\+set\+Blue}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to blue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a4c7e5282c32f7c5ada0fba6946a911da}{LED\+\_\+t\+\_\+set\+Yellow}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to yellow. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a146fc27eda7c1c56d54792aaf09cff06}{LED\+\_\+t\+\_\+set\+Magenta}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to magenta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a65d182855274fd04a7db07ef5dcea870}{LED\+\_\+t\+\_\+set\+Cyan}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to cyan. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a15ecf1dcff379ae07a4f07dabff35b6f}{LED\+\_\+t\+\_\+set\+Orange}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to orange. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a27655da63a0f346480b92a5f6795f7d9}{LED\+\_\+t\+\_\+set\+White}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to white. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_a47f7a8416effe63685a06bf15bb038f6}{LED\+\_\+t\+\_\+set\+Black}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to black. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_ab4711d91859b9a99c7753ab2c027a39d}{LED\+\_\+t\+\_\+set\+Purple}} ()
+\begin{DoxyCompactList}\small\item\em Set the color of the RGB LED to purple. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{_l_e_d___diagnostic_8c_aea324eb208f318665542cbc4fbd34c0f}{LED\+\_\+t\+\_\+call\+All\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Display all the colors available. Used only when debuging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:tudor.coroian@altran.com}{\texttt{ tudor.\+coroian@altran.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/08-\/11
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_l_e_d___diagnostic_8c}{LED\+\_\+\+Diagnostic.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+Tudor Coroian 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+11 
+\end{DoxyParagraph}
+
+
+\mbox{[}to be written\mbox{]} 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2e}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2e}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!led\_color\_t@{led\_color\_t}}
+\index{led\_color\_t@{led\_color\_t}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{led\_color\_t}{led\_color\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2e}{led\+\_\+color\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_GREEN@{LED\_i\_GREEN}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_GREEN@{LED\_i\_GREEN}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea48efdc7251c216c03324a687b9dc9805}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea48efdc7251c216c03324a687b9dc9805}} 
+LED\+\_\+i\+\_\+\+GREEN&Set the color of the LED to green. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_RED@{LED\_i\_RED}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_RED@{LED\_i\_RED}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea69b0962230df6f94287f7f116687c277}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea69b0962230df6f94287f7f116687c277}} 
+LED\+\_\+i\+\_\+\+RED&Set the color of the LED to red. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_BLUE@{LED\_i\_BLUE}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_BLUE@{LED\_i\_BLUE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eac026ae044cf84d671bc48b2b5e46276c}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eac026ae044cf84d671bc48b2b5e46276c}} 
+LED\+\_\+i\+\_\+\+BLUE&Set the color of the LED to blue. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_YELLOW@{LED\_i\_YELLOW}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_YELLOW@{LED\_i\_YELLOW}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea4d6630ce0e9da8a6b2fbad2dc24f8ff9}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea4d6630ce0e9da8a6b2fbad2dc24f8ff9}} 
+LED\+\_\+i\+\_\+\+YELLOW&Set the color of the LED to yellow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_MAGENTA@{LED\_i\_MAGENTA}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_MAGENTA@{LED\_i\_MAGENTA}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafc771fdf7e2254ab691fadeb76490e95}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafc771fdf7e2254ab691fadeb76490e95}} 
+LED\+\_\+i\+\_\+\+MAGENTA&Set the color of the LED to magenta. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_CYAN@{LED\_i\_CYAN}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_CYAN@{LED\_i\_CYAN}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea8658a049a3f5bce505f93d7f3feb564e}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea8658a049a3f5bce505f93d7f3feb564e}} 
+LED\+\_\+i\+\_\+\+CYAN&Set the color of the LED to cyan. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_ORANGE@{LED\_i\_ORANGE}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_ORANGE@{LED\_i\_ORANGE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafa46133011d7a7dd46275e84cb7d138c}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eafa46133011d7a7dd46275e84cb7d138c}} 
+LED\+\_\+i\+\_\+\+ORANGE&Set the color of the LED to orange. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_WHITE@{LED\_i\_WHITE}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_WHITE@{LED\_i\_WHITE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea7040021a06932b52c674d13ee38cc201}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea7040021a06932b52c674d13ee38cc201}} 
+LED\+\_\+i\+\_\+\+WHITE&Set the color of the LED to white. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_PURPLE@{LED\_i\_PURPLE}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_PURPLE@{LED\_i\_PURPLE}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea96a724de16ba755de4431d51e392a34d}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2ea96a724de16ba755de4431d51e392a34d}} 
+LED\+\_\+i\+\_\+\+PURPLE&Set the color of the LED to purple. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_i\_BLACK@{LED\_i\_BLACK}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_i\_BLACK@{LED\_i\_BLACK}}}\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eaeb616cb3ca6b3b216698775072cc8089}\label{_l_e_d___diagnostic_8c_a653c9a28baf93cfe8106400a53ecea2eaeb616cb3ca6b3b216698775072cc8089}} 
+LED\+\_\+i\+\_\+\+BLACK&Turn of the LED. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 50 of file LED\+\_\+\+Diagnostic.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_aea324eb208f318665542cbc4fbd34c0f}\label{_l_e_d___diagnostic_8c_aea324eb208f318665542cbc4fbd34c0f}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_callAllColors@{LED\_t\_callAllColors}}
+\index{LED\_t\_callAllColors@{LED\_t\_callAllColors}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_callAllColors()}{LED\_t\_callAllColors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+call\+All\+Colors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display all the colors available. Used only when debuging. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 438 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a41db6c9964a602e8f7ef9c38061e9ead}\label{_l_e_d___diagnostic_8c_a41db6c9964a602e8f7ef9c38061e9ead}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_init@{LED\_t\_init}}
+\index{LED\_t\_init@{LED\_t\_init}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_init()}{LED\_t\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialized the LED control module. Returns LED\+\_\+i\+\_\+\+OK on success. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 229 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a47f7a8416effe63685a06bf15bb038f6}\label{_l_e_d___diagnostic_8c_a47f7a8416effe63685a06bf15bb038f6}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setBlack@{LED\_t\_setBlack}}
+\index{LED\_t\_setBlack@{LED\_t\_setBlack}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setBlack()}{LED\_t\_setBlack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Black (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to black. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 421 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a9ec4230f815ca63c88ea33e4bc3ed5d2}\label{_l_e_d___diagnostic_8c_a9ec4230f815ca63c88ea33e4bc3ed5d2}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setBlue@{LED\_t\_setBlue}}
+\index{LED\_t\_setBlue@{LED\_t\_setBlue}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setBlue()}{LED\_t\_setBlue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Blue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to blue. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 373 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a65d182855274fd04a7db07ef5dcea870}\label{_l_e_d___diagnostic_8c_a65d182855274fd04a7db07ef5dcea870}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setCyan@{LED\_t\_setCyan}}
+\index{LED\_t\_setCyan@{LED\_t\_setCyan}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setCyan()}{LED\_t\_setCyan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Cyan (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to cyan. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 397 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a862dac8002eb2748222aeb953868ca5a}\label{_l_e_d___diagnostic_8c_a862dac8002eb2748222aeb953868ca5a}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setGreen@{LED\_t\_setGreen}}
+\index{LED\_t\_setGreen@{LED\_t\_setGreen}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setGreen()}{LED\_t\_setGreen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Green (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to green. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 357 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a146fc27eda7c1c56d54792aaf09cff06}\label{_l_e_d___diagnostic_8c_a146fc27eda7c1c56d54792aaf09cff06}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setMagenta@{LED\_t\_setMagenta}}
+\index{LED\_t\_setMagenta@{LED\_t\_setMagenta}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setMagenta()}{LED\_t\_setMagenta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Magenta (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to magenta. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 389 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a15ecf1dcff379ae07a4f07dabff35b6f}\label{_l_e_d___diagnostic_8c_a15ecf1dcff379ae07a4f07dabff35b6f}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setOrange@{LED\_t\_setOrange}}
+\index{LED\_t\_setOrange@{LED\_t\_setOrange}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setOrange()}{LED\_t\_setOrange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Orange (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to orange. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 405 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_ab4711d91859b9a99c7753ab2c027a39d}\label{_l_e_d___diagnostic_8c_ab4711d91859b9a99c7753ab2c027a39d}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setPurple@{LED\_t\_setPurple}}
+\index{LED\_t\_setPurple@{LED\_t\_setPurple}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setPurple()}{LED\_t\_setPurple()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Purple (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to purple. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 429 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a34f3be60d40350467666b0dbab1b8679}\label{_l_e_d___diagnostic_8c_a34f3be60d40350467666b0dbab1b8679}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setRed@{LED\_t\_setRed}}
+\index{LED\_t\_setRed@{LED\_t\_setRed}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setRed()}{LED\_t\_setRed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Red (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to red. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a27655da63a0f346480b92a5f6795f7d9}\label{_l_e_d___diagnostic_8c_a27655da63a0f346480b92a5f6795f7d9}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setWhite@{LED\_t\_setWhite}}
+\index{LED\_t\_setWhite@{LED\_t\_setWhite}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setWhite()}{LED\_t\_setWhite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+White (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to white. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 413 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_a4c7e5282c32f7c5ada0fba6946a911da}\label{_l_e_d___diagnostic_8c_a4c7e5282c32f7c5ada0fba6946a911da}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_setYellow@{LED\_t\_setYellow}}
+\index{LED\_t\_setYellow@{LED\_t\_setYellow}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_setYellow()}{LED\_t\_setYellow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+set\+Yellow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set the color of the RGB LED to yellow. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 381 of file LED\+\_\+\+Diagnostic.\+c.
+
+\mbox{\Hypertarget{_l_e_d___diagnostic_8c_adb3a82ba328c3417e1b3c90a6d656e82}\label{_l_e_d___diagnostic_8c_adb3a82ba328c3417e1b3c90a6d656e82}} 
+\index{LED\_Diagnostic.c@{LED\_Diagnostic.c}!LED\_t\_status@{LED\_t\_status}}
+\index{LED\_t\_status@{LED\_t\_status}!LED\_Diagnostic.c@{LED\_Diagnostic.c}}
+\doxysubsubsection{\texorpdfstring{LED\_t\_status()}{LED\_t\_status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_l_e_d___interface_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} LED\+\_\+t\+\_\+status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks the status of the LED control module. Returns the status of the LED control module. 
+
+\begin{DoxyReturn}{Returns}
+led\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 336 of file LED\+\_\+\+Diagnostic.\+c.
+

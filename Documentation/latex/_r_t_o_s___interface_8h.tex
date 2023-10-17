@@ -1,0 +1,30 @@
+\hypertarget{_r_t_o_s___interface_8h}{}\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/smart-\/air-\/exchanger/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+Interface.h File Reference}
+\label{_r_t_o_s___interface_8h}\index{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Interface.h@{C:/Users/Administrator/Desktop/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Interface.h}}
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}\label{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}} 
+void \mbox{\hyperlink{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}{rtos\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Call this function from app\+\_\+main() in order to start the RTOS. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}\label{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}} 
+void \mbox{\hyperlink{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}{rtos\+Reboot}} ()
+\begin{DoxyCompactList}\small\item\em Call this function from anywhere in order to trigger a reboot (will also execute the functions in \mbox{\hyperlink{_r_t_o_s___a_p_i_8c_aa3a59eb53caa6ad75445f37327fd0949}{rtos\+Shutdown\+Task()}}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+RTOS\+\_\+\+Control.\+h 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Control infrastructure for starting the RTOS 

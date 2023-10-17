@@ -1,0 +1,231 @@
+\hypertarget{_r_t_o_s___interface_8h}{}\doxysection{C\+:/\+Users/\+Work/\+Desktop/\+SAE\+\_\+\+Clone/\+Smart\+\_\+\+Air\+\_\+\+Exchanger/lib/\+RTOS/src/\+RTOS\+\_\+\+Interface.h File Reference}
+\label{_r_t_o_s___interface_8h}\index{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Interface.h@{C:/Users/Work/Desktop/SAE\_Clone/Smart\_Air\_Exchanger/lib/RTOS/src/RTOS\_Interface.h}}
+{\ttfamily \#include \char`\"{}RTOS\+\_\+\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for RTOS\+\_\+\+Interface.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{_r_t_o_s___interface_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___interface_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_r_t_o_s___interface_8h_afdba7f1d4e49eb4a844109ca9d73d8e1}{RTOS\+\_\+\+DEBUG}}~0
+\begin{DoxyCompactList}\small\item\em Flag for debugging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} \{ \newline
+\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ae6f79da7cbb9c2c921526d45f27ad77d}{CYCLE\+\_\+5\+MS}}
+, \mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a25b7a98ace162302ee5dbfca356ff2d9}{CYCLE\+\_\+50\+MS}}
+, \mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ac9ae8f866599d56abb1837932551cc73}{CYCLE\+\_\+500\+MS}}
+, \mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a86745dd539a7d5f0ced38dd0c746591a}{CYCLE\+\_\+1000\+MS}}
+, \newline
+\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a4fed40da7ee8f257be4b99b6ff758ef8}{CYCLE\+\_\+1\+MIN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for the task types, based on loop duration. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}} \{ \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a8dc8ee3a2f79a67c6542615728b830f6}{MIN\+\_\+\+VALUE}}
+, \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a031ae2dd4fefa897bbe2f97e342de7ca}{AVG\+\_\+\+VALUE}}
+, \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a6197106c093efff5fc975f86877b3be4}{MAX\+\_\+\+VALUE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for how to extract the value for the task performance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}{rtos\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Used to start the whole RTOS, including subsequent tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}{rtos\+Reboot}} ()
+\begin{DoxyCompactList}\small\item\em Used to trigger a controlled reboot of the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t_o_s___interface_8h_a48c6e0f0bd1996a93369f85feb220b5e}{get\+Performance\+Stats}} (char $\ast$stats)
+\begin{DoxyCompactList}\small\item\em Get the complete performance stats for all tasks, in a buffer, ready to be printed. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_r_t_o_s___interface_8h_a34d31dc2bac3a17948fb698bf398fe3d}{get\+Performance\+Stats\+Selective}} (\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}} selected\+Task, \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}} metric\+Type)
+\begin{DoxyCompactList}\small\item\em Get the performance stats for a single task type, with a single type of value extracted, as a number of ticks elapsed during the execution of the task (1ms ticks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+RTOS\+\_\+\+Control.\+h 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+05 
+\end{DoxyParagraph}
+
+
+Control infrastructure for starting the RTOS 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_afdba7f1d4e49eb4a844109ca9d73d8e1}\label{_r_t_o_s___interface_8h_afdba7f1d4e49eb4a844109ca9d73d8e1}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!RTOS\_DEBUG@{RTOS\_DEBUG}}
+\index{RTOS\_DEBUG@{RTOS\_DEBUG}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{RTOS\_DEBUG}{RTOS\_DEBUG}}
+{\footnotesize\ttfamily \#define RTOS\+\_\+\+DEBUG~0}
+
+
+
+Flag for debugging. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}\label{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!STAT\_METRIC\_TYPE@{STAT\_METRIC\_TYPE}}
+\index{STAT\_METRIC\_TYPE@{STAT\_METRIC\_TYPE}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{STAT\_METRIC\_TYPE}{STAT\_METRIC\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}}}
+
+
+
+Enum for how to extract the value for the task performance. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN\_VALUE@{MIN\_VALUE}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!MIN\_VALUE@{MIN\_VALUE}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a8dc8ee3a2f79a67c6542615728b830f6}\label{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a8dc8ee3a2f79a67c6542615728b830f6}} 
+MIN\+\_\+\+VALUE&Extract the smallest value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVG\_VALUE@{AVG\_VALUE}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!AVG\_VALUE@{AVG\_VALUE}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a031ae2dd4fefa897bbe2f97e342de7ca}\label{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a031ae2dd4fefa897bbe2f97e342de7ca}} 
+AVG\+\_\+\+VALUE&Extract the average of the values (rounded down) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_VALUE@{MAX\_VALUE}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!MAX\_VALUE@{MAX\_VALUE}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a6197106c093efff5fc975f86877b3be4}\label{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301a6197106c093efff5fc975f86877b3be4}} 
+MAX\+\_\+\+VALUE&Extract the biggest value. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!TASK\_TYPE\_LIST@{TASK\_TYPE\_LIST}}
+\index{TASK\_TYPE\_LIST@{TASK\_TYPE\_LIST}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{TASK\_TYPE\_LIST}{TASK\_TYPE\_LIST}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}
+
+
+
+Enum for the task types, based on loop duration. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYCLE\_5MS@{CYCLE\_5MS}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!CYCLE\_5MS@{CYCLE\_5MS}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ae6f79da7cbb9c2c921526d45f27ad77d}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ae6f79da7cbb9c2c921526d45f27ad77d}} 
+CYCLE\+\_\+5\+MS&Every 5ms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYCLE\_50MS@{CYCLE\_50MS}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!CYCLE\_50MS@{CYCLE\_50MS}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a25b7a98ace162302ee5dbfca356ff2d9}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a25b7a98ace162302ee5dbfca356ff2d9}} 
+CYCLE\+\_\+50\+MS&Every 50ms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYCLE\_500MS@{CYCLE\_500MS}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!CYCLE\_500MS@{CYCLE\_500MS}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ac9ae8f866599d56abb1837932551cc73}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1ac9ae8f866599d56abb1837932551cc73}} 
+CYCLE\+\_\+500\+MS&Every 500ms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYCLE\_1000MS@{CYCLE\_1000MS}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!CYCLE\_1000MS@{CYCLE\_1000MS}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a86745dd539a7d5f0ced38dd0c746591a}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a86745dd539a7d5f0ced38dd0c746591a}} 
+CYCLE\+\_\+1000\+MS&Every 1000ms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYCLE\_1MIN@{CYCLE\_1MIN}!RTOS\_Interface.h@{RTOS\_Interface.h}}\index{RTOS\_Interface.h@{RTOS\_Interface.h}!CYCLE\_1MIN@{CYCLE\_1MIN}}}\mbox{\Hypertarget{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a4fed40da7ee8f257be4b99b6ff758ef8}\label{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1a4fed40da7ee8f257be4b99b6ff758ef8}} 
+CYCLE\+\_\+1\+MIN&Every 1min. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a48c6e0f0bd1996a93369f85feb220b5e}\label{_r_t_o_s___interface_8h_a48c6e0f0bd1996a93369f85feb220b5e}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!getPerformanceStats@{getPerformanceStats}}
+\index{getPerformanceStats@{getPerformanceStats}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{getPerformanceStats()}{getPerformanceStats()}}
+{\footnotesize\ttfamily void get\+Performance\+Stats (\begin{DoxyParamCaption}\item[{char $\ast$}]{stats }\end{DoxyParamCaption})}
+
+
+
+Get the complete performance stats for all tasks, in a buffer, ready to be printed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stats} & Should be 256 bytes long \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{_r_t_o_s___interface_8h_a48c6e0f0bd1996a93369f85feb220b5e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a34d31dc2bac3a17948fb698bf398fe3d}\label{_r_t_o_s___interface_8h_a34d31dc2bac3a17948fb698bf398fe3d}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!getPerformanceStatsSelective@{getPerformanceStatsSelective}}
+\index{getPerformanceStatsSelective@{getPerformanceStatsSelective}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{getPerformanceStatsSelective()}{getPerformanceStatsSelective()}}
+{\footnotesize\ttfamily unsigned int get\+Performance\+Stats\+Selective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_afbac8bbc54a113a12da37b7cb51769a1}{TASK\+\_\+\+TYPE\+\_\+\+LIST}}}]{selected\+Task,  }\item[{\mbox{\hyperlink{_r_t_o_s___interface_8h_a13278451dd91f47e7d041cd32bf7a301}{STAT\+\_\+\+METRIC\+\_\+\+TYPE}}}]{metric\+Type }\end{DoxyParamCaption})}
+
+
+
+Get the performance stats for a single task type, with a single type of value extracted, as a number of ticks elapsed during the execution of the task (1ms ticks) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Task} & Specify the type of task (by loop duration) \\
+\hline
+{\em metric\+Type} & Specify required metric (by min/avg/max duration of multiple logged loops) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of ticks elapsed during runtime of requested task 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{_r_t_o_s___interface_8h_a34d31dc2bac3a17948fb698bf398fe3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}\label{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!rtosReboot@{rtosReboot}}
+\index{rtosReboot@{rtosReboot}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{rtosReboot()}{rtosReboot()}}
+{\footnotesize\ttfamily void rtos\+Reboot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to trigger a controlled reboot of the system. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{_r_t_o_s___interface_8h_a0764e0fef6dbf64b5084ed455032d522_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}\label{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2}} 
+\index{RTOS\_Interface.h@{RTOS\_Interface.h}!rtosStart@{rtosStart}}
+\index{rtosStart@{rtosStart}!RTOS\_Interface.h@{RTOS\_Interface.h}}
+\doxysubsubsection{\texorpdfstring{rtosStart()}{rtosStart()}}
+{\footnotesize\ttfamily void rtos\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to start the whole RTOS, including subsequent tasks. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_t_o_s___interface_8h_a1837509919a7e51fe94409128a1742e2_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,156 @@
+\hypertarget{_webserver_8c}{}\doxysection{Webserver\+\_\+\+STA/src/\+Webserver.c File Reference}
+\label{_webserver_8c}\index{Webserver\_STA/src/Webserver.c@{Webserver\_STA/src/Webserver.c}}
+{\ttfamily \#include \char`\"{}Webserver\+\_\+\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Humidity\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temperature\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FAN\+\_\+\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RTC\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}NTP\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Comfort\+\_\+\+Interface.\+h\char`\"{}}\newline
+Include dependency graph for Webserver.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_webserver_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_webserver_8c_a7a80d16ac9306d4bd0c065f33ba516d1}{get\+Webserver\+Number\+Buffers}} (int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Get the number of needed buffer reads when Webserver file is split into chunks of given size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_webserver_8c_a78ee4a33d99384679628349b4bb4a406}{get\+Webserver\+Buffer\+Index}} (int index, int buffer\+Size, const uint8\+\_\+t $\ast$$\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Get a pointer to the nth chunk of the HTML file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_webserver_8c_a030036f4adf41fb84eac3e8627f28f99}{html\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Unused. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_webserver_8c_a57f838aaf738eff2ab2e0ad4522b28d3}{compile\+Data\+Packet}} (uint8\+\_\+t $\ast$data\+Buffer)
+\begin{DoxyCompactList}\small\item\em Compiles the JSON content to be sent as a reply to the webserver data request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_webserver_8c_a77ed28f7fdbe4b4954f498977fdfdd88}{aws\+\_\+root\+\_\+ca\+\_\+pem\+\_\+start}} \mbox{[}$\,$\mbox{]}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_webserver_8c_a80582ae200698a0ad55f13e3b5d20285}{aws\+\_\+root\+\_\+ca\+\_\+pem\+\_\+end}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{_webserver_8c_ae95eb7d7fba43b6d535d7ca585cbb462}{filesize}} = -\/1
+\item 
+bool \mbox{\hyperlink{_webserver_8c_a0d03ddcfcfe3a50cfbcf9b01f94fa519}{In\+Out\+Direction}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Source}
+\mbox{\hyperlink{_webserver_8c}{Webserver.\+c}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Revision}
+1 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Author}
+George Ciuclea 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Date}
+2021.\+08.\+16 
+\end{DoxyParagraph}
+
+
+Holds RTOS runtime functions that will hold calls for various submodule API functions, in order to run them. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_webserver_8c_a57f838aaf738eff2ab2e0ad4522b28d3}\label{_webserver_8c_a57f838aaf738eff2ab2e0ad4522b28d3}} 
+\index{Webserver.c@{Webserver.c}!compileDataPacket@{compileDataPacket}}
+\index{compileDataPacket@{compileDataPacket}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{compileDataPacket()}{compileDataPacket()}}
+{\footnotesize\ttfamily int compile\+Data\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Compiles the JSON content to be sent as a reply to the webserver data request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Buffer} & The buffer where the JSON will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the JSON 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_webserver_8c_a78ee4a33d99384679628349b4bb4a406}\label{_webserver_8c_a78ee4a33d99384679628349b4bb4a406}} 
+\index{Webserver.c@{Webserver.c}!getWebserverBufferIndex@{getWebserverBufferIndex}}
+\index{getWebserverBufferIndex@{getWebserverBufferIndex}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{getWebserverBufferIndex()}{getWebserverBufferIndex()}}
+{\footnotesize\ttfamily int get\+Webserver\+Buffer\+Index (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{buffer\+Size,  }\item[{const uint8\+\_\+t $\ast$$\ast$}]{pointer }\end{DoxyParamCaption})}
+
+
+
+Get a pointer to the nth chunk of the HTML file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the chunk (starts at 0) \\
+\hline
+{\em buffer\+Size} & The maximum size of the chunks \\
+\hline
+{\em pointer} & The address where the pointer to the chunk memory location will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the selected buffer (will be smaller than buffer\+Size if at end of file and not enough data left) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_webserver_8c_a7a80d16ac9306d4bd0c065f33ba516d1}\label{_webserver_8c_a7a80d16ac9306d4bd0c065f33ba516d1}} 
+\index{Webserver.c@{Webserver.c}!getWebserverNumberBuffers@{getWebserverNumberBuffers}}
+\index{getWebserverNumberBuffers@{getWebserverNumberBuffers}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{getWebserverNumberBuffers()}{getWebserverNumberBuffers()}}
+{\footnotesize\ttfamily int get\+Webserver\+Number\+Buffers (\begin{DoxyParamCaption}\item[{int}]{buffer\+Size }\end{DoxyParamCaption})}
+
+
+
+Get the number of needed buffer reads when Webserver file is split into chunks of given size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Size} & The size of one buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of buffers 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_webserver_8c_a030036f4adf41fb84eac3e8627f28f99}\label{_webserver_8c_a030036f4adf41fb84eac3e8627f28f99}} 
+\index{Webserver.c@{Webserver.c}!htmlSize@{htmlSize}}
+\index{htmlSize@{htmlSize}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{htmlSize()}{htmlSize()}}
+{\footnotesize\ttfamily int html\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unused. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_webserver_8c_a80582ae200698a0ad55f13e3b5d20285}\label{_webserver_8c_a80582ae200698a0ad55f13e3b5d20285}} 
+\index{Webserver.c@{Webserver.c}!aws\_root\_ca\_pem\_end@{aws\_root\_ca\_pem\_end}}
+\index{aws\_root\_ca\_pem\_end@{aws\_root\_ca\_pem\_end}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{aws\_root\_ca\_pem\_end}{aws\_root\_ca\_pem\_end}}
+{\footnotesize\ttfamily const uint8\+\_\+t aws\+\_\+root\+\_\+ca\+\_\+pem\+\_\+end\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{_webserver_8c_a77ed28f7fdbe4b4954f498977fdfdd88}\label{_webserver_8c_a77ed28f7fdbe4b4954f498977fdfdd88}} 
+\index{Webserver.c@{Webserver.c}!aws\_root\_ca\_pem\_start@{aws\_root\_ca\_pem\_start}}
+\index{aws\_root\_ca\_pem\_start@{aws\_root\_ca\_pem\_start}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{aws\_root\_ca\_pem\_start}{aws\_root\_ca\_pem\_start}}
+{\footnotesize\ttfamily const uint8\+\_\+t aws\+\_\+root\+\_\+ca\+\_\+pem\+\_\+start\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{_webserver_8c_ae95eb7d7fba43b6d535d7ca585cbb462}\label{_webserver_8c_ae95eb7d7fba43b6d535d7ca585cbb462}} 
+\index{Webserver.c@{Webserver.c}!filesize@{filesize}}
+\index{filesize@{filesize}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{filesize}{filesize}}
+{\footnotesize\ttfamily int filesize = -\/1}
+
+\mbox{\Hypertarget{_webserver_8c_a0d03ddcfcfe3a50cfbcf9b01f94fa519}\label{_webserver_8c_a0d03ddcfcfe3a50cfbcf9b01f94fa519}} 
+\index{Webserver.c@{Webserver.c}!InOutDirection@{InOutDirection}}
+\index{InOutDirection@{InOutDirection}!Webserver.c@{Webserver.c}}
+\doxysubsubsection{\texorpdfstring{InOutDirection}{InOutDirection}}
+{\footnotesize\ttfamily bool In\+Out\+Direction = false}
+

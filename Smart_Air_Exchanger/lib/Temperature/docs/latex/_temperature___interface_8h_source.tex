@@ -1,0 +1,40 @@
+\hypertarget{_temperature___interface_8h_source}{}\doxysection{Temperature\+\_\+\+Interface.\+h}
+\label{_temperature___interface_8h_source}\index{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature\_Interface.h@{C:/Users/Administrator/Documents/Project/smart-\/air-\/exchanger/Smart\_Air\_Exchanger/lib/Temperature/src/Temperature\_Interface.h}}
+\mbox{\hyperlink{_temperature___interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef Temperature\_Interface\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define Temperature\_Interface\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define DEBUG\_TEMPERATURE       1       }}
+\DoxyCodeLine{15 \textcolor{comment}{/* Includes */}}
+\DoxyCodeLine{16 \textcolor{comment}{/*============================================================================*/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/* Constants and types */}}
+\DoxyCodeLine{20 \textcolor{comment}{/*============================================================================*/}}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcac1385a62aff183a538d6e947bc0e7064}{TEMPERATURE\_i\_SUCCESS}} = 0,              }
+\DoxyCodeLine{23     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcae846489f003c10e233ac6f2b6bec89d5}{TEMPERATURE\_i\_DEVICE\_NOT\_CONNECTED}},     }
+\DoxyCodeLine{24     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca4b9a671dac1a980421bb9d99729e64ae}{TEMPERATURE\_i\_NOT\_INITIALIZED}},          }
+\DoxyCodeLine{25     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca59fa4a8c2dfcf4bb88bcd41f1e26e85e}{TEMPERATURE\_i\_CAN\_NOT\_READ\_TEMPERATURE}}, }
+\DoxyCodeLine{26     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bca705b9d7ea5c98c267db050a8a6826a31}{TEMPERATURE\_i\_UNKNOWN\_DEVICE}},           }
+\DoxyCodeLine{27     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaf3ae41c3e1bdff8b1129dc97e9af289c}{TEMPERATURE\_i\_MISSING\_DEVICE}},           }
+\DoxyCodeLine{28     \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bcaa0073e4228f8fc4fc87ccfc564f7e68c}{TEMPERATURE\_i\_OUTSIDE\_INTERVAL}},         }
+\DoxyCodeLine{29 \} \mbox{\hyperlink{_temperature___interface_8h_a1fe95c16d09f87b269105d1b1b6377bc}{temperature\_err\_t}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/* Exported Variables */}}
+\DoxyCodeLine{32 \textcolor{comment}{/*============================================================================*/}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{extern} int32\_t \mbox{\hyperlink{_temperature___interface_8h_ace8c6d7d447cf9bc514e326873fa1b4b}{Temperature\_i\_Interior}};      }
+\DoxyCodeLine{35 \textcolor{keyword}{extern} int32\_t \mbox{\hyperlink{_temperature___interface_8h_a78ac6e8f1719bee14067c7fa3984f126}{Temperature\_i\_Exterior}};      }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* Exported functions prototypes */}}
+\DoxyCodeLine{38 \textcolor{comment}{/*============================================================================*/}}
+\DoxyCodeLine{39 \textcolor{comment}{//\#ifdef DEBUG\_TEMPERATURE\_C }}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{_temperature___interface_8h_a04dad00b0c5141a77c095babad5afa0e}{Temperature\_v\_Init}}();               }
+\DoxyCodeLine{41 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{_temperature___interface_8h_ad9f390dd122342b0943b13f5fd17a0fd}{Temperature\_v\_Read\_Temperature}}();   }
+\DoxyCodeLine{42 \textcolor{keyword}{extern} int32\_t \mbox{\hyperlink{_temperature___interface_8h_a1699ec48fd7b83d2181fec28f44fe803}{Temperature\_i\_getInterior}}();     }
+\DoxyCodeLine{43 \textcolor{keyword}{extern} int32\_t \mbox{\hyperlink{_temperature___interface_8h_a470b509e6bf45099bbf62e8865144629}{Temperature\_i\_getExterior}}();     }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
